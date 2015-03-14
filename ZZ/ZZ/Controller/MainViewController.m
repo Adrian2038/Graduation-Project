@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "HostViewController.h"
 #import "UIButton+SnapAdditions.h"
 
 @interface MainViewController ()
@@ -50,13 +51,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  
   if ([segue.identifier isEqualToString:@"Host Game"]) {
-    NSLog(@"Segue Host Game");
   }
 }
 
-#pragma mark - Animation
+#pragma mark - Animation  ... Something wrong with the animation
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -144,9 +143,52 @@
 {
   _buttonEnabed = NO;
   
-  
+    [UIView animateWithDuration:0.3f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^
+                     {
+                         self.sImageView.center = self.aImageView.center;
+                         self.sImageView.transform = self.aImageView.transform;
+                         
+                         self.nImageView.center = self.aImageView.center;
+                         self.nImageView.transform = self.aImageView.transform;
+                         
+                         self.pImageView.center = self.aImageView.center;
+                         self.pImageView.transform = self.aImageView.transform;
+                         
+                         self.jokerImageView.center = self.aImageView.center;
+                         self.joinGameButton.transform = self.aImageView.transform;
+                     }
+                     completion:^(BOOL finished)
+                     {
+                         CGPoint point = CGPointMake(self.aImageView.center.x, self.view.frame.size.height * -2.0f);
+                         
+                         [UIView animateWithDuration:1.0f
+                                               delay:0.0f
+                                             options:UIViewAnimationOptionCurveEaseOut
+                                          animations:^
+                                          {
+                                              self.sImageView.center = point;
+                                              self.nImageView.center = point;
+                                              self.aImageView.center = point;
+                                              self.pImageView.center = point;
+                                              self.jokerImageView.center = point;
+                                          }
+                                          completion:block];
+                         
+                         [UIView animateWithDuration:0.3f
+                                               delay:0.3f
+                                             options:UIViewAnimationOptionCurveEaseOut
+                                          animations:^
+                                          {
+                                              self.hostGameButton.alpha = 0.0f;
+                                              self.joinGameButton.alpha = 0.0f;
+                                              self.singlePlayerGameButton.alpha = 0.0f;
+                                          }
+                                          completion:nil];
+                     }];
   
 }
-
 
 @end
