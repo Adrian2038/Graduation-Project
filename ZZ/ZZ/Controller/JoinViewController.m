@@ -12,7 +12,7 @@
 
 - (IBAction)popToTop:(id)sender
 {
-  [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 

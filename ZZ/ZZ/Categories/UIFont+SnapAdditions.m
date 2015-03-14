@@ -12,7 +12,7 @@
 
 + (id)rw_snapFontWithSize:(CGFloat)size
 {
-  return [UIFont fontWithName:@"Action Man" size:size];
+    return [UIFont fontWithName:@"Action Man" size:size];
 }
 
 @end
