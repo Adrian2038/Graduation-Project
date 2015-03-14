@@ -12,12 +12,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    static NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    cell.backgroundColor = [UIColor grayColor];
+    cell.textLabel.text = @"Adrain";
+    return cell;
 }
 
 @end

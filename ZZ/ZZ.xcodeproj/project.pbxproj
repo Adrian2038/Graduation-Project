@@ -143,6 +143,7 @@
 		53AFC9111AB292C700DBFCAE /* SinglePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SinglePlayViewController.m; path = Controller/SinglePlayViewController.m; sourceTree = "<group>"; };
 		53AFC9131AB292D400DBFCAE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
 		53AFC9141AB292D400DBFCAE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
+		8BE265C51AB46B8300FCABE1 /* ZZHeaderPch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHeaderPch.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +275,7 @@
 				53AFC8E41AB285E200DBFCAE /* Info.plist */,
 				53AFC8E51AB285E200DBFCAE /* main.m */,
 				531E61F91AB2C70E003A0013 /* Action_Man.ttf */,
+				8BE265C51AB46B8300FCABE1 /* ZZHeaderPch.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -525,7 +527,10 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZ/ZZHeaderPch.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -567,6 +572,9 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZ/ZZHeaderPch.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -586,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = ZZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = ZZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
