@@ -7,6 +7,16 @@
 //
 
 
+@class JoinViewController;
+
+@protocol JoinViewControllerDelegate <NSObject>
+
+- (void)joinViewControllerDidCancel:(JoinViewController *)controller;
+
+@end
+
 @interface JoinViewController : UIViewController
+
+@property (nonatomic, weak) id <JoinViewControllerDelegate> delegate;
 
 @end

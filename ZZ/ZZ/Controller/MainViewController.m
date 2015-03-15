@@ -46,6 +46,11 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc %@", self);
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -53,7 +58,14 @@
     if ([segue.identifier isEqualToString:@"Host Game"]) {
         if ([segue.destinationViewController isKindOfClass:[HostViewController class]]) {
             HostViewController *controller = (HostViewController *)segue.destinationViewController;
-            controller.delegate = self;            
+            controller.delegate = self;
+            NSLog(@"host delegate = %@", self);
+        }
+    } else if ([segue.identifier isEqualToString:@"Join Game"]) {
+        if ([segue.destinationViewController isKindOfClass:[JoinViewController class]]) {
+            JoinViewController *controller = (JoinViewController *)segue.destinationViewController;
+            controller.delegate = self;
+            NSLog(@"join delegate = %@", self);
         }
     }
 }
@@ -201,6 +213,11 @@
 - (void)hostViewControllerDidCancel:(HostViewController *)controller
 {
 //    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)joinViewControllerDidCancel:(JoinViewController *)controller
+{
+    
 }
 
 @end

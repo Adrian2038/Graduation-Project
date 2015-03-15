@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		531631E91AB2E9AE0030CB17 /* HostControllerTableViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 531631E81AB2E9AE0030CB17 /* HostControllerTableViewProtocol.m */; };
-		531631EC1AB2EB330030CB17 /* HostControllerTextFieldProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 531631EB1AB2EB330030CB17 /* HostControllerTextFieldProtocol.m */; };
 		531E61FA1AB2C70E003A0013 /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 531E61F91AB2C70E003A0013 /* Action_Man.ttf */; };
 		531E62001AB2C71A003A0013 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E61FD1AB2C71A003A0013 /* UIButton+SnapAdditions.m */; };
 		531E62011AB2C71A003A0013 /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E61FF1AB2C71A003A0013 /* UIFont+SnapAdditions.m */; };
@@ -75,10 +73,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		531631E71AB2E9AE0030CB17 /* HostControllerTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostControllerTableViewProtocol.h; path = ZZ/Protocol/HostControllerTableViewProtocol.h; sourceTree = SOURCE_ROOT; };
-		531631E81AB2E9AE0030CB17 /* HostControllerTableViewProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostControllerTableViewProtocol.m; path = ZZ/Protocol/HostControllerTableViewProtocol.m; sourceTree = SOURCE_ROOT; };
-		531631EA1AB2EB330030CB17 /* HostControllerTextFieldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostControllerTextFieldProtocol.h; path = ZZ/Protocol/HostControllerTextFieldProtocol.h; sourceTree = SOURCE_ROOT; };
-		531631EB1AB2EB330030CB17 /* HostControllerTextFieldProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostControllerTextFieldProtocol.m; path = ZZ/Protocol/HostControllerTextFieldProtocol.m; sourceTree = SOURCE_ROOT; };
 		531E61F91AB2C70E003A0013 /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		531E61FC1AB2C71A003A0013 /* UIButton+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SnapAdditions.h"; sourceTree = "<group>"; };
 		531E61FD1AB2C71A003A0013 /* UIButton+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SnapAdditions.m"; sourceTree = "<group>"; };
@@ -164,18 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		531631E61AB2E92A0030CB17 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				531631E71AB2E9AE0030CB17 /* HostControllerTableViewProtocol.h */,
-				531631E81AB2E9AE0030CB17 /* HostControllerTableViewProtocol.m */,
-				531631EA1AB2EB330030CB17 /* HostControllerTextFieldProtocol.h */,
-				531631EB1AB2EB330030CB17 /* HostControllerTextFieldProtocol.m */,
-			);
-			name = Protocol;
-			path = Categories;
-			sourceTree = "<group>";
-		};
 		531E61FB1AB2C71A003A0013 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +241,6 @@
 				53AFC8F01AB285E200DBFCAE /* Images.xcassets */,
 				53AFC8F21AB285E200DBFCAE /* LaunchScreen.xib */,
 				53AFC90C1AB2914300DBFCAE /* Controller */,
-				531631E61AB2E92A0030CB17 /* Protocol */,
 				531E61FB1AB2C71A003A0013 /* Categories */,
 				5372772E1AB29B12001D5649 /* Images */,
 				53AFC8E31AB285E200DBFCAE /* Supporting Files */,
@@ -457,10 +438,8 @@
 				53AFC90B1AB2912900DBFCAE /* HostViewController.m in Sources */,
 				53AFC9121AB292C700DBFCAE /* SinglePlayViewController.m in Sources */,
 				531E62011AB2C71A003A0013 /* UIFont+SnapAdditions.m in Sources */,
-				531631EC1AB2EB330030CB17 /* HostControllerTextFieldProtocol.m in Sources */,
 				53AFC90F1AB292AB00DBFCAE /* JoinViewController.m in Sources */,
 				53AFC9151AB292D400DBFCAE /* MainViewController.m in Sources */,
-				531631E91AB2E9AE0030CB17 /* HostControllerTableViewProtocol.m in Sources */,
 				53AFC8E91AB285E200DBFCAE /* AppDelegate.m in Sources */,
 				531E62001AB2C71A003A0013 /* UIButton+SnapAdditions.m in Sources */,
 				53AFC8E61AB285E200DBFCAE /* main.m in Sources */,

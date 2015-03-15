@@ -9,10 +9,8 @@
 #import "HostViewController.h"
 #import "UIButton+SnapAdditions.h"
 #import "UIFont+SnapAdditions.h"
-#import "HostControllerTableViewProtocol.h"
-#import "HostControllerTextFieldProtocol.h"
 
-@interface HostViewController ()
+@interface HostViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,9 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-
-@property (nonatomic, strong) HostControllerTextFieldProtocol *textFieldProtocol;
-@property (nonatomic, strong) HostControllerTableViewProtocol *tableViewProtocol;
 
 @end
 
@@ -42,15 +37,20 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.nameTextField action:@selector(resignFirstResponder)];
     [self.view addGestureRecognizer:gestureRecognizer];
     
-    self.nameTextField.delegate = self.textFieldProtocol;
+    self.nameTextField.delegate = self;
     
-    self.tableView.dataSource = self.tableViewProtocol;
-    self.tableView.delegate = self.tableViewProtocol;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc %@", self);
 }
 
 #pragma mark - Action
@@ -64,22 +64,41 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - Properties
+#pragma mark - UITextFieldDelegate
 
-- (HostControllerTableViewProtocol *)tableViewProtocol
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (!_tableViewProtocol) {
-      _tableViewProtocol = [[HostControllerTableViewProtocol alloc] init];
-    }
-    return _tableViewProtocol;
+    [textField resignFirstResponder];
+    
+    return NO;
 }
 
-- (HostControllerTextFieldProtocol *)textFieldProtocol
+#pragma mark - UITableViewDataSource & UITableViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (!_textFieldProtocol) {
-        _textFieldProtocol = [[HostControllerTextFieldProtocol alloc] init];
-    }
-    return _textFieldProtocol;
+    return 3;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    cell.backgroundColor = [UIColor grayColor];
+    
+    NSString *name = nil;
+    switch (indexPath.row) {
+        case 0: name = @"Tom"; break;
+        case 1: name = @"Jack"; break;
+        case 2: name = @"Taylor Swift"; break;
+        default: break;
+    }
+    cell.textLabel.text = name;
+    return cell;
+}
+
 
 @end
