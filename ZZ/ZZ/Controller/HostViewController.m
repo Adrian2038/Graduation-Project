@@ -61,7 +61,7 @@
 
 - (IBAction)exitAction:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Properties

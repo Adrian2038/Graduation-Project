@@ -51,6 +51,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Host Game"]) {
+        if ([segue.destinationViewController isKindOfClass:[HostViewController class]]) {
+            HostViewController *controller = (HostViewController *)segue.destinationViewController;
+            controller.delegate = self;            
+        }
     }
 }
 
@@ -190,6 +194,13 @@
                                           completion:nil];
                      }];
   
+}
+
+#pragma mark - HostViewControllerDelegate
+
+- (void)hostViewControllerDidCancel:(HostViewController *)controller
+{
+//    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

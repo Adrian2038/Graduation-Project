@@ -23,7 +23,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     cell.backgroundColor = [UIColor grayColor];
-    cell.textLabel.text = @"Adrain";
+    
+    NSString *name = nil;
+    switch (indexPath.row) {
+        case 0: name = @"Tom"; break;
+        case 1: name = @"Jack"; break;
+        case 2: name = @"Taylor Swift"; break;
+        default: break;
+    }
+    cell.textLabel.text = name;
     return cell;
 }
 
