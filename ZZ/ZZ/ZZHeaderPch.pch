@@ -14,5 +14,18 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
+
+// The name of GameKit session
+#define SESSION_ID @"Snap!"
+
+typedef enum
+{
+    QuitReasonNoNetwork,
+    QuitReasonConnectionDropped,
+    QuitReasonUserQuit,
+    QuitReasonServerQuit,
+}
+QuitReason;
 
 #endif

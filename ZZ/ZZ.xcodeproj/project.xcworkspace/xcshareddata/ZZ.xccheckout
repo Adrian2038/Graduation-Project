@@ -10,6 +10,8 @@
 	<string>ZZ</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2B44AD03A37558A04838E15033D69C59AF30F9E3</key>
+		<string>https://github.com/Adrian2038/Graduation-Project-Company-.git</string>
 		<key>CA622C6C0D9EF4AFAD6C131470E7C26B967428B1</key>
 		<string>https://github.com/Adrian2038/Graduation-Project.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>ZZ/ZZ.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CA622C6C0D9EF4AFAD6C131470E7C26B967428B1</key>
+		<key>2B44AD03A37558A04838E15033D69C59AF30F9E3</key>
 		<string>../../..</string>
+		<key>CA622C6C0D9EF4AFAD6C131470E7C26B967428B1</key>
+		<string>../../../../Graduation%20Project</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Adrian2038/Graduation-Project.git</string>
+	<string>https://github.com/Adrian2038/Graduation-Project-Company-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CA622C6C0D9EF4AFAD6C131470E7C26B967428B1</string>
+	<string>2B44AD03A37558A04838E15033D69C59AF30F9E3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B44AD03A37558A04838E15033D69C59AF30F9E3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Graduation-Project</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
