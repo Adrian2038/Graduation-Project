@@ -282,8 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				53B9F6471ABACDBE001DC90A /* Main.storyboard */,
-				53AFC8F01AB285E200DBFCAE /* Images.xcassets */,
-				53AFC8F21AB285E200DBFCAE /* LaunchScreen.xib */,
 				53AFC90C1AB2914300DBFCAE /* Controller */,
 				538600341AB911CB00E554E6 /* Networking */,
 				5386003D1AB932FE00E554E6 /* View */,
@@ -301,6 +299,8 @@
 				538600321AB9113700E554E6 /* GameKit.framework */,
 				53AFC8E71AB285E200DBFCAE /* AppDelegate.h */,
 				53AFC8E81AB285E200DBFCAE /* AppDelegate.m */,
+				53AFC8F01AB285E200DBFCAE /* Images.xcassets */,
+				53AFC8F21AB285E200DBFCAE /* LaunchScreen.xib */,
 				53AFC8E41AB285E200DBFCAE /* Info.plist */,
 				53AFC8E51AB285E200DBFCAE /* main.m */,
 				531E61F91AB2C70E003A0013 /* Action_Man.ttf */,

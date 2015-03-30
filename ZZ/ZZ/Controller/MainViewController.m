@@ -182,16 +182,19 @@
 
 - (void)startGameWithBlock:(void(^)(Game *))block
 {
-    GameViewController *gameViewController = [[GameViewController alloc] init];
-    gameViewController.delegate = self;
-        
-    [self presentViewController:gameViewController animated:NO completion:^
-     {         
-         Game *game = [[Game alloc] init];
-         gameViewController.game = game;
-         game.delegate = gameViewController;
-         block(game);
-     }];
+    
+    [self performSegueWithIdentifier:@"Game ooo" sender:self];
+    
+//    GameViewController *gameViewController = [[GameViewController alloc] init];
+//    gameViewController.delegate = self;
+//        
+//    [self presentViewController:gameViewController animated:NO completion:^
+//     {         
+//         Game *game = [[Game alloc] init];
+//         gameViewController.game = game;
+//         game.delegate = gameViewController;
+//         block(game);
+//     }];
 }
 
 #pragma mark - HostViewControllerDelegate

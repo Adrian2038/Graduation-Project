@@ -73,7 +73,7 @@
                         <outlet property="hostGameButton" destination="3W0-xV-8Ak" id="Bxf-DT-hvW"/>
                         <outlet property="joinGameButton" destination="bI3-4f-F4u" id="GWU-jm-gJw"/>
                         <outlet property="singlePlayerGameButton" destination="c22-ny-9BX" id="2dn-gV-d5M"/>
-                        <segue destination="avd-EC-mjk" kind="modal" id="X2t-Gc-qFt"/>
+                        <segue destination="avd-EC-mjk" kind="modal" identifier="Game ooo" id="X2t-Gc-qFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
