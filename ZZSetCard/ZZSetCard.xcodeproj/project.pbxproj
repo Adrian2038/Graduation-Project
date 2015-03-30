@@ -15,6 +15,45 @@
 		53040CF71AC953AB00FB1B0F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53040CF61AC953AB00FB1B0F /* Info.plist */; };
 		53040CFB1AC953D600FB1B0F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53040CF91AC953D600FB1B0F /* MainViewController.m */; };
 		53040CFC1AC953D600FB1B0F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53040CFA1AC953D600FB1B0F /* MainViewController.xib */; };
+		535B97DC1AC9551C001652FD /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B51AC9551C001652FD /* Button.png */; };
+		535B97DD1AC9551C001652FD /* Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B61AC9551C001652FD /* Button@2x.png */; };
+		535B97DE1AC9551C001652FD /* ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B71AC9551C001652FD /* ButtonPressed.png */; };
+		535B97DF1AC9551C001652FD /* ButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B81AC9551C001652FD /* ButtonPressed@2x.png */; };
+		535B97E01AC9551C001652FD /* CellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B91AC9551C001652FD /* CellBackground.png */; };
+		535B97E11AC9551C001652FD /* CellBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BA1AC9551C001652FD /* CellBackground@2x.png */; };
+		535B97E21AC9551C001652FD /* CellBackgroundSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BB1AC9551C001652FD /* CellBackgroundSelected.png */; };
+		535B97E31AC9551C001652FD /* CellBackgroundSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BC1AC9551C001652FD /* CellBackgroundSelected@2x.png */; };
+		535B97E41AC9551C001652FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BD1AC9551C001652FD /* Default.png */; };
+		535B97E51AC9551C001652FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BE1AC9551C001652FD /* Default@2x.png */; };
+		535B97E61AC9551C001652FD /* ExitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97BF1AC9551C001652FD /* ExitButton.png */; };
+		535B97E71AC9551C001652FD /* ExitButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C01AC9551C001652FD /* ExitButton@2x.png */; };
+		535B97E81AC9551C001652FD /* ExitButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C11AC9551C001652FD /* ExitButtonPressed.png */; };
+		535B97E91AC9551C001652FD /* ExitButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C21AC9551C001652FD /* ExitButtonPressed@2x.png */; };
+		535B97EA1AC9551C001652FD /* Felt.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C31AC9551C001652FD /* Felt.png */; };
+		535B97EB1AC9551C001652FD /* Felt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C41AC9551C001652FD /* Felt@2x.png */; };
+		535B97EC1AC9551C001652FD /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C51AC9551C001652FD /* Icon-72.png */; };
+		535B97ED1AC9551C001652FD /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C61AC9551C001652FD /* Icon-72@2x.png */; };
+		535B97EE1AC9551C001652FD /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C71AC9551C001652FD /* Icon-Small-50.png */; };
+		535B97EF1AC9551C001652FD /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C81AC9551C001652FD /* Icon-Small-50@2x.png */; };
+		535B97F01AC9551C001652FD /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97C91AC9551C001652FD /* Icon-Small.png */; };
+		535B97F11AC9551C001652FD /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CA1AC9551C001652FD /* Icon-Small@2x.png */; };
+		535B97F21AC9551C001652FD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CB1AC9551C001652FD /* Icon.png */; };
+		535B97F31AC9551C001652FD /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CC1AC9551C001652FD /* Icon@2x.png */; };
+		535B97F41AC9551C001652FD /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CD1AC9551C001652FD /* iTunesArtwork */; };
+		535B97F51AC9551C001652FD /* Logo A.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CE1AC9551C001652FD /* Logo A.png */; };
+		535B97F61AC9551C001652FD /* Logo A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97CF1AC9551C001652FD /* Logo A@2x.png */; };
+		535B97F71AC9551C001652FD /* Logo Joker.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D01AC9551C001652FD /* Logo Joker.png */; };
+		535B97F81AC9551C001652FD /* Logo Joker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D11AC9551C001652FD /* Logo Joker@2x.png */; };
+		535B97F91AC9551C001652FD /* Logo N.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D21AC9551C001652FD /* Logo N.png */; };
+		535B97FA1AC9551C001652FD /* Logo N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D31AC9551C001652FD /* Logo N@2x.png */; };
+		535B97FB1AC9551C001652FD /* Logo P.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D41AC9551C001652FD /* Logo P.png */; };
+		535B97FC1AC9551C001652FD /* Logo P@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D51AC9551C001652FD /* Logo P@2x.png */; };
+		535B97FD1AC9551C001652FD /* Logo S.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D61AC9551C001652FD /* Logo S.png */; };
+		535B97FE1AC9551C001652FD /* Logo S@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D71AC9551C001652FD /* Logo S@2x.png */; };
+		535B97FF1AC9551C001652FD /* TableViewBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D81AC9551C001652FD /* TableViewBorder.png */; };
+		535B98001AC9551C001652FD /* TableViewBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97D91AC9551C001652FD /* TableViewBorder@2x.png */; };
+		535B98011AC9551C001652FD /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97DA1AC9551C001652FD /* TextField.png */; };
+		535B98021AC9551C001652FD /* TextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97DB1AC9551C001652FD /* TextField@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +80,46 @@
 		53040CF81AC953D600FB1B0F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
 		53040CF91AC953D600FB1B0F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
 		53040CFA1AC953D600FB1B0F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Controller/MainViewController.xib; sourceTree = "<group>"; };
+		535B97B51AC9551C001652FD /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
+		535B97B61AC9551C001652FD /* Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button@2x.png"; sourceTree = "<group>"; };
+		535B97B71AC9551C001652FD /* ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPressed.png; sourceTree = "<group>"; };
+		535B97B81AC9551C001652FD /* ButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonPressed@2x.png"; sourceTree = "<group>"; };
+		535B97B91AC9551C001652FD /* CellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellBackground.png; sourceTree = "<group>"; };
+		535B97BA1AC9551C001652FD /* CellBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CellBackground@2x.png"; sourceTree = "<group>"; };
+		535B97BB1AC9551C001652FD /* CellBackgroundSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellBackgroundSelected.png; sourceTree = "<group>"; };
+		535B97BC1AC9551C001652FD /* CellBackgroundSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CellBackgroundSelected@2x.png"; sourceTree = "<group>"; };
+		535B97BD1AC9551C001652FD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		535B97BE1AC9551C001652FD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		535B97BF1AC9551C001652FD /* ExitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitButton.png; sourceTree = "<group>"; };
+		535B97C01AC9551C001652FD /* ExitButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExitButton@2x.png"; sourceTree = "<group>"; };
+		535B97C11AC9551C001652FD /* ExitButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitButtonPressed.png; sourceTree = "<group>"; };
+		535B97C21AC9551C001652FD /* ExitButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExitButtonPressed@2x.png"; sourceTree = "<group>"; };
+		535B97C31AC9551C001652FD /* Felt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Felt.png; sourceTree = "<group>"; };
+		535B97C41AC9551C001652FD /* Felt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Felt@2x.png"; sourceTree = "<group>"; };
+		535B97C51AC9551C001652FD /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		535B97C61AC9551C001652FD /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		535B97C71AC9551C001652FD /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		535B97C81AC9551C001652FD /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		535B97C91AC9551C001652FD /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		535B97CA1AC9551C001652FD /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		535B97CB1AC9551C001652FD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		535B97CC1AC9551C001652FD /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		535B97CD1AC9551C001652FD /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		535B97CE1AC9551C001652FD /* Logo A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo A.png"; sourceTree = "<group>"; };
+		535B97CF1AC9551C001652FD /* Logo A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo A@2x.png"; sourceTree = "<group>"; };
+		535B97D01AC9551C001652FD /* Logo Joker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo Joker.png"; sourceTree = "<group>"; };
+		535B97D11AC9551C001652FD /* Logo Joker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo Joker@2x.png"; sourceTree = "<group>"; };
+		535B97D21AC9551C001652FD /* Logo N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo N.png"; sourceTree = "<group>"; };
+		535B97D31AC9551C001652FD /* Logo N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo N@2x.png"; sourceTree = "<group>"; };
+		535B97D41AC9551C001652FD /* Logo P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo P.png"; sourceTree = "<group>"; };
+		535B97D51AC9551C001652FD /* Logo P@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo P@2x.png"; sourceTree = "<group>"; };
+		535B97D61AC9551C001652FD /* Logo S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo S.png"; sourceTree = "<group>"; };
+		535B97D71AC9551C001652FD /* Logo S@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo S@2x.png"; sourceTree = "<group>"; };
+		535B97D81AC9551C001652FD /* TableViewBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewBorder.png; sourceTree = "<group>"; };
+		535B97D91AC9551C001652FD /* TableViewBorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TableViewBorder@2x.png"; sourceTree = "<group>"; };
+		535B97DA1AC9551C001652FD /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
+		535B97DB1AC9551C001652FD /* TextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TextField@2x.png"; sourceTree = "<group>"; };
+		535B98031AC95980001652FD /* MyPH.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPH.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				53040CC81AC9529E00FB1B0F /* ZZSetCard */,
+				535B97B41AC9551C001652FD /* Images */,
 				53040CE21AC9529E00FB1B0F /* ZZSetCardTests */,
 				53040CC71AC9529E00FB1B0F /* Products */,
 			);
@@ -97,6 +177,7 @@
 				53040CD81AC9529E00FB1B0F /* LaunchScreen.xib */,
 				53040CF21AC9537C00FB1B0F /* main.m */,
 				53040CF61AC953AB00FB1B0F /* Info.plist */,
+				535B98031AC95980001652FD /* MyPH.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -126,6 +207,53 @@
 				53040CFA1AC953D600FB1B0F /* MainViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		535B97B41AC9551C001652FD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				535B97B51AC9551C001652FD /* Button.png */,
+				535B97B61AC9551C001652FD /* Button@2x.png */,
+				535B97B71AC9551C001652FD /* ButtonPressed.png */,
+				535B97B81AC9551C001652FD /* ButtonPressed@2x.png */,
+				535B97B91AC9551C001652FD /* CellBackground.png */,
+				535B97BA1AC9551C001652FD /* CellBackground@2x.png */,
+				535B97BB1AC9551C001652FD /* CellBackgroundSelected.png */,
+				535B97BC1AC9551C001652FD /* CellBackgroundSelected@2x.png */,
+				535B97BD1AC9551C001652FD /* Default.png */,
+				535B97BE1AC9551C001652FD /* Default@2x.png */,
+				535B97BF1AC9551C001652FD /* ExitButton.png */,
+				535B97C01AC9551C001652FD /* ExitButton@2x.png */,
+				535B97C11AC9551C001652FD /* ExitButtonPressed.png */,
+				535B97C21AC9551C001652FD /* ExitButtonPressed@2x.png */,
+				535B97C31AC9551C001652FD /* Felt.png */,
+				535B97C41AC9551C001652FD /* Felt@2x.png */,
+				535B97C51AC9551C001652FD /* Icon-72.png */,
+				535B97C61AC9551C001652FD /* Icon-72@2x.png */,
+				535B97C71AC9551C001652FD /* Icon-Small-50.png */,
+				535B97C81AC9551C001652FD /* Icon-Small-50@2x.png */,
+				535B97C91AC9551C001652FD /* Icon-Small.png */,
+				535B97CA1AC9551C001652FD /* Icon-Small@2x.png */,
+				535B97CB1AC9551C001652FD /* Icon.png */,
+				535B97CC1AC9551C001652FD /* Icon@2x.png */,
+				535B97CD1AC9551C001652FD /* iTunesArtwork */,
+				535B97CE1AC9551C001652FD /* Logo A.png */,
+				535B97CF1AC9551C001652FD /* Logo A@2x.png */,
+				535B97D01AC9551C001652FD /* Logo Joker.png */,
+				535B97D11AC9551C001652FD /* Logo Joker@2x.png */,
+				535B97D21AC9551C001652FD /* Logo N.png */,
+				535B97D31AC9551C001652FD /* Logo N@2x.png */,
+				535B97D41AC9551C001652FD /* Logo P.png */,
+				535B97D51AC9551C001652FD /* Logo P@2x.png */,
+				535B97D61AC9551C001652FD /* Logo S.png */,
+				535B97D71AC9551C001652FD /* Logo S@2x.png */,
+				535B97D81AC9551C001652FD /* TableViewBorder.png */,
+				535B97D91AC9551C001652FD /* TableViewBorder@2x.png */,
+				535B97DA1AC9551C001652FD /* TextField.png */,
+				535B97DB1AC9551C001652FD /* TextField@2x.png */,
+			);
+			name = Images;
+			path = ZZSetCard/Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +336,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535B97F21AC9551C001652FD /* Icon.png in Resources */,
+				535B97E81AC9551C001652FD /* ExitButtonPressed.png in Resources */,
+				535B97DD1AC9551C001652FD /* Button@2x.png in Resources */,
+				535B97FD1AC9551C001652FD /* Logo S.png in Resources */,
+				535B97EE1AC9551C001652FD /* Icon-Small-50.png in Resources */,
+				535B97F01AC9551C001652FD /* Icon-Small.png in Resources */,
+				535B97DE1AC9551C001652FD /* ButtonPressed.png in Resources */,
+				535B97F11AC9551C001652FD /* Icon-Small@2x.png in Resources */,
+				535B97DC1AC9551C001652FD /* Button.png in Resources */,
+				535B97E31AC9551C001652FD /* CellBackgroundSelected@2x.png in Resources */,
+				535B97F31AC9551C001652FD /* Icon@2x.png in Resources */,
+				535B97FE1AC9551C001652FD /* Logo S@2x.png in Resources */,
+				535B97EC1AC9551C001652FD /* Icon-72.png in Resources */,
+				535B97F81AC9551C001652FD /* Logo Joker@2x.png in Resources */,
+				535B97F51AC9551C001652FD /* Logo A.png in Resources */,
+				535B97E71AC9551C001652FD /* ExitButton@2x.png in Resources */,
+				535B97FB1AC9551C001652FD /* Logo P.png in Resources */,
+				535B97FC1AC9551C001652FD /* Logo P@2x.png in Resources */,
+				535B97F71AC9551C001652FD /* Logo Joker.png in Resources */,
+				535B98021AC9551C001652FD /* TextField@2x.png in Resources */,
+				535B97FA1AC9551C001652FD /* Logo N@2x.png in Resources */,
+				535B97E21AC9551C001652FD /* CellBackgroundSelected.png in Resources */,
+				535B97E91AC9551C001652FD /* ExitButtonPressed@2x.png in Resources */,
+				535B97F41AC9551C001652FD /* iTunesArtwork in Resources */,
+				535B97FF1AC9551C001652FD /* TableViewBorder.png in Resources */,
+				535B97DF1AC9551C001652FD /* ButtonPressed@2x.png in Resources */,
+				535B97ED1AC9551C001652FD /* Icon-72@2x.png in Resources */,
+				535B97E11AC9551C001652FD /* CellBackground@2x.png in Resources */,
+				535B98001AC9551C001652FD /* TableViewBorder@2x.png in Resources */,
+				535B97EA1AC9551C001652FD /* Felt.png in Resources */,
+				535B97EB1AC9551C001652FD /* Felt@2x.png in Resources */,
+				535B97E41AC9551C001652FD /* Default.png in Resources */,
+				535B97F61AC9551C001652FD /* Logo A@2x.png in Resources */,
 				53040CDA1AC9529E00FB1B0F /* LaunchScreen.xib in Resources */,
+				535B97E01AC9551C001652FD /* CellBackground.png in Resources */,
+				535B97EF1AC9551C001652FD /* Icon-Small-50@2x.png in Resources */,
 				53040CD71AC9529E00FB1B0F /* Images.xcassets in Resources */,
 				53040CF71AC953AB00FB1B0F /* Info.plist in Resources */,
+				535B97F91AC9551C001652FD /* Logo N.png in Resources */,
+				535B97E51AC9551C001652FD /* Default@2x.png in Resources */,
+				535B98011AC9551C001652FD /* TextField.png in Resources */,
+				535B97E61AC9551C001652FD /* ExitButton.png in Resources */,
 				53040CFC1AC953D600FB1B0F /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ZZSetCard/MyPH.pch;
 				INFOPLIST_FILE = ZZSetCard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ZZSetCard/MyPH.pch;
 				INFOPLIST_FILE = ZZSetCard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +583,7 @@
 				53040CEB1AC9529E00FB1B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53040CEC1AC9529E00FB1B0F /* Build configuration list for PBXNativeTarget "ZZSetCardTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +592,7 @@
 				53040CEE1AC9529E00FB1B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
