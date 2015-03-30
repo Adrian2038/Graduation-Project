@@ -73,11 +73,12 @@
                         <outlet property="hostGameButton" destination="3W0-xV-8Ak" id="Bxf-DT-hvW"/>
                         <outlet property="joinGameButton" destination="bI3-4f-F4u" id="GWU-jm-gJw"/>
                         <outlet property="singlePlayerGameButton" destination="c22-ny-9BX" id="2dn-gV-d5M"/>
+                        <segue destination="avd-EC-mjk" kind="modal" id="X2t-Gc-qFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121" y="56"/>
+            <point key="canvasLocation" x="883" y="48"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="eg7-yM-fAQ">
@@ -212,6 +213,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U5y-zn-Jcy"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="centerLabel" destination="Y0s-o9-Rd5" id="UYM-o2-D3a"/>
@@ -219,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQk-e1-n9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357" y="104"/>
+            <point key="canvasLocation" x="1454" y="798"/>
         </scene>
         <!--Host View Controller-->
         <scene sceneID="pQg-gh-QrR">

@@ -184,7 +184,7 @@
 {
     GameViewController *gameViewController = [[GameViewController alloc] init];
     gameViewController.delegate = self;
-    
+        
     [self presentViewController:gameViewController animated:NO completion:^
      {         
          Game *game = [[Game alloc] init];
