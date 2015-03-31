@@ -8,6 +8,10 @@
 
 #import "MainViewController.h"
 
+#import "UIFont+SnapAdditions.h"
+#import "UIButton+SnapAdditions.h"
+
+
 @interface MainViewController ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *sImageView;
@@ -25,6 +29,16 @@
 @implementation MainViewController
 
 
+#pragma mark - View controller lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.hostGameButton rw_applySnapStyle];
+    [self.joinGameButton rw_applySnapStyle];
+    [self.singlePlayerGameButton rw_applySnapStyle];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
