@@ -10,28 +10,39 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, weak) IBOutlet UIImageView *sImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *nImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *aImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *pImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *jokerImageView;
+
+@property (nonatomic, weak) IBOutlet UIButton *hostGameButton;
+@property (nonatomic, weak) IBOutlet UIButton *joinGameButton;
+@property (nonatomic, weak) IBOutlet UIButton *singlePlayerGameButton;
+
 @end
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Actions
+
+- (IBAction)hostGameAction:(id)sender
+{
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)joinGameAction:(id)sender
+{
 }
-*/
+
+- (IBAction)singlePlayerGameAction:(id)sender
+{
+}
 
 @end
