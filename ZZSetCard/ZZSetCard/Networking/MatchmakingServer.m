@@ -16,15 +16,17 @@ typedef enum
 }
 ServerState;
 
-@implementation MatchmakingServer
+@interface MatchmakingServer ()
+
 {
     NSMutableArray *_connectedClients;
     ServerState _serverState;
 }
 
-@synthesize maxClients = _maxClients;
-@synthesize session = _session;
-@synthesize delegate = _delegate;
+@end
+
+@implementation MatchmakingServer
+
 
 - (id)init
 {
@@ -42,7 +44,9 @@ ServerState;
         _serverState = ServerStateAcceptingConnections;
         _connectedClients = [NSMutableArray arrayWithCapacity:self.maxClients];
         
-        _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeServer];
+        _session = [[GKSession alloc] initWithSessionID:sessionID
+                                            displayName:nil
+                                            sessionMode:GKSessionModeServer];
         _session.delegate = self;
         _session.available = YES;
     }
@@ -57,9 +61,7 @@ ServerState;
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingServer: peer %@ changed state %d", peerID, state);
-#endif
     
     switch (state)
     {
@@ -100,9 +102,7 @@ ServerState;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingServer: connection request from peer %@", peerID);
-#endif
     
     if (_serverState == ServerStateAcceptingConnections && [self connectedClientCount] < self.maxClients)
     {
@@ -120,16 +120,12 @@ ServerState;
 
 - (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingServer: connection with peer %@ failed %@", peerID, error);
-#endif
 }
 
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingServer: session failed %@", error);
-#endif
     
     if ([[error domain] isEqualToString:GKSessionErrorDomain])
     {

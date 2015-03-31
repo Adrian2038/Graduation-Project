@@ -26,6 +26,7 @@
 @property (nonatomic, assign) int maxClients;
 @property (nonatomic, strong, readonly) NSArray *connectedClients;
 @property (nonatomic, strong, readonly) GKSession *session;
+
 @property (nonatomic, weak) id <MatchmakingServerDelegate> delegate;
 
 - (void)endSession;

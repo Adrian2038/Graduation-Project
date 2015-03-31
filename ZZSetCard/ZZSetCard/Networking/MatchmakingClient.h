@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong, readonly) NSArray *availableServers;
 @property (nonatomic, strong, readonly) GKSession *session;
+
 @property (nonatomic, weak) id <MatchmakingClientDelegate> delegate;
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID;

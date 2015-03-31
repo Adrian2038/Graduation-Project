@@ -13,10 +13,12 @@
 
 - (void)rw_applySnapStyle
 {    
-    UIImage *buttonImage = [[UIImage imageNamed:@"Button"] stretchableImageWithLeftCapWidth:15 topCapHeight:0];
+    UIImage *buttonImage = [[UIImage imageNamed:@"Button"] stretchableImageWithLeftCapWidth:15
+                                                                               topCapHeight:0];
     [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
-    UIImage *pressedImage = [[UIImage imageNamed:@"ButtonPressed"] stretchableImageWithLeftCapWidth:15 topCapHeight:0];
+    UIImage *pressedImage = [[UIImage imageNamed:@"ButtonPressed"] stretchableImageWithLeftCapWidth:15
+                                                                                       topCapHeight:0];
     [self setBackgroundImage:pressedImage forState:UIControlStateHighlighted];
 }
 

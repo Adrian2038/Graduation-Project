@@ -17,15 +17,19 @@ typedef enum
 }
 ClientState;
 
-@implementation MatchmakingClient
+@interface MatchmakingClient ()
+
 {
     NSMutableArray *_availableServers;
     ClientState _clientState;
     NSString *_serverPeerID;
 }
 
-@synthesize session = _session;
-@synthesize delegate = _delegate;
+@end
+
+
+@implementation MatchmakingClient
+
 
 - (id)init
 {
@@ -43,7 +47,9 @@ ClientState;
         _clientState = ClientStateSearchingForServers;
         _availableServers = [NSMutableArray arrayWithCapacity:10];
         
-        _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeClient];
+        _session = [[GKSession alloc] initWithSessionID:sessionID
+                                            displayName:nil
+                                            sessionMode:GKSessionModeClient];
         _session.delegate = self;
         _session.available = YES;
     }
@@ -67,9 +73,7 @@ ClientState;
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingClient: peer %@ changed state %d", peerID, state);
-#endif
     
     switch (state)
     {
@@ -125,25 +129,19 @@ ClientState;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingClient: connection request from peer %@", peerID);
-#endif
 }
 
 - (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingClient: connection with peer %@ failed %@", peerID, error);
-#endif
     
     [self disconnectFromServer];
 }
 
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
-#ifdef DEBUG
     NSLog(@"MatchmakingClient: session failed %@", error);
-#endif
     
     if ([[error domain] isEqualToString:GKSessionErrorDomain])
     {
@@ -189,9 +187,7 @@ ClientState;
 
 - (void)dealloc
 {
-#ifdef DEBUG
     NSLog(@"dealloc %@", self);
-#endif
 }
 
 @end

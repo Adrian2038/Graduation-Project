@@ -12,8 +12,8 @@
 #import "PeerCell.h"
 
 
-@interface JoinViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingClientDelegate>
-
+@interface JoinViewController ()
+<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingClientDelegate>
 
 {
     MatchmakingClient *_matchmakingClient;
@@ -35,9 +35,7 @@
 
 - (void)dealloc
 {
-#ifdef DEBUG
     NSLog(@"dealloc %@", self);
-#endif
 }
 
 - (void)viewDidLoad
@@ -50,7 +48,9 @@
     self.waitLabel.font = [UIFont rw_snapFontWithSize:18.0f];
     self.nameTextField.font = [UIFont rw_snapFontWithSize:20.0f];
     
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.nameTextField action:@selector(resignFirstResponder)];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                 initWithTarget:self.nameTextField
+                                                 action:@selector(resignFirstResponder)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gestureRecognizer];
 }
@@ -106,7 +106,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
-        cell = [[PeerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[PeerCell alloc] initWithStyle:UITableViewCellStyleDefault
+                               reuseIdentifier:CellIdentifier];
     
     NSString *peerID = [_matchmakingClient peerIDForAvailableServerAtIndex:indexPath.row];
     cell.textLabel.text = [_matchmakingClient displayNameForPeerID:peerID];

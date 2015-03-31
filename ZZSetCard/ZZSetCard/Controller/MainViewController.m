@@ -14,7 +14,6 @@
 #import "UIButton+SnapAdditions.h"
 
 
-
 @interface MainViewController () <HostViewControllerDelegate, JoinViewControllerDelegate>
 
 {
@@ -281,9 +280,7 @@
 
 - (void)dealloc
 {
-#ifdef DEBUG
     NSLog(@"dealloc %@", self);
-#endif
 }
 
 
