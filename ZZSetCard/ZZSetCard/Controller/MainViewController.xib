@@ -6,6 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="aImageView" destination="w22-6A-EsK" id="lMq-nf-x1q"/>
+                <outlet property="hostGameButton" destination="eRh-09-Y4Q" id="9wW-aH-8Jw"/>
+                <outlet property="joinGameButton" destination="ksD-i3-E6M" id="DK8-27-wVN"/>
+                <outlet property="jokerImageView" destination="Sm1-Za-jdp" id="XIQ-lo-WNN"/>
+                <outlet property="nImageView" destination="oRS-aF-7Wa" id="WV3-0F-1xl"/>
+                <outlet property="pImageView" destination="5cK-Tq-wZ8" id="jQ0-Ae-auN"/>
+                <outlet property="sImageView" destination="G0v-Qn-9Rf" id="aJz-Ed-Avo"/>
+                <outlet property="singlePlayerGameButton" destination="TA2-II-HZi" id="7mC-XF-xH7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,26 +22,29 @@
             <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Felt.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Fb-PL-bEo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Felt.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ke-s9-6Z1">
                     <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXD-lS-AAM">
-                    <rect key="frame" x="202" y="167" width="165" height="37"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-09-Y4Q">
+                    <rect key="frame" x="202" y="168" width="165" height="37"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="加入游戏">
+                    <state key="normal" title="创建游戏">
                         <color key="titleColor" red="0.4549019608" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted">
                         <color key="titleColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="hostGameAction:" destination="-1" eventType="touchUpInside" id="1JX-D8-Xpd"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-BO-6Zv">
-                    <rect key="frame" x="202" y="218" width="165" height="37"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-II-HZi">
+                    <rect key="frame" x="202" y="258" width="165" height="37"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="单人游戏">
                         <color key="titleColor" red="0.4549019608" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,19 +53,40 @@
                     <state key="highlighted">
                         <color key="titleColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="singlePlayerGameAction:" destination="-1" eventType="touchUpInside" id="reg-WL-sJ0"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-2p-rqj">
-                    <rect key="frame" x="202" y="114" width="165" height="37"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Joker.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sm1-Za-jdp">
+                    <rect key="frame" x="399" y="28" width="90" height="132"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo A.png" translatesAutoresizingMaskIntoConstraints="NO" id="w22-6A-EsK">
+                    <rect key="frame" x="239" y="28" width="90" height="132"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo P.png" translatesAutoresizingMaskIntoConstraints="NO" id="5cK-Tq-wZ8">
+                    <rect key="frame" x="319" y="28" width="90" height="132"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo N.png" translatesAutoresizingMaskIntoConstraints="NO" id="oRS-aF-7Wa">
+                    <rect key="frame" x="159" y="28" width="90" height="132"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo S.png" translatesAutoresizingMaskIntoConstraints="NO" id="G0v-Qn-9Rf">
+                    <rect key="frame" x="80" y="28" width="90" height="132"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-i3-E6M">
+                    <rect key="frame" x="202" y="213" width="165" height="37"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="创建游戏">
+                    <state key="normal" title="加入游戏">
                         <color key="titleColor" red="0.4549019608" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted">
-                        <color key="titleColor" red="0.4549019608" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="joinGameAction:" destination="-1" eventType="touchUpInside" id="5dc-1F-Kcc"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -64,6 +96,11 @@
     </objects>
     <resources>
         <image name="Felt.png" width="480" height="320"/>
+        <image name="Logo A.png" width="90" height="132"/>
+        <image name="Logo Joker.png" width="90" height="132"/>
+        <image name="Logo N.png" width="90" height="132"/>
+        <image name="Logo P.png" width="90" height="132"/>
+        <image name="Logo S.png" width="90" height="132"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

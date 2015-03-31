@@ -12,9 +12,19 @@
 		53040CE61AC9529E00FB1B0F /* ZZSetCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53040CE51AC9529E00FB1B0F /* ZZSetCardTests.m */; };
 		53040CF31AC9537C00FB1B0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53040CF01AC9537C00FB1B0F /* AppDelegate.m */; };
 		53040CF51AC9537C00FB1B0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53040CF21AC9537C00FB1B0F /* main.m */; };
-		53040CF71AC953AB00FB1B0F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53040CF61AC953AB00FB1B0F /* Info.plist */; };
 		53040CFB1AC953D600FB1B0F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53040CF91AC953D600FB1B0F /* MainViewController.m */; };
 		53040CFC1AC953D600FB1B0F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53040CFA1AC953D600FB1B0F /* MainViewController.xib */; };
+		531E68B71ACA5207001A045F /* PeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68B61ACA5207001A045F /* PeerCell.m */; };
+		531E68BB1ACA5272001A045F /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68BA1ACA5272001A045F /* MatchmakingServer.m */; };
+		531E68BD1ACA52C5001A045F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531E68BC1ACA52C5001A045F /* GameKit.framework */; };
+		531E68C01ACA5375001A045F /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68BF1ACA5375001A045F /* MatchmakingClient.m */; };
+		531E68C41ACA541D001A045F /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68C31ACA541D001A045F /* UIFont+SnapAdditions.m */; };
+		531E68CA1ACA5488001A045F /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68C91ACA5488001A045F /* UIButton+SnapAdditions.m */; };
+		531E68CC1ACA54C3001A045F /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 531E68CB1ACA54C3001A045F /* Action_Man.ttf */; };
+		531E68D01ACA557F001A045F /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68CE1ACA557F001A045F /* HostViewController.m */; };
+		531E68D11ACA557F001A045F /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531E68CF1ACA557F001A045F /* HostViewController.xib */; };
+		531E68D51ACA75F1001A045F /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531E68D31ACA75F1001A045F /* JoinViewController.m */; };
+		531E68D61ACA75F1001A045F /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531E68D41ACA75F1001A045F /* JoinViewController.xib */; };
 		535B97DC1AC9551C001652FD /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B51AC9551C001652FD /* Button.png */; };
 		535B97DD1AC9551C001652FD /* Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B61AC9551C001652FD /* Button@2x.png */; };
 		535B97DE1AC9551C001652FD /* ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 535B97B71AC9551C001652FD /* ButtonPressed.png */; };
@@ -80,6 +90,24 @@
 		53040CF81AC953D600FB1B0F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
 		53040CF91AC953D600FB1B0F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
 		53040CFA1AC953D600FB1B0F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Controller/MainViewController.xib; sourceTree = "<group>"; };
+		531E68B51ACA5207001A045F /* PeerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerCell.h; path = Views/PeerCell.h; sourceTree = "<group>"; };
+		531E68B61ACA5207001A045F /* PeerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeerCell.m; path = Views/PeerCell.m; sourceTree = "<group>"; };
+		531E68B91ACA5272001A045F /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingServer.h; path = Networking/MatchmakingServer.h; sourceTree = "<group>"; };
+		531E68BA1ACA5272001A045F /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingServer.m; path = Networking/MatchmakingServer.m; sourceTree = "<group>"; };
+		531E68BC1ACA52C5001A045F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		531E68BE1ACA5375001A045F /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingClient.h; path = Networking/MatchmakingClient.h; sourceTree = "<group>"; };
+		531E68BF1ACA5375001A045F /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingClient.m; path = Networking/MatchmakingClient.m; sourceTree = "<group>"; };
+		531E68C21ACA541D001A045F /* UIFont+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SnapAdditions.h"; path = "Categories/UIFont+SnapAdditions.h"; sourceTree = "<group>"; };
+		531E68C31ACA541D001A045F /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SnapAdditions.m"; path = "Categories/UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
+		531E68C81ACA5488001A045F /* UIButton+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+SnapAdditions.h"; path = "Categories/UIButton+SnapAdditions.h"; sourceTree = "<group>"; };
+		531E68C91ACA5488001A045F /* UIButton+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SnapAdditions.m"; path = "Categories/UIButton+SnapAdditions.m"; sourceTree = "<group>"; };
+		531E68CB1ACA54C3001A045F /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
+		531E68CD1ACA557F001A045F /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = Controller/HostViewController.h; sourceTree = "<group>"; };
+		531E68CE1ACA557F001A045F /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = Controller/HostViewController.m; sourceTree = "<group>"; };
+		531E68CF1ACA557F001A045F /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = Controller/HostViewController.xib; sourceTree = "<group>"; };
+		531E68D21ACA75F1001A045F /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinViewController.h; path = Controller/JoinViewController.h; sourceTree = "<group>"; };
+		531E68D31ACA75F1001A045F /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinViewController.m; path = Controller/JoinViewController.m; sourceTree = "<group>"; };
+		531E68D41ACA75F1001A045F /* JoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinViewController.xib; path = Controller/JoinViewController.xib; sourceTree = "<group>"; };
 		535B97B51AC9551C001652FD /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
 		535B97B61AC9551C001652FD /* Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button@2x.png"; sourceTree = "<group>"; };
 		535B97B71AC9551C001652FD /* ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPressed.png; sourceTree = "<group>"; };
@@ -127,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531E68BD1ACA52C5001A045F /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +191,9 @@
 		53040CC81AC9529E00FB1B0F /* ZZSetCard */ = {
 			isa = PBXGroup;
 			children = (
+				531E68C11ACA53BB001A045F /* Categories */,
+				531E68B41ACA51D5001A045F /* Views */,
+				531E68B81ACA5232001A045F /* Networking */,
 				53040CFD1AC953DD00FB1B0F /* Controllers */,
 				53040CC91AC9529E00FB1B0F /* Supporting Files */,
 			);
@@ -171,6 +203,7 @@
 		53040CC91AC9529E00FB1B0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				531E68BC1ACA52C5001A045F /* GameKit.framework */,
 				53040CEF1AC9537C00FB1B0F /* AppDelegate.h */,
 				53040CF01AC9537C00FB1B0F /* AppDelegate.m */,
 				53040CD61AC9529E00FB1B0F /* Images.xcassets */,
@@ -178,6 +211,7 @@
 				53040CF21AC9537C00FB1B0F /* main.m */,
 				53040CF61AC953AB00FB1B0F /* Info.plist */,
 				535B98031AC95980001652FD /* MyPH.pch */,
+				531E68CB1ACA54C3001A045F /* Action_Man.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,8 +239,45 @@
 				53040CF81AC953D600FB1B0F /* MainViewController.h */,
 				53040CF91AC953D600FB1B0F /* MainViewController.m */,
 				53040CFA1AC953D600FB1B0F /* MainViewController.xib */,
+				531E68CD1ACA557F001A045F /* HostViewController.h */,
+				531E68CE1ACA557F001A045F /* HostViewController.m */,
+				531E68CF1ACA557F001A045F /* HostViewController.xib */,
+				531E68D21ACA75F1001A045F /* JoinViewController.h */,
+				531E68D31ACA75F1001A045F /* JoinViewController.m */,
+				531E68D41ACA75F1001A045F /* JoinViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		531E68B41ACA51D5001A045F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				531E68B51ACA5207001A045F /* PeerCell.h */,
+				531E68B61ACA5207001A045F /* PeerCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		531E68B81ACA5232001A045F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				531E68B91ACA5272001A045F /* MatchmakingServer.h */,
+				531E68BA1ACA5272001A045F /* MatchmakingServer.m */,
+				531E68BE1ACA5375001A045F /* MatchmakingClient.h */,
+				531E68BF1ACA5375001A045F /* MatchmakingClient.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		531E68C11ACA53BB001A045F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				531E68C21ACA541D001A045F /* UIFont+SnapAdditions.h */,
+				531E68C31ACA541D001A045F /* UIFont+SnapAdditions.m */,
+				531E68C81ACA5488001A045F /* UIButton+SnapAdditions.h */,
+				531E68C91ACA5488001A045F /* UIButton+SnapAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		535B97B41AC9551C001652FD /* Images */ = {
@@ -343,6 +414,7 @@
 				535B97EE1AC9551C001652FD /* Icon-Small-50.png in Resources */,
 				535B97F01AC9551C001652FD /* Icon-Small.png in Resources */,
 				535B97DE1AC9551C001652FD /* ButtonPressed.png in Resources */,
+				531E68CC1ACA54C3001A045F /* Action_Man.ttf in Resources */,
 				535B97F11AC9551C001652FD /* Icon-Small@2x.png in Resources */,
 				535B97DC1AC9551C001652FD /* Button.png in Resources */,
 				535B97E31AC9551C001652FD /* CellBackgroundSelected@2x.png in Resources */,
@@ -361,8 +433,10 @@
 				535B97E91AC9551C001652FD /* ExitButtonPressed@2x.png in Resources */,
 				535B97F41AC9551C001652FD /* iTunesArtwork in Resources */,
 				535B97FF1AC9551C001652FD /* TableViewBorder.png in Resources */,
+				531E68D61ACA75F1001A045F /* JoinViewController.xib in Resources */,
 				535B97DF1AC9551C001652FD /* ButtonPressed@2x.png in Resources */,
 				535B97ED1AC9551C001652FD /* Icon-72@2x.png in Resources */,
+				531E68D11ACA557F001A045F /* HostViewController.xib in Resources */,
 				535B97E11AC9551C001652FD /* CellBackground@2x.png in Resources */,
 				535B98001AC9551C001652FD /* TableViewBorder@2x.png in Resources */,
 				535B97EA1AC9551C001652FD /* Felt.png in Resources */,
@@ -373,7 +447,6 @@
 				535B97E01AC9551C001652FD /* CellBackground.png in Resources */,
 				535B97EF1AC9551C001652FD /* Icon-Small-50@2x.png in Resources */,
 				53040CD71AC9529E00FB1B0F /* Images.xcassets in Resources */,
-				53040CF71AC953AB00FB1B0F /* Info.plist in Resources */,
 				535B97F91AC9551C001652FD /* Logo N.png in Resources */,
 				535B97E51AC9551C001652FD /* Default@2x.png in Resources */,
 				535B98011AC9551C001652FD /* TextField.png in Resources */,
@@ -396,9 +469,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531E68C41ACA541D001A045F /* UIFont+SnapAdditions.m in Sources */,
+				531E68CA1ACA5488001A045F /* UIButton+SnapAdditions.m in Sources */,
+				531E68D51ACA75F1001A045F /* JoinViewController.m in Sources */,
 				53040CF51AC9537C00FB1B0F /* main.m in Sources */,
+				531E68B71ACA5207001A045F /* PeerCell.m in Sources */,
+				531E68BB1ACA5272001A045F /* MatchmakingServer.m in Sources */,
 				53040CFB1AC953D600FB1B0F /* MainViewController.m in Sources */,
+				531E68D01ACA557F001A045F /* HostViewController.m in Sources */,
 				53040CF31AC9537C00FB1B0F /* AppDelegate.m in Sources */,
+				531E68C01ACA5375001A045F /* MatchmakingClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
