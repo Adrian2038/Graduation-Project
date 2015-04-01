@@ -21,6 +21,7 @@
 
 {
     MatchmakingServer *_matchmakingServer;
+    QuitReason _quitReason;
 }
 
 
@@ -82,6 +83,8 @@
 
 - (IBAction)exitAction:(id)sender
 {
+    _quitReason = QuitReasonUserQuit;
+    [_matchmakingServer endSession];
     [self.delegate hostViewControllerDidCancel:self];
 }
 
@@ -137,6 +140,20 @@
 {
     [self.tableView reloadData];
 }
+
+- (void)matchmakingServerSessionDidEnd:(MatchmakingServer *)server
+{
+    _matchmakingServer.delegate = nil;
+    _matchmakingServer = nil;
+    [self.tableView reloadData];
+    [self.delegate hostViewController:self didEndSessionWithReason:_quitReason];
+}
+
+- (void)matchmakingServerNoNetwork:(MatchmakingServer *)server
+{
+    _quitReason = QuitReasonNoNetwork;
+}
+
 
 #pragma mark - Dealloc
 

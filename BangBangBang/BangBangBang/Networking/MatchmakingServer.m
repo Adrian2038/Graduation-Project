@@ -77,6 +77,22 @@ ServerState;
     return [_session displayNameForPeer:peerID];
 }
 
+- (void)endSession
+{
+    NSAssert(_serverState != ServerStateIdle, @"Wrong state");
+    
+    _serverState = ServerStateIdle;
+    
+    [_session disconnectFromAllPeers];
+    _session.available = NO;
+    _session.delegate = nil;
+    _session = nil;
+    
+    _connectedClients = nil;
+    
+    [self.delegate matchmakingServerSessionDidEnd:self];
+}
+
 
 #pragma mark - GKSessionDelegate
 
@@ -147,6 +163,15 @@ ServerState;
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
     NSLog(@"MatchmakingServer: session failed %@", error);
+    
+    if ([[error domain] isEqualToString:GKSessionErrorDomain])
+    {
+        if ([error code] == GKSessionCannotEnableError)
+        {
+            [self.delegate matchmakingServerNoNetwork:self];
+            [self endSession];
+        }
+    }
 }
 
 #pragma mark - Dealloc

@@ -229,6 +229,14 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+- (void)hostViewController:(HostViewController *)controller didEndSessionWithReason:(QuitReason)reason
+{
+    if (reason == QuitReasonNoNetwork)
+    {
+        [self showNoNetworkAlert];
+    }
+}
+
 #pragma mark - JoinViewControllerDelegate
 
 - (void)joinViewControllerDidCancel:(JoinViewController *)controller
