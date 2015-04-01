@@ -8,11 +8,21 @@
 
 #import "MatchmakingClient.h"
 
+typedef enum
+{
+    ClientStateIdle,
+    ClientStateSearchingForServers,
+    ClientStateConnecting,
+    ClientStateConnected,
+}
+ClientState;
+
 
 @interface MatchmakingClient ()
 
 {
     NSMutableArray *_availableServers;
+    ClientState _clientState;
 }
 
 @end
@@ -20,16 +30,30 @@
 
 @implementation MatchmakingClient
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        _clientState = ClientStateIdle;
+    }
+    return self;
+}
 
 #pragma mark - Methods ,that other clases use
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID
 {
-    _availableServers = [NSMutableArray arrayWithCapacity:10];
-    
-    _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeClient];
-    _session.delegate = self;
-    _session.available = YES;
+    if (_clientState == ClientStateIdle)
+    {
+        _clientState = ClientStateSearchingForServers;
+        
+        _availableServers = [NSMutableArray arrayWithCapacity:10];
+        
+        _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeClient];
+        _session.delegate = self;
+        _session.available = YES;
+    }
 }
 
 - (NSArray *)availableServers
@@ -62,19 +86,25 @@
     {
             // The client has discovered a new server.
         case GKPeerStateAvailable:
-            if (![_availableServers containsObject:peerID])
+            if (_clientState == ClientStateSearchingForServers)
             {
-                [_availableServers addObject:peerID];
-                [self.delegate matchmakingClient:self serverBecameAvailable:peerID];
+                if (![_availableServers containsObject:peerID])
+                {
+                    [_availableServers addObject:peerID];
+                    [self.delegate matchmakingClient:self serverBecameAvailable:peerID];
+                }
             }
             break;
             
             // The client sees that a server goes away.
         case GKPeerStateUnavailable:
-            if ([_availableServers containsObject:peerID])
+            if (_clientState == ClientStateSearchingForServers)
             {
-                [_availableServers removeObject:peerID];
-                [self.delegate matchmakingClient:self serverBecameUnavailable:peerID];
+                if ([_availableServers containsObject:peerID])
+                {
+                    [_availableServers removeObject:peerID];
+                    [self.delegate matchmakingClient:self serverBecameUnavailable:peerID];
+                }
             }
             break;
             
