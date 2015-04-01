@@ -12,6 +12,7 @@
 		5300F28A1ACBCAB000E09973 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300F2891ACBCAB000E09973 /* GameKit.framework */; };
 		5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */; };
 		5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2911ACBCE3500E09973 /* MatchmakingClient.m */; };
+		5300F2961ACBD43000E09973 /* PeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2951ACBD43000E09973 /* PeerCell.m */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
@@ -85,6 +86,8 @@
 		5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingServer.m; path = Networking/MatchmakingServer.m; sourceTree = "<group>"; };
 		5300F2901ACBCE3500E09973 /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingClient.h; path = Networking/MatchmakingClient.h; sourceTree = "<group>"; };
 		5300F2911ACBCE3500E09973 /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingClient.m; path = Networking/MatchmakingClient.m; sourceTree = "<group>"; };
+		5300F2941ACBD43000E09973 /* PeerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerCell.h; path = Views/PeerCell.h; sourceTree = "<group>"; };
+		5300F2951ACBD43000E09973 /* PeerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeerCell.m; path = Views/PeerCell.m; sourceTree = "<group>"; };
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
@@ -177,6 +180,15 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		5300F2931ACBD40E00E09973 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5300F2941ACBD43000E09973 /* PeerCell.h */,
+				5300F2951ACBD43000E09973 /* PeerCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		53E3216A1ACAA6170027AFB3 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +211,7 @@
 		53E321751ACAA6170027AFB3 /* BangBangBang */ = {
 			isa = PBXGroup;
 			children = (
+				5300F2931ACBD40E00E09973 /* Views */,
 				53E321F31ACAAC220027AFB3 /* Categories */,
 				53E321A11ACAA6DB0027AFB3 /* View Controllers */,
 				5300F28C1ACBCC9200E09973 /* Networking */,
@@ -464,6 +477,7 @@
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,
 				53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */,
 				53E321791ACAA6170027AFB3 /* main.m in Sources */,
+				5300F2961ACBD43000E09973 /* PeerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

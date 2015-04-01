@@ -12,8 +12,10 @@
 
 #import "MatchmakingClient.h"
 
+#import "PeerCell.h"
+
 @interface JoinViewController ()
-<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, JoinViewControllerDelegate>
 
 
 {
@@ -58,6 +60,7 @@
     if (_matchmakingClient == nil)
     {
         _matchmakingClient = [[MatchmakingClient alloc] init];
+        _matchmakingClient.delegate = self;
         [_matchmakingClient startSearchingForServersWithSessionID:SESSION_ID];
         
         self.nameTextField.placeholder = _matchmakingClient.session.displayName;
@@ -87,12 +90,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (_matchmakingClient != nil)
+        return [_matchmakingClient availableServerCount];
+    else
+        return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    static NSString *CellIdentifier = @"CellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+        cell = [[PeerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    NSString *peerID = [_matchmakingClient peerIDForAvailableServerAtIndex:indexPath.row];
+    cell.textLabel.text = [_matchmakingClient displayNameForPeerID:peerID];
+    
+    return cell;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -103,6 +118,17 @@
     return NO;
 }
 
+#pragma mark - MatchmakingClientDelegate
+
+- (void)matchmakingClient:(MatchmakingClient *)client serverBecameAvailable:(NSString *)peerID
+{
+    [self.tableView reloadData];
+}
+
+- (void)matchmakingClient:(MatchmakingClient *)client serverBecameUnavailable:(NSString *)peerID
+{
+    [self.tableView reloadData];
+}
 
 #pragma mark - Dealloc
 

@@ -20,6 +20,8 @@
 
 @implementation MatchmakingServer
 
+#pragma mark - Methods ,that other clases use
+
 
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID
 {
