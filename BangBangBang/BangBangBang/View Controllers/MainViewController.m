@@ -9,12 +9,13 @@
 #import "MainViewController.h"
 
 #import "HostViewController.h"
+#import "JoinViewController.h"
 
 #import "UIFont+SnapAdditions.h"
 #import "UIButton+SnapAdditions.h"
 
 
-@interface MainViewController () <HostViewControllerDelegate>
+@interface MainViewController () <HostViewControllerDelegate, JoinViewControllerDelegate>
 
 {
     BOOL _buttonsEnabled;
@@ -76,17 +77,28 @@
              HostViewController *controller = [[HostViewController alloc] initWithNibName:@"HostViewController" bundle:nil];
              controller.delegate = self;
              
-             [self presentViewController:controller animated:NO completion:nil];
+             [self presentViewController:controller animated:YES completion:nil];
          }];
     }
 }
 
 - (IBAction)joinGameAction:(id)sender
 {
+    if (_buttonsEnabled)
+    {
+        [self performExitAnimationWithCompletionBlock:^(BOOL finished)
+         {
+             JoinViewController *controller = [[JoinViewController alloc] initWithNibName:@"JoinViewController" bundle:nil];
+             controller.delegate = self;
+             
+             [self presentViewController:controller animated:YES completion:nil];
+         }];
+    }
 }
 
 - (IBAction)singlePlayerGameAction:(id)sender
 {
+    
 }
 
 
@@ -217,6 +229,12 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+#pragma mark - JoinViewControllerDelegate
+
+- (void)joinViewControllerDidCancel:(JoinViewController *)controller
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 #pragma mark - Dealloc
 

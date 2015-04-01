@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2851ACBA7EB00E09973 /* JoinViewController.m */; };
+		5300F2881ACBA7EB00E09973 /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5300F2861ACBA7EB00E09973 /* JoinViewController.xib */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
@@ -71,6 +73,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5300F2841ACBA7EB00E09973 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinViewController.h; path = "View Controllers/JoinViewController.h"; sourceTree = "<group>"; };
+		5300F2851ACBA7EB00E09973 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinViewController.m; path = "View Controllers/JoinViewController.m"; sourceTree = "<group>"; };
+		5300F2861ACBA7EB00E09973 /* JoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinViewController.xib; path = "View Controllers/JoinViewController.xib"; sourceTree = "<group>"; };
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
@@ -220,6 +225,9 @@
 				531B587E1ACB9ED800CEB87E /* HostViewController.h */,
 				531B587F1ACB9ED800CEB87E /* HostViewController.m */,
 				531B58801ACB9ED800CEB87E /* HostViewController.xib */,
+				5300F2841ACBA7EB00E09973 /* JoinViewController.h */,
+				5300F2851ACBA7EB00E09973 /* JoinViewController.m */,
+				5300F2861ACBA7EB00E09973 /* JoinViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 				53E321E11ACAA7200027AFB3 /* Icon@2x.png in Resources */,
 				53E321DD1ACAA7200027AFB3 /* Icon-Small-50@2x.png in Resources */,
 				53E321F01ACAA7200027AFB3 /* TextField@2x.png in Resources */,
+				5300F2881ACBA7EB00E09973 /* JoinViewController.xib in Resources */,
 				53E321D31ACAA7200027AFB3 /* Default@2x.png in Resources */,
 				53E321ED1ACAA7200027AFB3 /* TableViewBorder.png in Resources */,
 				53E321EA1ACAA7200027AFB3 /* Logo P@2x.png in Resources */,
@@ -422,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
