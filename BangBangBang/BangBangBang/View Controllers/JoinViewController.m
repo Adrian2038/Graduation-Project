@@ -14,6 +14,8 @@
 
 #import "PeerCell.h"
 
+
+
 @interface JoinViewController ()
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, JoinViewControllerDelegate>
 
@@ -115,7 +117,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"clicking...............");
+    NSLog(@"Join Game Clicking...............");
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

@@ -13,8 +13,10 @@
 
 #import "MatchmakingServer.h"
 
+#import "PeerCell.h"
+
 @interface HostViewController ()
-<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingServerDelegate>
 
 
 {
@@ -58,6 +60,7 @@
     if (_matchmakingServer == nil)
     {
         _matchmakingServer = [[MatchmakingServer alloc] init];
+        _matchmakingServer.delegate = self;
         _matchmakingServer.maxClients = 3;
         [_matchmakingServer startAcceptingConnectionsForSessionID:SESSION_ID];
         
@@ -94,12 +97,45 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (_matchmakingServer != nil)
+        return [_matchmakingServer connectedClientCount];
+    else
+        return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CellIdentifier = @"CellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+        cell = [[PeerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    NSString *peerID = [_matchmakingServer peerIDForConnectedClientAtIndex:indexPath.row];
+    cell.textLabel.text = [_matchmakingServer displayNameForPeerID:peerID];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Host Game Clicking...............");
+    
     return nil;
+}
+
+#pragma mark - MatchmakingServerDelegate
+
+- (void)matchmakingServer:(MatchmakingServer *)server clientDidConnect:(NSString *)peerID
+{
+    [self.tableView reloadData];
+}
+
+- (void)matchmakingServer:(MatchmakingServer *)server clientDidDisconnect:(NSString *)peerID
+{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Dealloc
