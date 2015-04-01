@@ -11,6 +11,7 @@
 		5300F2881ACBA7EB00E09973 /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5300F2861ACBA7EB00E09973 /* JoinViewController.xib */; };
 		5300F28A1ACBCAB000E09973 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300F2891ACBCAB000E09973 /* GameKit.framework */; };
 		5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */; };
+		5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2911ACBCE3500E09973 /* MatchmakingClient.m */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
@@ -82,6 +83,8 @@
 		5300F28B1ACBCAE600E09973 /* BangBangBangPch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BangBangBangPch.pch; sourceTree = "<group>"; };
 		5300F28D1ACBCCB200E09973 /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingServer.h; path = Networking/MatchmakingServer.h; sourceTree = "<group>"; };
 		5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingServer.m; path = Networking/MatchmakingServer.m; sourceTree = "<group>"; };
+		5300F2901ACBCE3500E09973 /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingClient.h; path = Networking/MatchmakingClient.h; sourceTree = "<group>"; };
+		5300F2911ACBCE3500E09973 /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingClient.m; path = Networking/MatchmakingClient.m; sourceTree = "<group>"; };
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 			children = (
 				5300F28D1ACBCCB200E09973 /* MatchmakingServer.h */,
 				5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */,
+				5300F2901ACBCE3500E09973 /* MatchmakingClient.h */,
+				5300F2911ACBCE3500E09973 /* MatchmakingClient.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
+				5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */,
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,
 				53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */,
 				53E321791ACAA6170027AFB3 /* main.m in Sources */,

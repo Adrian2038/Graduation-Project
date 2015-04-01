@@ -10,9 +10,16 @@
 
 #import "UIFont+SnapAdditions.h"
 
+#import "MatchmakingClient.h"
 
 @interface JoinViewController ()
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
+
+{
+    MatchmakingClient *_matchmakingClient;
+}
+
 
 @property (nonatomic, weak) IBOutlet UILabel *headingLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -42,6 +49,20 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.nameTextField action:@selector(resignFirstResponder)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (_matchmakingClient == nil)
+    {
+        _matchmakingClient = [[MatchmakingClient alloc] init];
+        [_matchmakingClient startSearchingForServersWithSessionID:SESSION_ID];
+        
+        self.nameTextField.placeholder = _matchmakingClient.session.displayName;
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidUnload
