@@ -15,7 +15,6 @@
     NSMutableArray *_availableServers;
 }
 
-
 @end
 
 
@@ -56,6 +55,13 @@
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
     NSLog(@"MatchmakingClient: session failed %@", error);
+}
+
+#pragma mark - Dealloc
+
+- (void)dealloc
+{
+    NSLog(@"dealloc %@", self);
 }
 
 
