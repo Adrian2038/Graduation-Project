@@ -56,6 +56,7 @@
 
 - (IBAction)exitAction:(id)sender
 {
+    [self.delegate hostViewControllerDidCancel:self];
 }
 
 #pragma mark - UITextFieldDelegate
