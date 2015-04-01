@@ -22,6 +22,7 @@
 
 {
     MatchmakingClient *_matchmakingClient;
+    QuitReason _quitReason;
 }
 
 
@@ -61,6 +62,8 @@
     
     if (_matchmakingClient == nil)
     {
+        _quitReason = QuitReasonConnectionDropped;
+
         _matchmakingClient = [[MatchmakingClient alloc] init];
         _matchmakingClient.delegate = self;
         [_matchmakingClient startSearchingForServersWithSessionID:SESSION_ID];
@@ -85,6 +88,8 @@
 
 - (IBAction)exitAction:(id)sender
 {
+    _quitReason = QuitReasonUserQuit;
+    [_matchmakingClient disconnectFromServer];
     [self.delegate joinViewControllerDidCancel:self];
 }
 
@@ -151,6 +156,15 @@
 {
     [self.tableView reloadData];
 }
+
+- (void)matchmakingClient:(MatchmakingClient *)client didDisconnectFromServer:(NSString *)peerID
+{
+    _matchmakingClient.delegate = nil;
+    _matchmakingClient = nil;
+    [self.tableView reloadData];
+    [self.delegate joinViewController:self didDisconnectWithReason:_quitReason];
+}
+
 
 #pragma mark - Dealloc
 

@@ -12,6 +12,8 @@
 @protocol JoinViewControllerDelegate <NSObject>
 
 - (void)joinViewControllerDidCancel:(JoinViewController *)controller;
+- (void)joinViewController:(JoinViewController *)controller didDisconnectWithReason:(QuitReason)reason;
+
 
 @end
 
