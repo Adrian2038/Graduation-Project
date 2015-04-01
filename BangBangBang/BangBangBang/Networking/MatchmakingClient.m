@@ -23,6 +23,7 @@ ClientState;
 {
     NSMutableArray *_availableServers;
     ClientState _clientState;
+    NSString *_serverPeerID;
 }
 
 @end
@@ -75,6 +76,16 @@ ClientState;
 {
     return [_session displayNameForPeer:peerID];
 }
+
+- (void)connectToServerWithPeerID:(NSString *)peerID
+{
+    NSAssert(_clientState == ClientStateSearchingForServers, @"Wrong state");
+    
+    _clientState = ClientStateConnecting;
+    _serverPeerID = peerID;
+    [_session connectToPeer:peerID withTimeout:_session.disconnectTimeout];
+}
+
 
 #pragma mark - GKSessionDelegate
 

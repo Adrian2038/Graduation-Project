@@ -27,5 +27,6 @@
 - (NSUInteger)availableServerCount;
 - (NSString *)peerIDForAvailableServerAtIndex:(NSUInteger)index;
 - (NSString *)displayNameForPeerID:(NSString *)peerID;
+- (void)connectToServerWithPeerID:(NSString *)peerID;
 
 @end
