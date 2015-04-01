@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
+		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
 		53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E3217B1ACAA6170027AFB3 /* AppDelegate.m */; };
 		53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E321831ACAA6170027AFB3 /* Images.xcassets */; };
@@ -69,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
+		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
+		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
 		53E321731ACAA6170027AFB3 /* BangBangBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E321771ACAA6170027AFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E321781ACAA6170027AFB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -212,6 +217,9 @@
 				53E3219C1ACAA6D50027AFB3 /* MainViewController.h */,
 				53E3219D1ACAA6D50027AFB3 /* MainViewController.m */,
 				53E3219E1ACAA6D50027AFB3 /* MainViewController.xib */,
+				531B587E1ACB9ED800CEB87E /* HostViewController.h */,
+				531B587F1ACB9ED800CEB87E /* HostViewController.m */,
+				531B58801ACB9ED800CEB87E /* HostViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 				53E321D81ACAA7200027AFB3 /* Felt.png in Resources */,
 				53E321DA1ACAA7200027AFB3 /* Icon-72.png in Resources */,
 				53E321E41ACAA7200027AFB3 /* Logo A@2x.png in Resources */,
+				531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */,
 				53E321E81ACAA7200027AFB3 /* Logo N@2x.png in Resources */,
 				53E321CC1ACAA7200027AFB3 /* ButtonPressed.png in Resources */,
 				53E321D41ACAA7200027AFB3 /* ExitButton.png in Resources */,
@@ -413,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,
@@ -600,6 +610,7 @@
 				53E321981ACAA6170027AFB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53E321991ACAA6170027AFB3 /* Build configuration list for PBXNativeTarget "BangBangBangTests" */ = {
 			isa = XCConfigurationList;
@@ -608,6 +619,7 @@
 				53E3219B1ACAA6170027AFB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
