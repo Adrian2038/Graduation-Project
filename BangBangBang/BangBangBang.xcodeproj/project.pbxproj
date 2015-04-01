@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2851ACBA7EB00E09973 /* JoinViewController.m */; };
 		5300F2881ACBA7EB00E09973 /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5300F2861ACBA7EB00E09973 /* JoinViewController.xib */; };
+		5300F28A1ACBCAB000E09973 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300F2891ACBCAB000E09973 /* GameKit.framework */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
@@ -76,6 +77,8 @@
 		5300F2841ACBA7EB00E09973 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinViewController.h; path = "View Controllers/JoinViewController.h"; sourceTree = "<group>"; };
 		5300F2851ACBA7EB00E09973 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinViewController.m; path = "View Controllers/JoinViewController.m"; sourceTree = "<group>"; };
 		5300F2861ACBA7EB00E09973 /* JoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinViewController.xib; path = "View Controllers/JoinViewController.xib"; sourceTree = "<group>"; };
+		5300F2891ACBCAB000E09973 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		5300F28B1ACBCAE600E09973 /* BangBangBangPch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BangBangBangPch.pch; sourceTree = "<group>"; };
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5300F28A1ACBCAB000E09973 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +192,7 @@
 		53E321761ACAA6170027AFB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5300F2891ACBCAB000E09973 /* GameKit.framework */,
 				53E3217A1ACAA6170027AFB3 /* AppDelegate.h */,
 				53E3217B1ACAA6170027AFB3 /* AppDelegate.m */,
 				53E321831ACAA6170027AFB3 /* Images.xcassets */,
@@ -195,6 +200,7 @@
 				53E321771ACAA6170027AFB3 /* Info.plist */,
 				53E321781ACAA6170027AFB3 /* main.m */,
 				53E321F11ACAA7330027AFB3 /* Action_Man.ttf */,
+				5300F28B1ACBCAE600E09973 /* BangBangBangPch.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = BangBangBang/BangBangBangPch.pch;
 				INFOPLIST_FILE = BangBangBang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = BangBangBang/BangBangBangPch.pch;
 				INFOPLIST_FILE = BangBangBang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,22 @@
+//
+//  BangBangBangPch.pch
+//  BangBangBang
+//
+//  Created by Zhu Dengquan on 15/4/1.
+//  Copyright (c) 2015年 Zhu Dengquan. All rights reserved.
+//
+
+#ifndef BangBangBang_BangBangBangPch_pch
+#define BangBangBang_BangBangBangPch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <GameKit/GameKit.h>
+
+#endif
