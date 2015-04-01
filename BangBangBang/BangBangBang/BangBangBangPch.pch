@@ -19,4 +19,8 @@
 
 #import <GameKit/GameKit.h>
 
+// The name of the GameKit session.
+#define SESSION_ID @"Snap!"
+
+
 #endif

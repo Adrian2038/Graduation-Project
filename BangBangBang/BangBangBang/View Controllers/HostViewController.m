@@ -11,8 +11,16 @@
 #import "UIButton+SnapAdditions.h"
 #import "UIFont+SnapAdditions.h"
 
+#import "MatchmakingServer.h"
+
 @interface HostViewController ()
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
+
+{
+    MatchmakingServer *_matchmakingServer;
+}
+
 
 @property (nonatomic, weak) IBOutlet UILabel *headingLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -41,6 +49,21 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.nameTextField action:@selector(resignFirstResponder)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (_matchmakingServer == nil)
+    {
+        _matchmakingServer = [[MatchmakingServer alloc] init];
+        _matchmakingServer.maxClients = 3;
+        [_matchmakingServer startAcceptingConnectionsForSessionID:SESSION_ID];
+        
+        self.nameTextField.placeholder = _matchmakingServer.session.displayName;
+        [self.tableView reloadData];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
