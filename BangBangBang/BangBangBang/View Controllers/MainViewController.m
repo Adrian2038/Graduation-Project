@@ -15,7 +15,8 @@
 #import "UIButton+SnapAdditions.h"
 
 
-@interface MainViewController () <HostViewControllerDelegate, JoinViewControllerDelegate>
+@interface MainViewController ()
+<HostViewControllerDelegate, JoinViewControllerDelegate>
 
 {
     BOOL _buttonsEnabled;
