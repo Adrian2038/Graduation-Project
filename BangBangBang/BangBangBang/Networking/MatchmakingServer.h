@@ -16,7 +16,6 @@
 - (void)matchmakingServerSessionDidEnd:(MatchmakingServer *)server;
 - (void)matchmakingServerNoNetwork:(MatchmakingServer *)server;
 
-
 @end
 
 @interface MatchmakingServer : NSObject <GKSessionDelegate>
@@ -27,11 +26,10 @@
 @property (nonatomic, strong, readonly) NSArray *connectedClients;
 @property (nonatomic, strong, readonly) GKSession *session;
 
+- (void)endSession;
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID;
 - (NSUInteger)connectedClientCount;
 - (NSString *)peerIDForConnectedClientAtIndex:(NSUInteger)index;
 - (NSString *)displayNameForPeerID:(NSString *)peerID;
-- (void)endSession;
-
 
 @end

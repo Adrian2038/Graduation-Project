@@ -63,7 +63,7 @@
     if (_matchmakingClient == nil)
     {
         _quitReason = QuitReasonConnectionDropped;
-
+        
         _matchmakingClient = [[MatchmakingClient alloc] init];
         _matchmakingClient.delegate = self;
         [_matchmakingClient startSearchingForServersWithSessionID:SESSION_ID];
@@ -134,7 +134,6 @@
         [_matchmakingClient connectToServerWithPeerID:peerID];
     }
 }
-
 
 
 #pragma mark - UITextFieldDelegate

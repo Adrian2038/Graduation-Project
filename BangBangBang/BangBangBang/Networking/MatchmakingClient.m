@@ -26,29 +26,30 @@ ClientState;
     NSString *_serverPeerID;
 }
 
+
 @end
 
 
 @implementation MatchmakingClient
 
-- (instancetype)init
+
+- (id)init
 {
-    self = [super init];
-    if (self)
+    if ((self = [super init]))
     {
         _clientState = ClientStateIdle;
     }
     return self;
 }
 
-#pragma mark - Methods ,that other clases use
+
+#pragma mark - Other classes use
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID
 {
     if (_clientState == ClientStateIdle)
     {
         _clientState = ClientStateSearchingForServers;
-        
         _availableServers = [NSMutableArray arrayWithCapacity:10];
         
         _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeClient];
@@ -60,6 +61,15 @@ ClientState;
 - (NSArray *)availableServers
 {
     return _availableServers;
+}
+
+- (void)connectToServerWithPeerID:(NSString *)peerID
+{
+    NSAssert(_clientState == ClientStateSearchingForServers, @"Wrong state");
+    
+    _clientState = ClientStateConnecting;
+    _serverPeerID = peerID;
+    [_session connectToPeer:peerID withTimeout:_session.disconnectTimeout];
 }
 
 - (NSUInteger)availableServerCount
@@ -75,15 +85,6 @@ ClientState;
 - (NSString *)displayNameForPeerID:(NSString *)peerID
 {
     return [_session displayNameForPeer:peerID];
-}
-
-- (void)connectToServerWithPeerID:(NSString *)peerID
-{
-    NSAssert(_clientState == ClientStateSearchingForServers, @"Wrong state");
-    
-    _clientState = ClientStateConnecting;
-    _serverPeerID = peerID;
-    [_session connectToPeer:peerID withTimeout:_session.disconnectTimeout];
 }
 
 - (void)disconnectFromServer
@@ -134,7 +135,6 @@ ClientState;
                     [self.delegate matchmakingClient:self serverBecameUnavailable:peerID];
                 }
             }
-            
             // Is this the server we're currently trying to connect with?
             if (_clientState == ClientStateConnecting && [peerID isEqualToString:_serverPeerID])
             {
@@ -191,12 +191,12 @@ ClientState;
     }
 }
 
+
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
     NSLog(@"dealloc %@", self);
 }
-
 
 @end

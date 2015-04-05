@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Zhu Dengquan. All rights reserved.
 //
 
-#import "MatchmakingServer.h"
 
+#import "MatchmakingServer.h"
 
 typedef enum
 {
@@ -16,7 +16,6 @@ typedef enum
     ServerStateIgnoringNewConnections,
 }
 ServerState;
-
 
 @interface MatchmakingServer ()
 
@@ -31,24 +30,22 @@ ServerState;
 @implementation MatchmakingServer
 
 
-- (instancetype)init
+- (id)init
 {
-    self = [super init];
-    if (self)
+    if ((self = [super init]))
     {
         _serverState = ServerStateIdle;
     }
     return self;
 }
 
-#pragma mark - Methods ,that other clases use
+#pragma mark - Other classes use
 
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID
 {
     if (_serverState == ServerStateIdle)
     {
         _serverState = ServerStateAcceptingConnections;
-        
         _connectedClients = [NSMutableArray arrayWithCapacity:self.maxClients];
         
         _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeServer];
@@ -92,7 +89,6 @@ ServerState;
     
     [self.delegate matchmakingServerSessionDidEnd:self];
 }
-
 
 #pragma mark - GKSessionDelegate
 
@@ -174,12 +170,12 @@ ServerState;
     }
 }
 
+
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
     NSLog(@"dealloc %@", self);
 }
-
 
 @end
