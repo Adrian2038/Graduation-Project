@@ -147,6 +147,8 @@ ClientState;
             if (_clientState == ClientStateConnecting)
             {
                 _clientState = ClientStateConnected;
+                
+                [self.delegate matchmakingClient:self didConnecToServer:peerID];
             }
             break;
             

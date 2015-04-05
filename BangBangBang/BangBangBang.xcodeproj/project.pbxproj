@@ -64,6 +64,9 @@
 		53E321F21ACAA7330027AFB3 /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E321F11ACAA7330027AFB3 /* Action_Man.ttf */; };
 		53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321F51ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m */; };
 		53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */; };
+		8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17496A1AD1269400AB29CE /* GameViewController.m */; };
+		8B17496D1AD1269400AB29CE /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B17496B1AD1269400AB29CE /* GameViewController.xib */; };
+		8B1749711AD1282E00AB29CE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1749701AD1282E00AB29CE /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,11 @@
 		53E321F51ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SnapAdditions.m"; path = "Categories/UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
 		53E321F71ACAACF30027AFB3 /* UIButton+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+SnapAdditions.h"; path = "Categories/UIButton+SnapAdditions.h"; sourceTree = "<group>"; };
 		53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SnapAdditions.m"; path = "Categories/UIButton+SnapAdditions.m"; sourceTree = "<group>"; };
+		8B1749691AD1269400AB29CE /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = "View Controllers/GameViewController.h"; sourceTree = "<group>"; };
+		8B17496A1AD1269400AB29CE /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = "View Controllers/GameViewController.m"; sourceTree = "<group>"; };
+		8B17496B1AD1269400AB29CE /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameViewController.xib; path = "View Controllers/GameViewController.xib"; sourceTree = "<group>"; };
+		8B17496F1AD1282E00AB29CE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = "Data Model/Game.h"; sourceTree = "<group>"; };
+		8B1749701AD1282E00AB29CE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = "Data Model/Game.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,10 +219,11 @@
 		53E321751ACAA6170027AFB3 /* BangBangBang */ = {
 			isa = PBXGroup;
 			children = (
-				5300F2931ACBD40E00E09973 /* Views */,
-				53E321F31ACAAC220027AFB3 /* Categories */,
+				8B17496E1AD1281600AB29CE /* Data Model */,
 				53E321A11ACAA6DB0027AFB3 /* View Controllers */,
 				5300F28C1ACBCC9200E09973 /* Networking */,
+				5300F2931ACBD40E00E09973 /* Views */,
+				53E321F31ACAAC220027AFB3 /* Categories */,
 				53E321761ACAA6170027AFB3 /* Supporting Files */,
 			);
 			path = BangBangBang;
@@ -265,6 +274,9 @@
 				5300F2841ACBA7EB00E09973 /* JoinViewController.h */,
 				5300F2851ACBA7EB00E09973 /* JoinViewController.m */,
 				5300F2861ACBA7EB00E09973 /* JoinViewController.xib */,
+				8B1749691AD1269400AB29CE /* GameViewController.h */,
+				8B17496A1AD1269400AB29CE /* GameViewController.m */,
+				8B17496B1AD1269400AB29CE /* GameViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -324,6 +336,15 @@
 				53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		8B17496E1AD1281600AB29CE /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B17496F1AD1282E00AB29CE /* Game.h */,
+				8B1749701AD1282E00AB29CE /* Game.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +441,7 @@
 				53E321D61ACAA7200027AFB3 /* ExitButtonPressed.png in Resources */,
 				53E321EF1ACAA7200027AFB3 /* TextField.png in Resources */,
 				53E321DE1ACAA7200027AFB3 /* Icon-Small.png in Resources */,
+				8B17496D1AD1269400AB29CE /* GameViewController.xib in Resources */,
 				53E321CF1ACAA7200027AFB3 /* CellBackground@2x.png in Resources */,
 				53E321E11ACAA7200027AFB3 /* Icon@2x.png in Resources */,
 				53E321DD1ACAA7200027AFB3 /* Icon-Small-50@2x.png in Resources */,
@@ -469,7 +491,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
+				8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */,
 				5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */,
+				8B1749711AD1282E00AB29CE /* Game.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,

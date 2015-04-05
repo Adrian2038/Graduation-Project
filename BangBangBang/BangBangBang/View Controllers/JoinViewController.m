@@ -17,7 +17,7 @@
 
 
 @interface JoinViewController ()
-<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, JoinViewControllerDelegate>
+<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingClientDelegate>
 
 
 {
@@ -164,6 +164,19 @@
     [self.tableView reloadData];
     [self.delegate joinViewController:self didDisconnectWithReason:_quitReason];
 }
+
+- (void)matchmakingClient:(MatchmakingClient *)client didConnecToServer:(NSString *)peerID
+{
+    NSString *name = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (name.length == 0) {
+        name = _matchmakingClient.session.displayName;
+    }
+    [self.delegate joinViewController:self
+                 startGameWithSession:_matchmakingClient.session
+                           playerName:name
+                               server:peerID];
+}
+
 
 - (void)matchmakingClientNoNetwork:(MatchmakingClient *)client
 {
