@@ -49,6 +49,22 @@ GameState;
     [self.delegate gameWaitingForServerReady:self];
 }
 
+- (void)startServerGameWithSession:(GKSession *)session
+                        playerName:(NSString *)name
+                           clients:(NSArray *)clients
+{
+    self.isServer = YES;
+    
+    _session = session;
+    _session.available = NO;
+    _session.delegate = self;
+    [_session setDataReceiveHandler:self withContext:nil];
+    
+    _state = GameStateWaitingForSignIn;
+    
+    [self.delegate gameWaitingForClientsReady:self];
+}
+
 
 - (void)quitGameWithReason:(QuitReason)reason
 {

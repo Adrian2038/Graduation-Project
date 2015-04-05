@@ -26,9 +26,7 @@ ClientState;
     NSString *_serverPeerID;
 }
 
-
 @end
-
 
 @implementation MatchmakingClient
 

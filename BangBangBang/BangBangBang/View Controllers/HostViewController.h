@@ -13,7 +13,10 @@
 
 - (void)hostViewControllerDidCancel:(HostViewController *)controller;
 - (void)hostViewController:(HostViewController *)controller didEndSessionWithReason:(QuitReason)reason;
-
+- (void)hostViewController:(HostViewController *)controller
+      startGameWithSession:(GKSession *)session
+                playerName:(NSString *)name
+                   clients:(NSArray *)clients;
 
 @end
 

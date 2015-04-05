@@ -31,5 +31,7 @@
 - (NSUInteger)connectedClientCount;
 - (NSString *)peerIDForConnectedClientAtIndex:(NSUInteger)index;
 - (NSString *)displayNameForPeerID:(NSString *)peerID;
+- (void)stopAcceptingConnections;
+
 
 @end

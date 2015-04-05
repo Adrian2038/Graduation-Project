@@ -52,6 +52,11 @@
     self.centerLabel.text = NSLocalizedString(@"正在等待游戏开始...", @"Status text: waiting for server");
 }
 
+- (void)gameWaitingForClientsReady:(Game *)game
+{
+    self.centerLabel.text = NSLocalizedString(@"正在等待其它游戏玩家...", @"Status text: waiting for clients");
+}
+
 #pragma mark - Dealloc
 
 - (void)dealloc
