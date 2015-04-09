@@ -53,6 +53,8 @@ ClientState;
         _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeClient];
         _session.delegate = self;
         _session.available = YES;
+      
+      NSLog(@"client session : %@", _session);
     }
 }
 
