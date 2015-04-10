@@ -30,6 +30,8 @@ typedef enum
 }
 PacketType;
 
+const size_t PACKET_HEADER_SIZE;
+
 @interface Packet : NSObject
 
 @property (nonatomic, assign) PacketType packetType;

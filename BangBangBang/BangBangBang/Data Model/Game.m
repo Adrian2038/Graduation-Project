@@ -110,8 +110,6 @@ GameState;
     [self.delegate game:self didQuitWithReason:reason];
 }
 
-#pragma mark - Networking
-
 - (void)clientReceivedPacket:(Packet *)packet
 {
     switch (packet.packetType) {
@@ -125,10 +123,35 @@ GameState;
             break;
             
         default:
-            NSLog(@"Client received unexcepted packet: %@",packet);
+            NSLog(@"Client received unexcepted packet: %@", packet);
             break;
     }
 }
+
+
+- (void)serverReceivedPacket:(Packet *)packet fromPlayer:(Player *)player
+{
+    switch (packet.packetType) {
+        case PacketTypeSignInResponse:
+            if (_state == GameStateWaitingForSignIn) {
+                player.name = ((PacketSignInResponse *)packet).playerName;
+                
+                NSLog(@"Server received sign in frome client : %@", player.name);
+            }
+            break;
+            
+        default:
+            NSLog(@"Server receives unexcepted packet: %@", packet);
+            break;
+    }
+}
+
+-(Player *)playerWithPeerID:(NSString *)peerID
+{
+    return [_players objectForKey:peerID];
+}
+
+#pragma mark - Networking
 
 - (void)sendPacketToAllClients:(Packet *)packet
 {
@@ -193,7 +216,13 @@ GameState;
         return;
     }
     
-    [self clientReceivedPacket:packet];
+    Player *player = [self playerWithPeerID:peerID];
+    if (self.isServer) {
+        [self serverReceivedPacket:packet fromPlayer:player];
+        
+    } else {
+        [self clientReceivedPacket:packet];
+    }
 }
 
 
