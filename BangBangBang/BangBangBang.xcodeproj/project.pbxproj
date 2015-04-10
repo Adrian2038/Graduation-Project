@@ -15,6 +15,7 @@
 		5300F2961ACBD43000E09973 /* PeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2951ACBD43000E09973 /* PeerCell.m */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
+		535B7D091AD763CA00868B63 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D081AD763CA00868B63 /* Player.m */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
 		53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E3217B1ACAA6170027AFB3 /* AppDelegate.m */; };
 		53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E321831ACAA6170027AFB3 /* Images.xcassets */; };
@@ -94,6 +95,8 @@
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
+		535B7D071AD763CA00868B63 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = "Data Model/Player.h"; sourceTree = "<group>"; };
+		535B7D081AD763CA00868B63 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = "Data Model/Player.m"; sourceTree = "<group>"; };
 		53E321731ACAA6170027AFB3 /* BangBangBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E321771ACAA6170027AFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E321781ACAA6170027AFB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 			children = (
 				8B17496F1AD1282E00AB29CE /* Game.h */,
 				8B1749701AD1282E00AB29CE /* Game.m */,
+				535B7D071AD763CA00868B63 /* Player.h */,
+				535B7D081AD763CA00868B63 /* Player.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
 				8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */,
 				5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */,
+				535B7D091AD763CA00868B63 /* Player.m in Sources */,
 				8B1749711AD1282E00AB29CE /* Game.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
