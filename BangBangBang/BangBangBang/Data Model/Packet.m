@@ -10,6 +10,8 @@
 
 #import "NSData+SnapAdditions.h"
 
+const size_t PACKET_HEADER_SIZE = 10;
+
 @implementation Packet
 
 + (id)packetWithType:(PacketType)packetType
@@ -27,6 +29,24 @@
     return self;
 }
 
++ (id)packetWithData:(NSData *)data
+{
+    if (data.length < PACKET_HEADER_SIZE) {
+        NSLog(@"Error : packet too small");
+        return nil;
+    }
+    
+    if ([data rw_int32AtOffset:0] != 'SNAP') {
+        NSLog(@"Error : packet has valid header");
+        return nil;
+    }
+    
+    int packetNumber = [data rw_int32AtOffset:4];
+    PacketType packetType = [data rw_int16AtOffset:8];
+    
+    return [Packet packetWithType:packetType];
+}
+
 - (NSData *)data
 {
     NSMutableData *data = [NSMutableData dataWithCapacity:100];
@@ -35,7 +55,14 @@
     [data rw_appendInt32:0];
     [data rw_appendInt16:self.packetType];
     
+    [self addPayloadToData:data];
+    
     return data;
+}
+
+- (void)addPayloadToData:(NSMutableData *)data
+{
+    // base dose nothig,subclass override it,and do some stuff.
 }
 
 - (NSString *)description

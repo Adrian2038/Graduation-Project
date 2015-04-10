@@ -37,6 +37,9 @@ PacketType;
 + (id)packetWithType:(PacketType)packetType;
 - (id)initWithType:(PacketType)packetType;
 
+
++ (id)packetWithData:(NSData *)data;
+
 - (NSData *)data;
 
 @end

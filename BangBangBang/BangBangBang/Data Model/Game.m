@@ -9,6 +9,7 @@
 #import "Game.h"
 #import "Player.h"
 #import "Packet.h"
+#import "PacketSignInResponse.h"
 
 typedef enum
 {
@@ -111,6 +112,24 @@ GameState;
 
 #pragma mark - Networking
 
+- (void)clientReceivedPacket:(Packet *)packet
+{
+    switch (packet.packetType) {
+        case PacketTypeSignInRequest:
+            if (_state == GameStateWaitingForSignIn) {
+                _state = GameStateWaitingForReady;
+                
+                Packet *packet = [PacketSignInResponse packetWithPlayerName:_localPlayerName];
+                [self sendPacketToServer:packet];
+            }
+            break;
+            
+        default:
+            NSLog(@"Client received unexcepted packet: %@",packet);
+            break;
+    }
+}
+
 - (void)sendPacketToAllClients:(Packet *)packet
 {
     GKSendDataMode dataModel = GKSendDataReliable;
@@ -120,6 +139,18 @@ GameState;
     
     if (![_session sendDataToAllPeers:data withDataMode:dataModel error:&error]) {
         NSLog(@"Error sending data to clients : %@", error);
+    }
+}
+
+- (void)sendPacketToServer:(Packet *)packet
+{
+    GKSendDataMode dataModel = GKSendDataReliable;
+    
+    NSData *data = [packet data];
+    NSError *error;
+    
+    if (![_session sendData:data toPeers:@[_serverPeerID] withDataMode:dataModel error:&error]) {
+        NSLog(@"Error sending data to server : %@", error);
     }
 }
 
@@ -155,6 +186,14 @@ GameState;
 - (void)receiveData:(NSData *)data fromPeer:(NSString *)peerID inSession:(GKSession *)session context:(void *)context
 {
     NSLog(@"Game: receive data from peer: %@, data: %@, length: %d", peerID, data, [data length]);
+    
+    Packet *packet = [Packet packetWithData:data];
+    if (!packet) {
+        NSLog(@"Invalid packet %@", data);
+        return;
+    }
+    
+    [self clientReceivedPacket:packet];
 }
 
 
