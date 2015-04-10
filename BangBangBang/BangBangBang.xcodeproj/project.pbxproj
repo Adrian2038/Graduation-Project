@@ -16,6 +16,8 @@
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
 		535B7D091AD763CA00868B63 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D081AD763CA00868B63 /* Player.m */; };
+		535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0B1AD76E6D00868B63 /* Packet.m */; };
+		535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
 		53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E3217B1ACAA6170027AFB3 /* AppDelegate.m */; };
 		53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E321831ACAA6170027AFB3 /* Images.xcassets */; };
@@ -97,6 +99,10 @@
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
 		535B7D071AD763CA00868B63 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = "Data Model/Player.h"; sourceTree = "<group>"; };
 		535B7D081AD763CA00868B63 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = "Data Model/Player.m"; sourceTree = "<group>"; };
+		535B7D0A1AD76E6D00868B63 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Packet.h; path = "Data Model/Packet.h"; sourceTree = "<group>"; };
+		535B7D0B1AD76E6D00868B63 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Packet.m; path = "Data Model/Packet.m"; sourceTree = "<group>"; };
+		535B7D0D1AD77CA100868B63 /* NSData+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+SnapAdditions.h"; path = "Categories/NSData+SnapAdditions.h"; sourceTree = "<group>"; };
+		535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+SnapAdditions.m"; path = "Categories/NSData+SnapAdditions.m"; sourceTree = "<group>"; };
 		53E321731ACAA6170027AFB3 /* BangBangBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E321771ACAA6170027AFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E321781ACAA6170027AFB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -337,6 +343,8 @@
 				53E321F51ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m */,
 				53E321F71ACAACF30027AFB3 /* UIButton+SnapAdditions.h */,
 				53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */,
+				535B7D0D1AD77CA100868B63 /* NSData+SnapAdditions.h */,
+				535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -348,6 +356,8 @@
 				8B1749701AD1282E00AB29CE /* Game.m */,
 				535B7D071AD763CA00868B63 /* Player.h */,
 				535B7D081AD763CA00868B63 /* Player.m */,
+				535B7D0A1AD76E6D00868B63 /* Packet.h */,
+				535B7D0B1AD76E6D00868B63 /* Packet.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -502,6 +512,8 @@
 				8B1749711AD1282E00AB29CE /* Game.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
+				535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */,
+				535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
 				5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */,
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,

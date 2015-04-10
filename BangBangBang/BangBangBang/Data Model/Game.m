@@ -8,6 +8,7 @@
 
 #import "Game.h"
 #import "Player.h"
+#import "Packet.h"
 
 typedef enum
 {
@@ -91,6 +92,9 @@ GameState;
         
         index++;
     }
+    
+    Packet *packet = [Packet packetWithType:PacketTypeSignInRequest];
+    [self sendPacketToAllClients:packet];
 }
 
 
@@ -103,6 +107,20 @@ GameState;
     _session = nil;
     
     [self.delegate game:self didQuitWithReason:reason];
+}
+
+#pragma mark - Networking
+
+- (void)sendPacketToAllClients:(Packet *)packet
+{
+    GKSendDataMode dataModel = GKSendDataReliable;
+    
+    NSData *data = [packet data];
+    NSError *error;
+    
+    if (![_session sendDataToAllPeers:data withDataMode:dataModel error:&error]) {
+        NSLog(@"Error sending data to clients : %@", error);
+    }
 }
 
 

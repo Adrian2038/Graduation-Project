@@ -51,8 +51,6 @@ ServerState;
         _session = [[GKSession alloc] initWithSessionID:sessionID displayName:nil sessionMode:GKSessionModeServer];
         _session.delegate = self;
         _session.available = YES;
-      
-      NSLog(@"server session : %@", _session);
     }
 }
 
