@@ -13,15 +13,15 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@, peerID = %@, name = %@, position = %d",
-          [super description], self.peerID, self.name, self.position];
+    return [NSString stringWithFormat:@"%@, peerID = %@, name = %@, position = %d",
+            [super description], self.peerID, self.name, self.position];
 }
 
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
-  NSLog(@"dealloc %@", self);
+    NSLog(@"dealloc %@", self);
 }
 
 @end

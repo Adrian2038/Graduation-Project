@@ -7,6 +7,7 @@
 //
 
 #import "Game.h"
+#import "Player.h"
 
 typedef enum
 {
@@ -26,6 +27,8 @@ GameState;
     GKSession *_session;
     NSString *_serverPeerID;
     NSString *_localPlayerName;
+  
+    NSMutableDictionary *_players;
 }
 
 #pragma mark - Game Logic
@@ -47,6 +50,7 @@ GameState;
     _state = GameStateWaitingForSignIn;
     
     [self.delegate gameWaitingForServerReady:self];
+    
 }
 
 - (void)startServerGameWithSession:(GKSession *)session
@@ -63,6 +67,30 @@ GameState;
     _state = GameStateWaitingForSignIn;
     
     [self.delegate gameWaitingForClientsReady:self];
+    
+    // Create the player object for the server.
+    Player *player = [[Player alloc] init];
+    player.peerID = session.peerID;
+    player.name = name;
+    player.position = PlayerPositionBotton;
+    [_players setObject:player forKey:player.peerID];
+    
+    // Add a player object for each client
+    int index = 0;
+    for (NSString *peerID in clients) {
+        Player *player = [[Player alloc] init];
+        player.peerID = peerID;
+        [_players setObject:player forKey:player.peerID];
+        
+        if (index == 0)
+            clients.count == 1 ? player.position = PlayerPositionTop : PlayerPositionLeft;
+        else if (index == 1)
+            player.position = PlayerPositionTop;
+        else
+            player.position = PlayerPositionRight;
+        
+        index++;
+    }
 }
 
 
