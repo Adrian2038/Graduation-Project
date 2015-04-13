@@ -50,14 +50,17 @@ const size_t PACKET_HEADER_SIZE = 10;
     
     switch (packetType) {
         case PacketTypeSignInRequest:
+        case PacketTypeClientReady:
             packet = [Packet packetWithType:packetType];
             break;
             
         case PacketTypeSignInResponse:
             packet = [PacketSignInResponse packetWithData:data];
             break;
+            
         case PacketTypeServerReady:
             packet = [PacketServerReady packetWithData:data];
+            break;
             
         default:
             NSLog(@"Packet has invalid type");

@@ -126,8 +126,14 @@ GameState;
             if (_state == GameStateWaitingForReady) {
                 _players = ((PacketServerReady*)packet).players;
                 
-                NSLog(@"The Players : %@", _players);
+                [self changeRelativePositionsOfPlayers];
+                
+                Packet *packet = [Packet packetWithType:PacketTypeClientReady];
+                [self sendPacketToServer:packet];
+                
+                [self beginGame];
             }
+            break;
             
         default:
             NSLog(@"Client received unexcepted packet: %@", packet);
@@ -151,6 +157,11 @@ GameState;
                 }
             }
             break;
+        case PacketTypeClientReady:
+            if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers]) {
+                [self beginGame];
+            }
+            break;
             
         default:
             NSLog(@"Server receives unexcepted packet: %@", packet);
@@ -172,6 +183,29 @@ GameState;
         }
     }
     return YES;
+}
+
+- (void)changeRelativePositionsOfPlayers
+{
+    NSAssert(!self.isServer, @"Must be Client");
+    
+    Player *myPlayer = [self playerWithPeerID:_session.peerID];
+    int diff = myPlayer.position;
+    myPlayer.position = PlayerPositionBotton;
+    
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key , Player *obj, BOOL *stop)
+    {
+        if (obj != myPlayer) {
+            obj.position = (obj.position - diff) % 4;
+        }
+    }];
+}
+
+- (void)beginGame
+{
+    _state = GameStateDealing;
+    
+    NSLog(@"The game should begin");
 }
 
 #pragma mark - Networking
