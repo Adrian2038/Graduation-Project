@@ -8,6 +8,7 @@
 
 #import "Packet.h"
 #import "PacketSignInResponse.h"
+#import "PacketServerReady.h"
 
 #import "NSData+SnapAdditions.h"
 
@@ -53,8 +54,10 @@ const size_t PACKET_HEADER_SIZE = 10;
             break;
             
         case PacketTypeSignInResponse:
-            packetType = [PacketSignInResponse packetWithData:data];
+            packet = [PacketSignInResponse packetWithData:data];
             break;
+        case PacketTypeServerReady:
+            packet = [PacketServerReady packetWithData:data];
             
         default:
             NSLog(@"Packet has invalid type");

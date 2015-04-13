@@ -10,6 +10,7 @@
 #import "Player.h"
 #import "Packet.h"
 #import "PacketSignInResponse.h"
+#import "PacketServerReady.h"
 
 typedef enum
 {
@@ -121,6 +122,12 @@ GameState;
                 [self sendPacketToServer:packet];
             }
             break;
+        case PacketTypeServerReady:
+            if (_state == GameStateWaitingForReady) {
+                _players = ((PacketServerReady*)packet).players;
+                
+                NSLog(@"The Players : %@", _players);
+            }
             
         default:
             NSLog(@"Client received unexcepted packet: %@", packet);
@@ -138,6 +145,9 @@ GameState;
                 
                 if ([self receivedResponsesFromAllPlayers]) {
                     _state = GameStateWaitingForReady;
+                    
+                    Packet *packet = [PacketServerReady packetWithPlayers:_players];
+                    [self sendPacketToAllClients:packet];
                 }
             }
             break;
