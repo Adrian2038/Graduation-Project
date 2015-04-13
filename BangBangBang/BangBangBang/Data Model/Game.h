@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Zhu Dengquan. All rights reserved.
 //
 
+#import "Player.h"
+
 @class Game;
 
 @protocol GameDelegate <NSObject>
@@ -25,5 +27,6 @@
 - (void)startClientGameWithSession:(GKSession *)session playerName:(NSString *)name server:(NSString *)peerID;
 - (void)startServerGameWithSession:(GKSession *)session playerName:(NSString *)name clients:(NSArray *)clients;
 - (void)quitGameWithReason:(QuitReason)reason;
+- (Player *)playerAtPosition:(PlayerPosition)position;
 
 @end

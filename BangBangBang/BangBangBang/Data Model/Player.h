@@ -8,7 +8,7 @@
 
 typedef enum
 {
-    PlayerPositionBotton, // the user
+    PlayerPositionBottom, // the user
     PlayerPositionLeft,
     PlayerPositionTop,
     PlayerPositionRight
@@ -23,5 +23,8 @@ PlayerPosition;
 @property (nonatomic, copy) NSString *peerID;
 
 @property (nonatomic, assign) BOOL receivedResponse;
+
+@property (nonatomic, assign) int gamesWon;
+
 
 @end

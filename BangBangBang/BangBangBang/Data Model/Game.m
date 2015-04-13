@@ -75,7 +75,7 @@ GameState;
     Player *player = [[Player alloc] init];
     player.peerID = session.peerID;
     player.name = name;
-    player.position = PlayerPositionBotton;
+    player.position = PlayerPositionBottom;
     [_players setObject:player forKey:player.peerID];
     
     // Add a player object for each client
@@ -191,7 +191,7 @@ GameState;
     
     Player *myPlayer = [self playerWithPeerID:_session.peerID];
     int diff = myPlayer.position;
-    myPlayer.position = PlayerPositionBotton;
+    myPlayer.position = PlayerPositionBottom;
     
     [_players enumerateKeysAndObjectsUsingBlock:^(id key , Player *obj, BOOL *stop)
     {
@@ -207,6 +207,22 @@ GameState;
     
     [self.delegate gameDidBegin:self];
     
+}
+
+- (Player *)playerAtPosition:(PlayerPosition)position
+{
+    NSAssert(position >= PlayerPositionBottom && position <= PlayerPositionRight, @"Invalid player position");
+    
+    __block Player *player;
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+    {
+        player = obj;
+        if (player.position == position)
+            *stop = YES;
+        else
+            player = nil;
+    }];
+    return player;
 }
 
 #pragma mark - Networking

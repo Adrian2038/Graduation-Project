@@ -19,6 +19,8 @@
 
 #import <GameKit/GameKit.h>
 
+#import <QuartzCore/QuartzCore.h>
+
 // The name of the GameKit session.
 #define SESSION_ID @"Snap!"
 
