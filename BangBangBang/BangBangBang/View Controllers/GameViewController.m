@@ -13,7 +13,12 @@
 #import "Game.h"
 #import "Player.h"
 
+
 @interface GameViewController ()
+
+{
+    UIAlertView *_alertView;
+}
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, weak) IBOutlet UIView *cardContainerView;
@@ -73,12 +78,38 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_alertView dismissWithClickedButtonIndex:_alertView.cancelButtonIndex animated:NO];
+}
 
 #pragma mark - Action
 
 - (IBAction)exitAction:(UIButton *)sender
 {
-    [self.game quitGameWithReason:QuitReasonUserQuit];
+    if (self.game.isServer) {
+        _alertView = [[UIAlertView alloc]
+                      initWithTitle:NSLocalizedString(@"End Game", @"Alert title (user is host)")
+                      message:NSLocalizedString(@"This will terminal the game for all other players", @"Alert message (user is host)")
+                      delegate:self
+                      cancelButtonTitle:NSLocalizedString(@"No", @"Button : No")
+                      otherButtonTitles:NSLocalizedString(@"Yes", @"Button Yes"),
+                      nil];
+        [_alertView show];
+    } else {
+        _alertView = [[UIAlertView alloc]
+                      initWithTitle: NSLocalizedString(@"Leave Game?", @"Alert title (user is not host)")
+                      message:nil
+                      delegate:self
+                      cancelButtonTitle:NSLocalizedString(@"No", @"Button: No")
+                      otherButtonTitles:NSLocalizedString(@"Yes", @"Button: Yes"),
+                      nil];
+        
+        [_alertView show];
+
+    }
 }
 
 - (IBAction)turnOverPressed:(id)sender
@@ -390,6 +421,15 @@
     [self hidePlayerLabelsForPlayer:disconnectedPlayer];
     [self hideActiveIndicatorForPlayer:disconnectedPlayer];
     [self hideSnapIndicatorForPlayer:disconnectedPlayer];
+}
+
+#pragma mark - AlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        [self.delegate gameViewController:self didQuitWithReason:QuitReasonUserQuit];
+    }
 }
 
 #pragma mark - Dealloc

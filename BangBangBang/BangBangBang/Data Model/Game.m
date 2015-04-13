@@ -105,6 +105,16 @@ GameState;
 {
     _state = GameStateQuitting;
     
+    if (reason == QuitReasonUserQuit) {
+        if (self.isServer) {
+            Packet *packet = [Packet packetWithType:PacketTypeServerQuit];
+            [self sendPacketToAllClients:packet];
+        } else {
+            Packet *packet = [Packet packetWithType:PacketTypeClientQuit];
+            [self sendPacketToServer:packet];
+        }
+    }
+    
     [_session disconnectFromAllPeers];
     _session.delegate = nil;
     _session = nil;
@@ -144,6 +154,10 @@ GameState;
             }
             break;
             
+        case PacketTypeServerQuit:
+            [self quitGameWithReason:QuitReasonServerQuit];
+            break;
+            
         default:
             NSLog(@"Client received unexcepted packet: %@", packet);
             break;
@@ -170,6 +184,10 @@ GameState;
             if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers]) {
                 [self beginGame];
             }
+            break;
+            
+        case PacketTypeClientQuit:
+            [self clientDidDisconnect:player.peerID];
             break;
             
         default:
@@ -316,6 +334,12 @@ GameState;
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
     NSLog(@"Game: session failed %@", error);
+    
+    if ([error.domain isEqualToString:GKSessionErrorDomain]) {
+        if (_state != GameStateQuitting) {
+            [self quitGameWithReason:QuitReasonConnectionDropped];
+        }
+    }
 }
 
 #pragma mark - GKSession Data Receive Handler

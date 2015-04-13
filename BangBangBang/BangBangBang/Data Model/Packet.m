@@ -52,6 +52,8 @@ const size_t PACKET_HEADER_SIZE = 10;
     switch (packetType) {
         case PacketTypeSignInRequest:
         case PacketTypeClientReady:
+        case PacketTypeClientQuit:
+        case PacketTypeServerQuit:
             packet = [Packet packetWithType:packetType];
             break;
             
