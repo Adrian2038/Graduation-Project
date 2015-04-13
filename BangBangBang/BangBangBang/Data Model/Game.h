@@ -13,6 +13,7 @@
 - (void)game:(Game *)game didQuitWithReason:(QuitReason)reason;
 - (void)gameWaitingForServerReady:(Game *)game;
 - (void)gameWaitingForClientsReady:(Game *)game;
+- (void)gameDidBegin:(Game *)game;
 
 @end
 

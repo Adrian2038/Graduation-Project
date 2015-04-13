@@ -205,7 +205,8 @@ GameState;
 {
     _state = GameStateDealing;
     
-    NSLog(@"The game should begin");
+    [self.delegate gameDidBegin:self];
+    
 }
 
 #pragma mark - Networking
