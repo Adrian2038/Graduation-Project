@@ -145,6 +145,7 @@
 		531C08DD1ADB9B28000E852C /* Dealing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085C1ADB9B28000E852C /* Dealing.caf */; };
 		531C08DE1ADB9B28000E852C /* TurnCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085D1ADB9B28000E852C /* TurnCard.caf */; };
 		531C08DF1ADB9B28000E852C /* WrongMatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085E1ADB9B28000E852C /* WrongMatch.caf */; };
+		53477E061ADBBDE30066A568 /* PacketOtherClientQuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */; };
 		535B7D091AD763CA00868B63 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D081AD763CA00868B63 /* Player.m */; };
 		535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0B1AD76E6D00868B63 /* Packet.m */; };
 		535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */; };
@@ -358,6 +359,8 @@
 		531C085C1ADB9B28000E852C /* Dealing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dealing.caf; sourceTree = "<group>"; };
 		531C085D1ADB9B28000E852C /* TurnCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TurnCard.caf; sourceTree = "<group>"; };
 		531C085E1ADB9B28000E852C /* WrongMatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongMatch.caf; sourceTree = "<group>"; };
+		53477E041ADBBDE30066A568 /* PacketOtherClientQuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketOtherClientQuit.h; path = "Data Model/PacketOtherClientQuit.h"; sourceTree = "<group>"; };
+		53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketOtherClientQuit.m; path = "Data Model/PacketOtherClientQuit.m"; sourceTree = "<group>"; };
 		535B7D071AD763CA00868B63 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = "Data Model/Player.h"; sourceTree = "<group>"; };
 		535B7D081AD763CA00868B63 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = "Data Model/Player.m"; sourceTree = "<group>"; };
 		535B7D0A1AD76E6D00868B63 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Packet.h; path = "Data Model/Packet.h"; sourceTree = "<group>"; };
@@ -784,6 +787,8 @@
 				535B7D111AD7B7EC00868B63 /* PacketSignInResponse.m */,
 				531C06CF1ADB6A07000E852C /* PacketServerReady.h */,
 				531C06D01ADB6A07000E852C /* PacketServerReady.m */,
+				53477E041ADBBDE30066A568 /* PacketOtherClientQuit.h */,
+				53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -1063,6 +1068,7 @@
 				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
 				8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */,
 				5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */,
+				53477E061ADBBDE30066A568 /* PacketOtherClientQuit.m in Sources */,
 				535B7D091AD763CA00868B63 /* Player.m in Sources */,
 				8B1749711AD1282E00AB29CE /* Game.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "Packet.h"
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
+#import "PacketOtherClientQuit.h"
 
 #import "NSData+SnapAdditions.h"
 
@@ -60,6 +61,10 @@ const size_t PACKET_HEADER_SIZE = 10;
             
         case PacketTypeServerReady:
             packet = [PacketServerReady packetWithData:data];
+            break;
+            
+        case PacketTypeOtherClientQuit:
+            packet = [PacketOtherClientQuit packetWithData:data];
             break;
             
         default:

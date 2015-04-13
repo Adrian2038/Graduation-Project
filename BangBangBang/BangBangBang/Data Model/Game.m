@@ -11,6 +11,7 @@
 #import "Packet.h"
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
+#import "PacketOtherClientQuit.h"
 
 typedef enum
 {
@@ -122,6 +123,7 @@ GameState;
                 [self sendPacketToServer:packet];
             }
             break;
+            
         case PacketTypeServerReady:
             if (_state == GameStateWaitingForReady) {
                 _players = ((PacketServerReady*)packet).players;
@@ -132,6 +134,13 @@ GameState;
                 [self sendPacketToServer:packet];
                 
                 [self beginGame];
+            }
+            break;
+            
+        case PacketTypeOtherClientQuit:
+            if (_state != GameStateQuitting) {
+                PacketOtherClientQuit *quitClient = ((PacketOtherClientQuit *)packet);
+                [self clientDidDisconnect:quitClient.peerID];
             }
             break;
             
@@ -225,6 +234,24 @@ GameState;
     return player;
 }
 
+- (void)clientDidDisconnect:(NSString *)peerID
+{
+    if (_state != GameStateQuitting) {
+        Player *player = [self playerWithPeerID:peerID];
+        if (player) {
+            [_players removeObjectForKey:peerID];
+            
+            if (_state != GameStateWaitingForSignIn) {
+                if (self.isServer) {
+                    PacketOtherClientQuit *packet = [PacketOtherClientQuit packetWithPeerID:peerID];
+                    [self sendPacketToAllClients:packet];
+                }
+                [self.delegate game:self playerDidDisconnect:player];
+            }
+        }
+    }
+}
+
 #pragma mark - Networking
 
 - (void)sendPacketToAllClients:(Packet *)packet
@@ -262,6 +289,14 @@ GameState;
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
     NSLog(@"Game: peer %@ changed state %d", peerID, state);
+    
+    if (state == GKPeerStateDisconnected) {
+        if (self.isServer) {
+            [self clientDidDisconnect:peerID];
+        } else if ([peerID isEqualToString:_serverPeerID]) {
+            [self quitGameWithReason:QuitReasonConnectionDropped];
+        }
+    }
 }
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID

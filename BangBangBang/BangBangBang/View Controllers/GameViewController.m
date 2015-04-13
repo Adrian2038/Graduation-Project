@@ -312,6 +312,54 @@
     }
 }
 
+- (void)hidePlayerLabelsForPlayer:(Player *)player
+{
+    switch (player.position)
+    {
+        case PlayerPositionBottom:
+            self.playerNameBottomLabel.hidden = YES;
+            self.playerWinsBottomLabel.hidden = YES;
+            break;
+            
+        case PlayerPositionLeft:
+            self.playerNameLeftLabel.hidden = YES;
+            self.playerWinsLeftLabel.hidden = YES;
+            break;
+            
+        case PlayerPositionTop:
+            self.playerNameTopLabel.hidden = YES;
+            self.playerWinsTopLabel.hidden = YES;
+            break;
+            
+        case PlayerPositionRight:
+            self.playerNameRightLabel.hidden = YES;
+            self.playerWinsRightLabel.hidden = YES;
+            break;
+    }
+}
+
+- (void)hideActiveIndicatorForPlayer:(Player *)player
+{
+    switch (player.position)
+    {
+        case PlayerPositionBottom: self.playerActiveBottomImageView.hidden = YES; break;
+        case PlayerPositionLeft:   self.playerActiveLeftImageView.hidden   = YES; break;
+        case PlayerPositionTop:    self.playerActiveTopImageView.hidden    = YES; break;
+        case PlayerPositionRight:  self.playerActiveRightImageView.hidden  = YES; break;
+    }
+}
+
+- (void)hideSnapIndicatorForPlayer:(Player *)player
+{
+    switch (player.position)
+    {
+        case PlayerPositionBottom: self.snapIndicatorBottomImageView.hidden = YES; break;
+        case PlayerPositionLeft:   self.snapIndicatorLeftImageView.hidden   = YES; break;
+        case PlayerPositionTop:    self.snapIndicatorTopImageView.hidden    = YES; break;
+        case PlayerPositionRight:  self.snapIndicatorRightImageView.hidden  = YES; break;
+    }
+}
+
 
 #pragma mark - GameDelegate
 
@@ -335,6 +383,13 @@
     [self showPlayerLabels];
     [self caculateLabelFrames];
     [self updateWinsLabels];
+}
+
+- (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer
+{
+    [self hidePlayerLabelsForPlayer:disconnectedPlayer];
+    [self hideActiveIndicatorForPlayer:disconnectedPlayer];
+    [self hideSnapIndicatorForPlayer:disconnectedPlayer];
 }
 
 #pragma mark - Dealloc
