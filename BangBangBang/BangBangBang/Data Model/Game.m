@@ -136,7 +136,9 @@ GameState;
             if (_state == GameStateWaitingForSignIn) {
                 player.name = ((PacketSignInResponse *)packet).playerName;
                 
-                NSLog(@"Server received sign in frome client : %@", player.name);
+                if ([self receivedResponsesFromAllPlayers]) {
+                    _state = GameStateWaitingForReady;
+                }
             }
             break;
             
@@ -151,10 +153,26 @@ GameState;
     return [_players objectForKey:peerID];
 }
 
+- (BOOL)receivedResponsesFromAllPlayers
+{
+    for (NSString *peerID in _players) {
+        Player *player = [self playerWithPeerID:peerID];
+        if (!player.receivedResponse) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 #pragma mark - Networking
 
 - (void)sendPacketToAllClients:(Packet *)packet
 {
+  [_players enumerateKeysAndObjectsUsingBlock:^(id key, Player *obj, BOOL *stop)
+  {
+    obj.receivedResponse = [_session.peerID isEqualToString:obj.peerID];
+  }];
+  
     GKSendDataMode dataModel = GKSendDataReliable;
     
     NSData *data = [packet data];
@@ -217,6 +235,10 @@ GameState;
     }
     
     Player *player = [self playerWithPeerID:peerID];
+    if (player) {
+        player.receivedResponse = YES; // this is the new bit.
+    }
+  
     if (self.isServer) {
         [self serverReceivedPacket:packet fromPlayer:player];
         

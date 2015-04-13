@@ -15,6 +15,7 @@
 		5300F2961ACBD43000E09973 /* PeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2951ACBD43000E09973 /* PeerCell.m */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
+		531C06D11ADB6A07000E852C /* PacketServerReady.m in Sources */ = {isa = PBXBuildFile; fileRef = 531C06D01ADB6A07000E852C /* PacketServerReady.m */; };
 		535B7D091AD763CA00868B63 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D081AD763CA00868B63 /* Player.m */; };
 		535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0B1AD76E6D00868B63 /* Packet.m */; };
 		535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */; };
@@ -98,6 +99,8 @@
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
+		531C06CF1ADB6A07000E852C /* PacketServerReady.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketServerReady.h; path = "Data Model/PacketServerReady.h"; sourceTree = "<group>"; };
+		531C06D01ADB6A07000E852C /* PacketServerReady.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketServerReady.m; path = "Data Model/PacketServerReady.m"; sourceTree = "<group>"; };
 		535B7D071AD763CA00868B63 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = "Data Model/Player.h"; sourceTree = "<group>"; };
 		535B7D081AD763CA00868B63 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = "Data Model/Player.m"; sourceTree = "<group>"; };
 		535B7D0A1AD76E6D00868B63 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Packet.h; path = "Data Model/Packet.h"; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				535B7D0B1AD76E6D00868B63 /* Packet.m */,
 				535B7D101AD7B7EC00868B63 /* PacketSignInResponse.h */,
 				535B7D111AD7B7EC00868B63 /* PacketSignInResponse.m */,
+				531C06CF1ADB6A07000E852C /* PacketServerReady.h */,
+				531C06D01ADB6A07000E852C /* PacketServerReady.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */,
 				53E321791ACAA6170027AFB3 /* main.m in Sources */,
 				5300F2961ACBD43000E09973 /* PeerCell.m in Sources */,
+				531C06D11ADB6A07000E852C /* PacketServerReady.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
