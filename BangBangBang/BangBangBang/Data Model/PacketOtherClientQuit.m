@@ -7,21 +7,21 @@
 //
 
 #import "PacketOtherClientQuit.h"
-
 #import "NSData+SnapAdditions.h"
 
 @implementation PacketOtherClientQuit
 
+@synthesize peerID = _peerID;
 
 + (id)packetWithPeerID:(NSString *)peerID
 {
-    return [[[self class] alloc] initWIthPeerID:peerID];
+    return [[[self class] alloc] initWithPeerID:peerID];
 }
 
-- (id)initWIthPeerID:(NSString *)peerID
+- (id)initWithPeerID:(NSString *)peerID
 {
-    self = [super initWithType:PacketTypeOtherClientQuit];
-    if (self) {
+    if ((self = [super initWithType:PacketTypeOtherClientQuit]))
+    {
         self.peerID = peerID;
     }
     return self;

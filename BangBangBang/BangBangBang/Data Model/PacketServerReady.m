@@ -12,33 +12,22 @@
 
 @implementation PacketServerReady
 
-// Something wrong here, it will call the framwork method.
+@synthesize players = _players;
+
 + (id)packetWithPlayers:(NSMutableDictionary *)players
 {
-    return [[[self class] alloc] initWithPlayerss:players];
+    return [[[self class] alloc] initWithPlayers:players];
 }
 
-// I may change the init name
-- (id)initWithPlayerss:(NSMutableDictionary *)players
+- (id)initWithPlayers:(NSMutableDictionary *)players
 {
-    self = [super initWithType:PacketTypeServerReady];
-    if (self) {
+    if ((self = [super initWithType:PacketTypeServerReady]))
+    {
         self.players = players;
     }
     return self;
 }
 
-- (void)addPayloadToData:(NSMutableData *)data
-{
-    [data rw_appendInt8:[self.players count]];
-    
-    [self.players enumerateKeysAndObjectsUsingBlock:^(id key, Player *player, BOOL *stop)
-    {
-        [data rw_appendString:player.peerID];
-        [data rw_appendString:player.name];
-        [data rw_appendInt8:player.position];
-    }];
-}
 + (id)packetWithData:(NSData *)data
 {
     NSMutableDictionary *players = [NSMutableDictionary dictionaryWithCapacity:4];
@@ -49,7 +38,8 @@
     int numberOfPlayers = [data rw_int8AtOffset:offset];
     offset += 1;
     
-    for (int t = 0; t < numberOfPlayers; ++t) {
+    for (int t = 0; t < numberOfPlayers; ++t)
+    {
         NSString *peerID = [data rw_stringAtOffset:offset bytesRead:&count];
         offset += count;
         
@@ -67,6 +57,18 @@
     }
     
     return [[self class] packetWithPlayers:players];
+}
+
+- (void)addPayloadToData:(NSMutableData *)data
+{
+    [data rw_appendInt8:[self.players count]];
+    
+    [self.players enumerateKeysAndObjectsUsingBlock:^(id key, Player *player, BOOL *stop)
+     {
+         [data rw_appendString:player.peerID];
+         [data rw_appendString:player.name];
+         [data rw_appendInt8:player.position];
+     }];
 }
 
 @end

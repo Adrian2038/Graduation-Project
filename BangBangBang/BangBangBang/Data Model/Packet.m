@@ -7,40 +7,33 @@
 //
 
 #import "Packet.h"
+#import "NSData+SnapAdditions.h"
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
 
-#import "NSData+SnapAdditions.h"
-
 const size_t PACKET_HEADER_SIZE = 10;
 
 @implementation Packet
+
+@synthesize packetType = _packetType;
 
 + (id)packetWithType:(PacketType)packetType
 {
     return [[[self class] alloc] initWithType:packetType];
 }
 
-- (id)initWithType:(PacketType)packetType
-{
-    self = [super init];
-    if (self) {
-        self.packetType = packetType;
-    }
-    
-    return self;
-}
-
 + (id)packetWithData:(NSData *)data
 {
-    if (data.length < PACKET_HEADER_SIZE) {
-        NSLog(@"Error : packet too small");
+    if ([data length] < PACKET_HEADER_SIZE)
+    {
+        NSLog(@"Error: Packet too small");
         return nil;
     }
     
-    if ([data rw_int32AtOffset:0] != 'SNAP') {
-        NSLog(@"Error : packet has valid header");
+    if ([data rw_int32AtOffset:0] != 'SNAP')
+    {
+        NSLog(@"Error: Packet has invalid header");
         return nil;
     }
     
@@ -49,11 +42,12 @@ const size_t PACKET_HEADER_SIZE = 10;
     
     Packet *packet;
     
-    switch (packetType) {
+    switch (packetType)
+    {
         case PacketTypeSignInRequest:
         case PacketTypeClientReady:
-        case PacketTypeClientQuit:
         case PacketTypeServerQuit:
+        case PacketTypeClientQuit:
             packet = [Packet packetWithType:packetType];
             break;
             
@@ -70,18 +64,27 @@ const size_t PACKET_HEADER_SIZE = 10;
             break;
             
         default:
-            NSLog(@"Packet has invalid type");
-            break;
+            NSLog(@"Error: Packet has invalid type");
+            return nil;
     }
     
     return packet;
 }
 
+- (id)initWithType:(PacketType)packetType
+{
+    if ((self = [super init]))
+    {
+        self.packetType = packetType;
+    }
+    return self;
+}
+
 - (NSData *)data
 {
-    NSMutableData *data = [NSMutableData dataWithCapacity:100];
+    NSMutableData *data = [[NSMutableData alloc] initWithCapacity:100];
     
-    [data rw_appendInt32:'SNAP'];  // 0x534E4150
+    [data rw_appendInt32:'SNAP'];   // 0x534E4150
     [data rw_appendInt32:0];
     [data rw_appendInt16:self.packetType];
     
@@ -92,12 +95,12 @@ const size_t PACKET_HEADER_SIZE = 10;
 
 - (void)addPayloadToData:(NSMutableData *)data
 {
-    // base dose nothig,subclass override it,and do some stuff.
+    // base class does nothing
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@, type = %d", [super description], self.packetType];
+    return [NSString stringWithFormat:@"%@, type=%d", [super description], self.packetType];
 }
 
 @end

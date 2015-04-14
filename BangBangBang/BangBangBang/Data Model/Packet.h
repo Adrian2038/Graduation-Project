@@ -7,19 +7,21 @@
 //
 
 
+const size_t PACKET_HEADER_SIZE;
+
 typedef enum
 {
     PacketTypeSignInRequest = 0x64,    // server to client
     PacketTypeSignInResponse,          // client to server
     
-    PacketTypeServerReady,             // sever to client
+    PacketTypeServerReady,             // server to client
     PacketTypeClientReady,             // client to server
     
     PacketTypeDealCards,               // server to client
-    PacketTypeClientDealCards,         // client to server
+    PacketTypeClientDealtCards,        // client to server
     
     PacketTypeActivatePlayer,          // server to client
-    PacketTypeClientTurnedCards,       // client to server
+    PacketTypeClientTurnedCard,        // client to server
     
     PacketTypePlayerShouldSnap,        // client to server
     PacketTypePlayerCalledSnap,        // server to client
@@ -30,16 +32,12 @@ typedef enum
 }
 PacketType;
 
-const size_t PACKET_HEADER_SIZE;
-
 @interface Packet : NSObject
 
 @property (nonatomic, assign) PacketType packetType;
 
 + (id)packetWithType:(PacketType)packetType;
 - (id)initWithType:(PacketType)packetType;
-
-
 + (id)packetWithData:(NSData *)data;
 
 - (NSData *)data;

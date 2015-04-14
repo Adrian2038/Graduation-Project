@@ -10,7 +10,7 @@
 
 @interface PacketSignInResponse : Packet
 
-@property (nonatomic, strong) NSString *playerName;
+@property (nonatomic, copy) NSString *playerName;
 
 + (id)packetWithPlayerName:(NSString *)playerName;
 

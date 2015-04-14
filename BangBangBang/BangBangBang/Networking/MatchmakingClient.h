@@ -14,18 +14,16 @@
 - (void)matchmakingClient:(MatchmakingClient *)client serverBecameAvailable:(NSString *)peerID;
 - (void)matchmakingClient:(MatchmakingClient *)client serverBecameUnavailable:(NSString *)peerID;
 - (void)matchmakingClient:(MatchmakingClient *)client didDisconnectFromServer:(NSString *)peerID;
-- (void)matchmakingClient:(MatchmakingClient *)client didConnecToServer:(NSString *)peerID;
 - (void)matchmakingClientNoNetwork:(MatchmakingClient *)client;
+- (void)matchmakingClient:(MatchmakingClient *)client didConnectToServer:(NSString *)peerID;
 
 @end
 
 @interface MatchmakingClient : NSObject <GKSessionDelegate>
 
-@property (nonatomic, weak) id <MatchmakingClientDelegate> delegate;
-
-
 @property (nonatomic, strong, readonly) NSArray *availableServers;
 @property (nonatomic, strong, readonly) GKSession *session;
+@property (nonatomic, weak) id <MatchmakingClientDelegate> delegate;
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID;
 - (NSUInteger)availableServerCount;

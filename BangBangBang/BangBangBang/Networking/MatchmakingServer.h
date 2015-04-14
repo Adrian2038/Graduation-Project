@@ -20,11 +20,10 @@
 
 @interface MatchmakingServer : NSObject <GKSessionDelegate>
 
-@property (nonatomic, weak) id <MatchmakingServerDelegate> delegate;
-
 @property (nonatomic, assign) int maxClients;
 @property (nonatomic, strong, readonly) NSArray *connectedClients;
 @property (nonatomic, strong, readonly) GKSession *session;
+@property (nonatomic, weak) id <MatchmakingServerDelegate> delegate;
 
 - (void)endSession;
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID;
@@ -32,6 +31,5 @@
 - (NSString *)peerIDForConnectedClientAtIndex:(NSUInteger)index;
 - (NSString *)displayNameForPeerID:(NSString *)peerID;
 - (void)stopAcceptingConnections;
-
 
 @end

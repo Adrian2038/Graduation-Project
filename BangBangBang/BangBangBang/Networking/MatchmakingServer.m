@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Zhu Dengquan. All rights reserved.
 //
 
-
 #import "MatchmakingServer.h"
 
 typedef enum
@@ -17,18 +16,15 @@ typedef enum
 }
 ServerState;
 
-@interface MatchmakingServer ()
-
+@implementation MatchmakingServer
 {
     NSMutableArray *_connectedClients;
     ServerState _serverState;
 }
 
-@end
-
-
-@implementation MatchmakingServer
-
+@synthesize maxClients = _maxClients;
+@synthesize session = _session;
+@synthesize delegate = _delegate;
 
 - (id)init
 {
@@ -38,8 +34,6 @@ ServerState;
     }
     return self;
 }
-
-#pragma mark - Other classes use
 
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID
 {
@@ -59,51 +53,13 @@ ServerState;
     return _connectedClients;
 }
 
-- (NSUInteger)connectedClientCount
-{
-    return [_connectedClients count];
-}
-
-- (NSString *)peerIDForConnectedClientAtIndex:(NSUInteger)index
-{
-    return [_connectedClients objectAtIndex:index];
-}
-
-- (NSString *)displayNameForPeerID:(NSString *)peerID
-{
-    return [_session displayNameForPeer:peerID];
-}
-
-- (void)endSession
-{
-    NSAssert(_serverState != ServerStateIdle, @"Wrong state");
-    
-    _serverState = ServerStateIdle;
-    
-    [_session disconnectFromAllPeers];
-    _session.available = NO;
-    _session.delegate = nil;
-    _session = nil;
-    
-    _connectedClients = nil;
-    
-    [self.delegate matchmakingServerSessionDidEnd:self];
-}
-
-- (void)stopAcceptingConnections
-{
-    NSAssert(_serverState == ServerStateAcceptingConnections, @"Wrong state");
-    
-    _serverState = ServerStateIgnoringNewConnections;
-    _session.available = NO;
-}
-
-
 #pragma mark - GKSessionDelegate
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
+#ifdef DEBUG
     NSLog(@"MatchmakingServer: peer %@ changed state %d", peerID, state);
+#endif
     
     switch (state)
     {
@@ -144,7 +100,9 @@ ServerState;
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID
 {
+#ifdef DEBUG
     NSLog(@"MatchmakingServer: connection request from peer %@", peerID);
+#endif
     
     if (_serverState == ServerStateAcceptingConnections && [self connectedClientCount] < self.maxClients)
     {
@@ -162,12 +120,16 @@ ServerState;
 
 - (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error
 {
+#ifdef DEBUG
     NSLog(@"MatchmakingServer: connection with peer %@ failed %@", peerID, error);
+#endif
 }
 
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
+#ifdef DEBUG
     NSLog(@"MatchmakingServer: session failed %@", error);
+#endif
     
     if ([[error domain] isEqualToString:GKSessionErrorDomain])
     {
@@ -179,12 +141,43 @@ ServerState;
     }
 }
 
-
-#pragma mark - Dealloc
-
-- (void)dealloc
+- (NSUInteger)connectedClientCount
 {
-    NSLog(@"dealloc %@", self);
+    return [_connectedClients count];
+}
+
+- (NSString *)peerIDForConnectedClientAtIndex:(NSUInteger)index
+{
+    return [_connectedClients objectAtIndex:index];
+}
+
+- (NSString *)displayNameForPeerID:(NSString *)peerID
+{
+    return [_session displayNameForPeer:peerID];
+}
+
+- (void)stopAcceptingConnections
+{
+    NSAssert(_serverState == ServerStateAcceptingConnections, @"Wrong state");
+    
+    _serverState = ServerStateIgnoringNewConnections;
+    _session.available = NO;
+}
+
+- (void)endSession
+{
+    NSAssert(_serverState != ServerStateIdle, @"Wrong state");
+    
+    _serverState = ServerStateIdle;
+    
+    [_session disconnectFromAllPeers];
+    _session.available = NO;
+    _session.delegate = nil;
+    _session = nil;
+    
+    _connectedClients = nil;
+    
+    [self.delegate matchmakingServerSessionDidEnd:self];
 }
 
 @end

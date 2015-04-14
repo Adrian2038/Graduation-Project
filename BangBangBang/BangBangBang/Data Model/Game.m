@@ -6,14 +6,16 @@
 //  Copyright (c) 2015年 Zhu Dengquan. All rights reserved.
 //
 
+
 #import "Game.h"
-#import "Player.h"
 #import "Packet.h"
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
 #import "Card.h"
 #import "Deck.h"
+
+
 
 typedef enum
 {
@@ -33,18 +35,35 @@ GameState;
     GKSession *_session;
     NSString *_serverPeerID;
     NSString *_localPlayerName;
-  
+    
     NSMutableDictionary *_players;
     
     PlayerPosition _startingPlayerPosition;
     PlayerPosition _activePlayerPosition;
 }
 
+@synthesize delegate = _delegate;
+@synthesize isServer = _isServer;
+
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        _players = [NSMutableDictionary dictionaryWithCapacity:4];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+#ifdef DEBUG
+    NSLog(@"dealloc %@", self);
+#endif
+}
+
 #pragma mark - Game Logic
 
-- (void)startClientGameWithSession:(GKSession *)session
-                        playerName:(NSString *)name
-                            server:(NSString *)peerID
+- (void)startClientGameWithSession:(GKSession *)session playerName:(NSString *)name server:(NSString *)peerID
 {
     self.isServer = NO;
     
@@ -59,12 +78,9 @@ GameState;
     _state = GameStateWaitingForSignIn;
     
     [self.delegate gameWaitingForServerReady:self];
-    
 }
 
-- (void)startServerGameWithSession:(GKSession *)session
-                        playerName:(NSString *)name
-                           clients:(NSArray *)clients
+- (void)startServerGameWithSession:(GKSession *)session playerName:(NSString *)name clients:(NSArray *)clients
 {
     self.isServer = YES;
     
@@ -77,22 +93,23 @@ GameState;
     
     [self.delegate gameWaitingForClientsReady:self];
     
-    // Create the player object for the server.
+    // Create the Player object for the server.
     Player *player = [[Player alloc] init];
-    player.peerID = session.peerID;
     player.name = name;
+    player.peerID = _session.peerID;
     player.position = PlayerPositionBottom;
     [_players setObject:player forKey:player.peerID];
     
-    // Add a player object for each client
+    // Add a Player object for each client.
     int index = 0;
-    for (NSString *peerID in clients) {
+    for (NSString *peerID in clients)
+    {
         Player *player = [[Player alloc] init];
         player.peerID = peerID;
         [_players setObject:player forKey:player.peerID];
         
         if (index == 0)
-            clients.count == 1 ? player.position = PlayerPositionTop : PlayerPositionLeft;
+            player.position = ([clients count] == 1) ? PlayerPositionTop : PlayerPositionLeft;
         else if (index == 1)
             player.position = PlayerPositionTop;
         else
@@ -103,18 +120,22 @@ GameState;
     
     Packet *packet = [Packet packetWithType:PacketTypeSignInRequest];
     [self sendPacketToAllClients:packet];
+    
 }
-
 
 - (void)quitGameWithReason:(QuitReason)reason
 {
     _state = GameStateQuitting;
     
-    if (reason == QuitReasonUserQuit) {
-        if (self.isServer) {
+    if (reason == QuitReasonUserQuit)
+    {
+        if (self.isServer)
+        {
             Packet *packet = [Packet packetWithType:PacketTypeServerQuit];
             [self sendPacketToAllClients:packet];
-        } else {
+        }
+        else
+        {
             Packet *packet = [Packet packetWithType:PacketTypeClientQuit];
             [self sendPacketToServer:packet];
         }
@@ -129,9 +150,11 @@ GameState;
 
 - (void)clientReceivedPacket:(Packet *)packet
 {
-    switch (packet.packetType) {
+    switch (packet.packetType)
+    {
         case PacketTypeSignInRequest:
-            if (_state == GameStateWaitingForSignIn) {
+            if (_state == GameStateWaitingForSignIn)
+            {
                 _state = GameStateWaitingForReady;
                 
                 Packet *packet = [PacketSignInResponse packetWithPlayerName:_localPlayerName];
@@ -140,22 +163,23 @@ GameState;
             break;
             
         case PacketTypeServerReady:
-            if (_state == GameStateWaitingForReady) {
-                _players = ((PacketServerReady*)packet).players;
-                
+            if (_state == GameStateWaitingForReady)
+            {
+                _players = ((PacketServerReady *)packet).players;
                 [self changeRelativePositionsOfPlayers];
                 
                 Packet *packet = [Packet packetWithType:PacketTypeClientReady];
                 [self sendPacketToServer:packet];
-                NSLog(@"server ready");
+                
                 [self beginGame];
             }
             break;
             
         case PacketTypeOtherClientQuit:
-            if (_state != GameStateQuitting) {
-                PacketOtherClientQuit *quitClient = ((PacketOtherClientQuit *)packet);
-                [self clientDidDisconnect:quitClient.peerID];
+            if (_state != GameStateQuitting)
+            {
+                PacketOtherClientQuit *quitPacket = ((PacketOtherClientQuit *)packet);
+                [self clientDidDisconnect:quitPacket.peerID];
             }
             break;
             
@@ -164,20 +188,33 @@ GameState;
             break;
             
         default:
-            NSLog(@"Client received unexcepted packet: %@", packet);
+            NSLog(@"Client received unexpected packet: %@", packet);
             break;
     }
 }
 
+- (BOOL)receivedResponsesFromAllPlayers
+{
+    for (NSString *peerID in _players)
+    {
+        Player *player = [self playerWithPeerID:peerID];
+        if (!player.receivedResponse)
+            return NO;
+    }
+    return YES;
+}
 
 - (void)serverReceivedPacket:(Packet *)packet fromPlayer:(Player *)player
 {
-    switch (packet.packetType) {
+    switch (packet.packetType)
+    {
         case PacketTypeSignInResponse:
-            if (_state == GameStateWaitingForSignIn) {
+            if (_state == GameStateWaitingForSignIn)
+            {
                 player.name = ((PacketSignInResponse *)packet).playerName;
                 
-                if ([self receivedResponsesFromAllPlayers]) {
+                if ([self receivedResponsesFromAllPlayers])
+                {
                     _state = GameStateWaitingForReady;
                     
                     Packet *packet = [PacketServerReady packetWithPlayers:_players];
@@ -185,10 +222,12 @@ GameState;
                 }
             }
             break;
+            
         case PacketTypeClientReady:
-            if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers]) {
+            NSLog(@"State: %d, received Responses: %d", _state, [self receivedResponsesFromAllPlayers]);
+            if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers])
+            {
                 [self beginGame];
-                NSLog(@"client ready");
             }
             break;
             
@@ -197,77 +236,35 @@ GameState;
             break;
             
         default:
-            NSLog(@"Server receives unexcepted packet: %@", packet);
+            NSLog(@"Server received unexpected packet: %@", packet);
             break;
     }
 }
 
--(Player *)playerWithPeerID:(NSString *)peerID
+- (Player *)playerWithPeerID:(NSString *)peerID
 {
     return [_players objectForKey:peerID];
-}
-
-- (BOOL)receivedResponsesFromAllPlayers
-{
-    for (NSString *peerID in _players) {
-        Player *player = [self playerWithPeerID:peerID];
-        if (!player.receivedResponse) {
-            return NO;
-        }
-    }
-    return YES;
-}
-
-- (void)changeRelativePositionsOfPlayers
-{
-    NSAssert(!self.isServer, @"Must be Client");
-    
-    Player *myPlayer = [self playerWithPeerID:_session.peerID];
-    int diff = myPlayer.position;
-    myPlayer.position = PlayerPositionBottom;
-    
-    [_players enumerateKeysAndObjectsUsingBlock:^(id key , Player *obj, BOOL *stop)
-    {
-        if (obj != myPlayer) {
-            obj.position = (obj.position - diff) % 4;
-        }
-    }];
 }
 
 - (void)beginGame
 {
     _state = GameStateDealing;
-    
     [self.delegate gameDidBegin:self];
     
-    if (self.isServer) {
+    if (self.isServer)
+    {
         [self pickRandomStartingPlayer];
         [self dealCards];
     }
-    
-}
-
-- (Player *)playerAtPosition:(PlayerPosition)position
-{
-    NSAssert(position >= PlayerPositionBottom && position <= PlayerPositionRight, @"Invalid player position");
-    
-    __block Player *player;
-    [_players enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-    {
-        player = obj;
-        if (player.position == position)
-            *stop = YES;
-        else
-            player = nil;
-    }];
-    return player;
 }
 
 - (void)pickRandomStartingPlayer
 {
-    do {
+    do
+    {
         _startingPlayerPosition = arc4random() % 4;
-    } while ([self playerAtPosition:_startingPlayerPosition] == nil);
+    }
+    while ([self playerAtPosition:_startingPlayerPosition] == nil);
     
     _activePlayerPosition = _startingPlayerPosition;
 }
@@ -280,10 +277,13 @@ GameState;
     Deck *deck = [[Deck alloc] init];
     [deck shuffle];
     
-    while ([deck cardsRemaining] > 0) {
-        for (PlayerPosition p =  _startingPlayerPosition ; p > _startingPlayerPosition + 4; ++p) {
+    while ([deck cardsRemaining] > 0)
+    {
+        for (PlayerPosition p = _startingPlayerPosition; p < _startingPlayerPosition + 4; ++p)
+        {
             Player *player = [self playerAtPosition:(p % 4)];
-            if (player && [deck cardsRemaining] > 0) {
+            if (player != nil && [deck cardsRemaining] > 0)
+            {
                 Card *card = [deck draw];
                 NSLog(@"player at position %d should get card %@", player.position, card);
             }
@@ -291,91 +291,89 @@ GameState;
     }
 }
 
-- (void)clientDidDisconnect:(NSString *)peerID
+
+- (void)changeRelativePositionsOfPlayers
 {
-    if (_state != GameStateQuitting) {
-        Player *player = [self playerWithPeerID:peerID];
-        if (player) {
-            [_players removeObjectForKey:peerID];
-            
-            if (_state != GameStateWaitingForSignIn) {
-                if (self.isServer) {
-                    PacketOtherClientQuit *packet = [PacketOtherClientQuit packetWithPeerID:peerID];
-                    [self sendPacketToAllClients:packet];
-                }
-                [self.delegate game:self playerDidDisconnect:player];
-            }
-        }
-    }
+    NSAssert(!self.isServer, @"Must be client");
+    
+    Player *myPlayer = [self playerWithPeerID:_session.peerID];
+    int diff = myPlayer.position;
+    myPlayer.position = PlayerPositionBottom;
+    
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key, Player *obj, BOOL *stop)
+     {
+         if (obj != myPlayer)
+         {
+             obj.position = (obj.position - diff) % 4;
+         }
+     }];
 }
 
-#pragma mark - Networking
-
-- (void)sendPacketToAllClients:(Packet *)packet
+- (Player *)playerAtPosition:(PlayerPosition)position
 {
-  [_players enumerateKeysAndObjectsUsingBlock:^(id key, Player *obj, BOOL *stop)
-  {
-    obj.receivedResponse = [_session.peerID isEqualToString:obj.peerID];
-  }];
-  
-    GKSendDataMode dataModel = GKSendDataReliable;
+    NSAssert(position >= PlayerPositionBottom && position <= PlayerPositionRight, @"Invalid player position");
     
-    NSData *data = [packet data];
-    NSError *error;
+    __block Player *player;
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+     {
+         player = obj;
+         if (player.position == position)
+             *stop = YES;
+         else
+             player = nil;
+     }];
     
-    if (![_session sendDataToAllPeers:data withDataMode:dataModel error:&error]) {
-        NSLog(@"Error sending data to clients : %@", error);
-    }
+    return player;
 }
-
-- (void)sendPacketToServer:(Packet *)packet
-{
-    GKSendDataMode dataModel = GKSendDataReliable;
-    
-    NSData *data = [packet data];
-    NSError *error;
-    
-    if (![_session sendData:data toPeers:@[_serverPeerID] withDataMode:dataModel error:&error]) {
-        NSLog(@"Error sending data to server : %@", error);
-    }
-}
-
 
 #pragma mark - GKSessionDelegate
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
+#ifdef DEBUG
     NSLog(@"Game: peer %@ changed state %d", peerID, state);
+#endif
     
-    if (state == GKPeerStateDisconnected) {
-        if (self.isServer) {
+    if (state == GKPeerStateDisconnected)
+    {
+        if (self.isServer)
+        {
             [self clientDidDisconnect:peerID];
-        } else if ([peerID isEqualToString:_serverPeerID]) {
+        }
+        else if ([peerID isEqualToString:_serverPeerID])
+        {
             [self quitGameWithReason:QuitReasonConnectionDropped];
         }
     }
 }
-
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID
 {
+#ifdef DEBUG
     NSLog(@"Game: connection request from peer %@", peerID);
+#endif
     
     [session denyConnectionFromPeer:peerID];
 }
 
 - (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error
 {
+#ifdef DEBUG
     NSLog(@"Game: connection with peer %@ failed %@", peerID, error);
+#endif
     
     // Not used.
 }
 
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error
 {
+#ifdef DEBUG
     NSLog(@"Game: session failed %@", error);
+#endif
     
-    if ([error.domain isEqualToString:GKSessionErrorDomain]) {
-        if (_state != GameStateQuitting) {
+    if ([[error domain] isEqualToString:GKSessionErrorDomain])
+    {
+        if (_state != GameStateQuitting)
+        {
             [self quitGameWithReason:QuitReasonConnectionDropped];
         }
     }
@@ -385,33 +383,81 @@ GameState;
 
 - (void)receiveData:(NSData *)data fromPeer:(NSString *)peerID inSession:(GKSession *)session context:(void *)context
 {
+#ifdef DEBUG
     NSLog(@"Game: receive data from peer: %@, data: %@, length: %d", peerID, data, [data length]);
+#endif
     
     Packet *packet = [Packet packetWithData:data];
-    if (!packet) {
-        NSLog(@"Invalid packet %@", data);
+    if (packet == nil)
+    {
+        NSLog(@"Invalid packet: %@", data);
         return;
     }
     
     Player *player = [self playerWithPeerID:peerID];
-    if (player) {
-        player.receivedResponse = YES; // this is the new bit.
+    if (player != nil)
+    {
+        player.receivedResponse = YES;  // this is the new bit
     }
-  
-    if (self.isServer) {
+    
+    if (self.isServer)
         [self serverReceivedPacket:packet fromPlayer:player];
-        
-    } else {
+    else
         [self clientReceivedPacket:packet];
+}
+
+#pragma mark - Networking
+
+- (void)sendPacketToAllClients:(Packet *)packet
+{
+    GKSendDataMode dataMode = GKSendDataReliable;
+    NSData *data = [packet data];
+    NSError *error;
+    
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key, Player *obj, BOOL *stop)
+     {
+         obj.receivedResponse = [_session.peerID isEqualToString:obj.peerID];
+     }];
+    
+    if (![_session sendDataToAllPeers:data withDataMode:dataMode error:&error])
+    {
+        NSLog(@"Error sending data to clients: %@", error);
     }
 }
 
-
-#pragma mark - Dealloc
-
-- (void)dealloc
+- (void)sendPacketToServer:(Packet *)packet
 {
-    NSLog(@"dealloc %@", self);
+    GKSendDataMode dataMode = GKSendDataReliable;
+    NSData *data = [packet data];
+    NSError *error;
+    if (![_session sendData:data toPeers:[NSArray arrayWithObject:_serverPeerID] withDataMode:dataMode error:&error])
+    {
+        NSLog(@"Error sending data to server: %@", error);
+    }
+}
+
+- (void)clientDidDisconnect:(NSString *)peerID
+{
+    if (_state != GameStateQuitting)
+    {
+        Player *player = [self playerWithPeerID:peerID];
+        if (player != nil)
+        {
+            [_players removeObjectForKey:peerID];
+            
+            if (_state != GameStateWaitingForSignIn)
+            {
+                // Tell the other clients that this one is now disconnected.
+                if (self.isServer)
+                {
+                    PacketOtherClientQuit *packet = [PacketOtherClientQuit packetWithPeerID:peerID];
+                    [self sendPacketToAllClients:packet];
+                }			
+                
+                [self.delegate game:self playerDidDisconnect:player];
+            }
+        }
+    }
 }
 
 @end
