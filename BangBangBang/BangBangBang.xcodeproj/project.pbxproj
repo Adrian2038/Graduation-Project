@@ -15,7 +15,6 @@
 		5300F2961ACBD43000E09973 /* PeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300F2951ACBD43000E09973 /* PeerCell.m */; };
 		531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531B587F1ACB9ED800CEB87E /* HostViewController.m */; };
 		531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531B58801ACB9ED800CEB87E /* HostViewController.xib */; };
-		531C06D11ADB6A07000E852C /* PacketServerReady.m in Sources */ = {isa = PBXBuildFile; fileRef = 531C06D01ADB6A07000E852C /* PacketServerReady.m */; };
 		531C085F1ADB9B28000E852C /* ActivePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 531C07DC1ADB9B28000E852C /* ActivePlayer.png */; };
 		531C08601ADB9B28000E852C /* ActivePlayer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 531C07DD1ADB9B28000E852C /* ActivePlayer@2x.png */; };
 		531C08611ADB9B28000E852C /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 531C07DE1ADB9B28000E852C /* Back.png */; };
@@ -145,13 +144,14 @@
 		531C08DD1ADB9B28000E852C /* Dealing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085C1ADB9B28000E852C /* Dealing.caf */; };
 		531C08DE1ADB9B28000E852C /* TurnCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085D1ADB9B28000E852C /* TurnCard.caf */; };
 		531C08DF1ADB9B28000E852C /* WrongMatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 531C085E1ADB9B28000E852C /* WrongMatch.caf */; };
-		53477E061ADBBDE30066A568 /* PacketOtherClientQuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */; };
 		535B7D091AD763CA00868B63 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D081AD763CA00868B63 /* Player.m */; };
-		535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0B1AD76E6D00868B63 /* Packet.m */; };
 		535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */; };
-		535B7D121AD7B7EC00868B63 /* PacketSignInResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 535B7D111AD7B7EC00868B63 /* PacketSignInResponse.m */; };
 		5366563F1ADCAF8E002C4391 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 5366563E1ADCAF8E002C4391 /* Card.m */; };
 		536656421ADCB152002C4391 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656411ADCB152002C4391 /* Deck.m */; };
+		536656571ADCBF92002C4391 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656501ADCBF92002C4391 /* Packet.m */; };
+		536656581ADCBF92002C4391 /* PacketOtherClientQuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656521ADCBF92002C4391 /* PacketOtherClientQuit.m */; };
+		536656591ADCBF92002C4391 /* PacketServerReady.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656541ADCBF92002C4391 /* PacketServerReady.m */; };
+		5366565A1ADCBF92002C4391 /* PacketSignInResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656561ADCBF92002C4391 /* PacketSignInResponse.m */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
 		53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E3217B1ACAA6170027AFB3 /* AppDelegate.m */; };
 		53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E321831ACAA6170027AFB3 /* Images.xcassets */; };
@@ -230,8 +230,6 @@
 		531B587E1ACB9ED800CEB87E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewController.h; path = "View Controllers/HostViewController.h"; sourceTree = "<group>"; };
 		531B587F1ACB9ED800CEB87E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewController.m; path = "View Controllers/HostViewController.m"; sourceTree = "<group>"; };
 		531B58801ACB9ED800CEB87E /* HostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HostViewController.xib; path = "View Controllers/HostViewController.xib"; sourceTree = "<group>"; };
-		531C06CF1ADB6A07000E852C /* PacketServerReady.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketServerReady.h; path = "Data Model/PacketServerReady.h"; sourceTree = "<group>"; };
-		531C06D01ADB6A07000E852C /* PacketServerReady.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketServerReady.m; path = "Data Model/PacketServerReady.m"; sourceTree = "<group>"; };
 		531C07DC1ADB9B28000E852C /* ActivePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActivePlayer.png; sourceTree = "<group>"; };
 		531C07DD1ADB9B28000E852C /* ActivePlayer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ActivePlayer@2x.png"; sourceTree = "<group>"; };
 		531C07DE1ADB9B28000E852C /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
@@ -361,20 +359,22 @@
 		531C085C1ADB9B28000E852C /* Dealing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dealing.caf; sourceTree = "<group>"; };
 		531C085D1ADB9B28000E852C /* TurnCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TurnCard.caf; sourceTree = "<group>"; };
 		531C085E1ADB9B28000E852C /* WrongMatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongMatch.caf; sourceTree = "<group>"; };
-		53477E041ADBBDE30066A568 /* PacketOtherClientQuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketOtherClientQuit.h; path = "Data Model/PacketOtherClientQuit.h"; sourceTree = "<group>"; };
-		53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketOtherClientQuit.m; path = "Data Model/PacketOtherClientQuit.m"; sourceTree = "<group>"; };
 		535B7D071AD763CA00868B63 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = "Data Model/Player.h"; sourceTree = "<group>"; };
 		535B7D081AD763CA00868B63 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = "Data Model/Player.m"; sourceTree = "<group>"; };
-		535B7D0A1AD76E6D00868B63 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Packet.h; path = "Data Model/Packet.h"; sourceTree = "<group>"; };
-		535B7D0B1AD76E6D00868B63 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Packet.m; path = "Data Model/Packet.m"; sourceTree = "<group>"; };
 		535B7D0D1AD77CA100868B63 /* NSData+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+SnapAdditions.h"; path = "Categories/NSData+SnapAdditions.h"; sourceTree = "<group>"; };
 		535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+SnapAdditions.m"; path = "Categories/NSData+SnapAdditions.m"; sourceTree = "<group>"; };
-		535B7D101AD7B7EC00868B63 /* PacketSignInResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketSignInResponse.h; path = "Data Model/PacketSignInResponse.h"; sourceTree = "<group>"; };
-		535B7D111AD7B7EC00868B63 /* PacketSignInResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketSignInResponse.m; path = "Data Model/PacketSignInResponse.m"; sourceTree = "<group>"; };
 		5366563D1ADCAF8E002C4391 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = "Data Model/Card.h"; sourceTree = "<group>"; };
 		5366563E1ADCAF8E002C4391 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = "Data Model/Card.m"; sourceTree = "<group>"; };
 		536656401ADCB152002C4391 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = "Data Model/Deck.h"; sourceTree = "<group>"; };
 		536656411ADCB152002C4391 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = "Data Model/Deck.m"; sourceTree = "<group>"; };
+		5366564F1ADCBF92002C4391 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Packet.h; path = Networking/Packet.h; sourceTree = "<group>"; };
+		536656501ADCBF92002C4391 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Packet.m; path = Networking/Packet.m; sourceTree = "<group>"; };
+		536656511ADCBF92002C4391 /* PacketOtherClientQuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketOtherClientQuit.h; path = Networking/PacketOtherClientQuit.h; sourceTree = "<group>"; };
+		536656521ADCBF92002C4391 /* PacketOtherClientQuit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketOtherClientQuit.m; path = Networking/PacketOtherClientQuit.m; sourceTree = "<group>"; };
+		536656531ADCBF92002C4391 /* PacketServerReady.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketServerReady.h; path = Networking/PacketServerReady.h; sourceTree = "<group>"; };
+		536656541ADCBF92002C4391 /* PacketServerReady.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketServerReady.m; path = Networking/PacketServerReady.m; sourceTree = "<group>"; };
+		536656551ADCBF92002C4391 /* PacketSignInResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketSignInResponse.h; path = Networking/PacketSignInResponse.h; sourceTree = "<group>"; };
+		536656561ADCBF92002C4391 /* PacketSignInResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketSignInResponse.m; path = Networking/PacketSignInResponse.m; sourceTree = "<group>"; };
 		53E321731ACAA6170027AFB3 /* BangBangBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E321771ACAA6170027AFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E321781ACAA6170027AFB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -464,14 +464,14 @@
 				5300F28E1ACBCCB200E09973 /* MatchmakingServer.m */,
 				5300F2901ACBCE3500E09973 /* MatchmakingClient.h */,
 				5300F2911ACBCE3500E09973 /* MatchmakingClient.m */,
-				535B7D0A1AD76E6D00868B63 /* Packet.h */,
-				535B7D0B1AD76E6D00868B63 /* Packet.m */,
-				535B7D101AD7B7EC00868B63 /* PacketSignInResponse.h */,
-				535B7D111AD7B7EC00868B63 /* PacketSignInResponse.m */,
-				531C06CF1ADB6A07000E852C /* PacketServerReady.h */,
-				531C06D01ADB6A07000E852C /* PacketServerReady.m */,
-				53477E041ADBBDE30066A568 /* PacketOtherClientQuit.h */,
-				53477E051ADBBDE30066A568 /* PacketOtherClientQuit.m */,
+				5366564F1ADCBF92002C4391 /* Packet.h */,
+				536656501ADCBF92002C4391 /* Packet.m */,
+				536656511ADCBF92002C4391 /* PacketOtherClientQuit.h */,
+				536656521ADCBF92002C4391 /* PacketOtherClientQuit.m */,
+				536656531ADCBF92002C4391 /* PacketServerReady.h */,
+				536656541ADCBF92002C4391 /* PacketServerReady.m */,
+				536656551ADCBF92002C4391 /* PacketSignInResponse.h */,
+				536656561ADCBF92002C4391 /* PacketSignInResponse.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1074,26 +1074,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5366565A1ADCBF92002C4391 /* PacketSignInResponse.m in Sources */,
 				536656421ADCB152002C4391 /* Deck.m in Sources */,
-				535B7D121AD7B7EC00868B63 /* PacketSignInResponse.m in Sources */,
 				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
 				8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */,
 				5300F28F1ACBCCB200E09973 /* MatchmakingServer.m in Sources */,
-				53477E061ADBBDE30066A568 /* PacketOtherClientQuit.m in Sources */,
+				536656581ADCBF92002C4391 /* PacketOtherClientQuit.m in Sources */,
 				535B7D091AD763CA00868B63 /* Player.m in Sources */,
 				8B1749711AD1282E00AB29CE /* Game.m in Sources */,
+				536656571ADCBF92002C4391 /* Packet.m in Sources */,
 				531B58811ACB9ED800CEB87E /* HostViewController.m in Sources */,
 				53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */,
-				535B7D0C1AD76E6D00868B63 /* Packet.m in Sources */,
 				535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
 				5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */,
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,
 				53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */,
+				536656591ADCBF92002C4391 /* PacketServerReady.m in Sources */,
 				5366563F1ADCAF8E002C4391 /* Card.m in Sources */,
 				53E321791ACAA6170027AFB3 /* main.m in Sources */,
 				5300F2961ACBD43000E09973 /* PeerCell.m in Sources */,
-				531C06D11ADB6A07000E852C /* PacketServerReady.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
