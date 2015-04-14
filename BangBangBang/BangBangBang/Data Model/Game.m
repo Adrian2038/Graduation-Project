@@ -12,6 +12,8 @@
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
+#import "Card.h"
+#import "Deck.h"
 
 typedef enum
 {
@@ -145,7 +147,7 @@ GameState;
                 
                 Packet *packet = [Packet packetWithType:PacketTypeClientReady];
                 [self sendPacketToServer:packet];
-                
+                NSLog(@"server ready");
                 [self beginGame];
             }
             break;
@@ -186,6 +188,7 @@ GameState;
         case PacketTypeClientReady:
             if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers]) {
                 [self beginGame];
+                NSLog(@"client ready");
             }
             break;
             
@@ -271,7 +274,21 @@ GameState;
 
 - (void)dealCards
 {
+    NSAssert(self.isServer, @"Must be server");
+    NSAssert(_state == GameStateDealing, @"Wrong state");
     
+    Deck *deck = [[Deck alloc] init];
+    [deck shuffle];
+    
+    while ([deck cardsRemaining] > 0) {
+        for (PlayerPosition p =  _startingPlayerPosition ; p > _startingPlayerPosition + 4; ++p) {
+            Player *player = [self playerAtPosition:(p % 4)];
+            if (player && [deck cardsRemaining] > 0) {
+                Card *card = [deck draw];
+                NSLog(@"player at position %d should get card %@", player.position, card);
+            }
+        }
+    }
 }
 
 - (void)clientDidDisconnect:(NSString *)peerID
