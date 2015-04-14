@@ -153,6 +153,7 @@
 		536656581ADCBF92002C4391 /* PacketOtherClientQuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656521ADCBF92002C4391 /* PacketOtherClientQuit.m */; };
 		536656591ADCBF92002C4391 /* PacketServerReady.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656541ADCBF92002C4391 /* PacketServerReady.m */; };
 		5366565A1ADCBF92002C4391 /* PacketSignInResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 536656561ADCBF92002C4391 /* PacketSignInResponse.m */; };
+		5394AD8B1ADCECAF009B6E7D /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5394AD8A1ADCECAF009B6E7D /* CardView.m */; };
 		53E321791ACAA6170027AFB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321781ACAA6170027AFB3 /* main.m */; };
 		53E3217C1ACAA6170027AFB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E3217B1ACAA6170027AFB3 /* AppDelegate.m */; };
 		53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E321831ACAA6170027AFB3 /* Images.xcassets */; };
@@ -378,6 +379,8 @@
 		536656541ADCBF92002C4391 /* PacketServerReady.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketServerReady.m; path = Networking/PacketServerReady.m; sourceTree = "<group>"; };
 		536656551ADCBF92002C4391 /* PacketSignInResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketSignInResponse.h; path = Networking/PacketSignInResponse.h; sourceTree = "<group>"; };
 		536656561ADCBF92002C4391 /* PacketSignInResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketSignInResponse.m; path = Networking/PacketSignInResponse.m; sourceTree = "<group>"; };
+		5394AD891ADCECAF009B6E7D /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Views/CardView.h; sourceTree = "<group>"; };
+		5394AD8A1ADCECAF009B6E7D /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Views/CardView.m; sourceTree = "<group>"; };
 		53E321731ACAA6170027AFB3 /* BangBangBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E321771ACAA6170027AFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E321781ACAA6170027AFB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -484,6 +487,8 @@
 			children = (
 				5300F2941ACBD43000E09973 /* PeerCell.h */,
 				5300F2951ACBD43000E09973 /* PeerCell.m */,
+				5394AD891ADCECAF009B6E7D /* CardView.h */,
+				5394AD8A1ADCECAF009B6E7D /* CardView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1079,6 +1084,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5394AD8B1ADCECAF009B6E7D /* CardView.m in Sources */,
 				5366565A1ADCBF92002C4391 /* PacketSignInResponse.m in Sources */,
 				536656421ADCB152002C4391 /* Deck.m in Sources */,
 				5300F2871ACBA7EB00E09973 /* JoinViewController.m in Sources */,
