@@ -33,6 +33,9 @@ GameState;
     NSString *_localPlayerName;
   
     NSMutableDictionary *_players;
+    
+    PlayerPosition _startingPlayerPosition;
+    PlayerPosition _activePlayerPosition;
 }
 
 #pragma mark - Game Logic
@@ -234,6 +237,11 @@ GameState;
     
     [self.delegate gameDidBegin:self];
     
+    if (self.isServer) {
+        [self pickRandomStartingPlayer];
+        [self dealCards];
+    }
+    
 }
 
 - (Player *)playerAtPosition:(PlayerPosition)position
@@ -250,6 +258,20 @@ GameState;
             player = nil;
     }];
     return player;
+}
+
+- (void)pickRandomStartingPlayer
+{
+    do {
+        _startingPlayerPosition = arc4random() % 4;
+    } while ([self playerAtPosition:_startingPlayerPosition] == nil);
+    
+    _activePlayerPosition = _startingPlayerPosition;
+}
+
+- (void)dealCards
+{
+    
 }
 
 - (void)clientDidDisconnect:(NSString *)peerID
