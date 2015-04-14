@@ -14,7 +14,7 @@
 #import "PacketOtherClientQuit.h"
 #import "Card.h"
 #import "Deck.h"
-
+#import "Player.h"
 
 
 typedef enum
@@ -285,12 +285,18 @@ GameState;
             if (player != nil && [deck cardsRemaining] > 0)
             {
                 Card *card = [deck draw];
-                NSLog(@"player at position %d should get card %@", player.position, card);
+                [player.closedCards addCardToTop:card];
             }
         }
     }
+    Player *startingPlayer = [self activePlayer];
+    [self.delegate gameShouldDealCards:self startingWithPlayer:startingPlayer];
 }
 
+- (Player *)activePlayer
+{
+    return [self playerAtPosition:_activePlayerPosition];
+}
 
 - (void)changeRelativePositionsOfPlayers
 {

@@ -18,6 +18,7 @@
 - (void)gameWaitingForClientsReady:(Game *)game;
 - (void)gameDidBegin:(Game *)game;
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer;
+- (void)gameShouldDealCards:(Game *)game startingWithPlayer:(Player *)startingPlayer;
 
 @end
 

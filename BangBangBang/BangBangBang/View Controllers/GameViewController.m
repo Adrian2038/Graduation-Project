@@ -423,6 +423,11 @@
     [self hideSnapIndicatorForPlayer:disconnectedPlayer];
 }
 
+- (void)gameShouldDealCards:(Game *)game startingWithPlayer:(Player *)startingPlayer
+{
+    self.centerLabel.text = NSLocalizedString(@"游戏处理中...", @"Status text: dealing");
+}
+
 #pragma mark - AlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
