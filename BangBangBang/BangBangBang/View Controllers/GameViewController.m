@@ -21,7 +21,6 @@
 
 {
     UIAlertView *_alertView;
-    AVAudioPlayer *_dealingCardsSound;
 }
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
