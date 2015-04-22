@@ -27,7 +27,7 @@
 
 - (id)initWithPlayerName:(NSString *)playerName
 {
-    if ((self = [super initWithType:PacketTypeSignInResponse]))
+    if ((self = [super initWithInsideType:PacketTypeSignInResponse]))
     {
         self.playerName = playerName;
     }

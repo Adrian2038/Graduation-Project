@@ -20,7 +20,7 @@
 
 - (id)initWithPeerID:(NSString *)peerID
 {
-    if ((self = [super initWithType:PacketTypeOtherClientQuit]))
+    if ((self = [super initWithInsideType:PacketTypeOtherClientQuit]))
     {
         self.peerID = peerID;
     }

@@ -37,7 +37,7 @@ PacketType;
 @property (nonatomic, assign) PacketType packetType;
 
 + (id)packetWithType:(PacketType)packetType;
-- (id)initWithType:(PacketType)packetType;
+- (id)initWithInsideType:(PacketType)packetType;
 + (id)packetWithData:(NSData *)data;
 
 - (NSData *)data;

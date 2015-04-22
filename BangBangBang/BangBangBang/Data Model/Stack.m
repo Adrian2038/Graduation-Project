@@ -48,4 +48,9 @@
     return [_cards copy];
 }
 
+- (Card *)cardAtIndex:(NSUInteger)index
+{
+    return [_cards objectAtIndex:index];
+}
+
 @end

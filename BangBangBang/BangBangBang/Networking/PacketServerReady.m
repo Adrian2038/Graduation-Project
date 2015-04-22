@@ -21,7 +21,7 @@
 
 - (id)initWithPlayers:(NSMutableDictionary *)players
 {
-    if ((self = [super initWithType:PacketTypeServerReady]))
+    if ((self = [super initWithInsideType:PacketTypeServerReady]))
     {
         self.players = players;
     }

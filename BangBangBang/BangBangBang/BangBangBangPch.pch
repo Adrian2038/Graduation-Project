@@ -21,8 +21,17 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import <AVFoundation/AVFoundation.h>
+
 // The name of the GameKit session.
 #define SESSION_ID @"Snap!"
+
+// Returns a random number between 0.0 and 1.0 (inclusive).
+#define RANDOM_FLOAT() ((float)arc4random()/0xFFFFFFFFu)
+
+// Returns a random number between 0 and n (inclusive).
+#define RANDOM_INT(n) (arc4random() % (n + 1))
+
 
 typedef enum
 {

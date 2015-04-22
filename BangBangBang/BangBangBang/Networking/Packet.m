@@ -20,7 +20,7 @@ const size_t PACKET_HEADER_SIZE = 10;
 
 + (id)packetWithType:(PacketType)packetType
 {
-    return [[[self class] alloc] initWithType:packetType];
+    return [[[self class] alloc] initWithInsideType:packetType];
 }
 
 + (id)packetWithData:(NSData *)data
@@ -71,7 +71,7 @@ const size_t PACKET_HEADER_SIZE = 10;
     return packet;
 }
 
-- (id)initWithType:(PacketType)packetType
+- (id)initWithInsideType:(PacketType)packetType
 {
     if ((self = [super init]))
     {
