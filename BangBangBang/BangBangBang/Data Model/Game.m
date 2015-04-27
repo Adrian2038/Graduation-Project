@@ -13,6 +13,7 @@
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
 #import "PacketDealCards.h"
+#import "PacketActivatePlayer.h"
 #import "Card.h"
 #import "Deck.h"
 #import "Player.h"
@@ -195,6 +196,13 @@ GameState;
             }
             break;
             
+        case PacketTypeActivatePlayer:
+            if (_state == GameStateDealing)
+            {
+                [self handleActivatePlayerPacket:(PacketActivatePlayer *)packet];
+            }
+            break;
+            
         default:
             NSLog(@"Client received unexpected packet: %@", packet);
             break;
@@ -357,6 +365,22 @@ GameState;
     return player;
 }
 
+- (void)beginRound
+{
+    [self activatePlayerAtPosition:_activePlayerPosition];
+}
+
+- (void)activatePlayerAtPosition:(PlayerPosition)playerPosition
+{
+    if (self.isServer) {
+        NSString *peerID = [self activePlayer].peerID;
+        Packet *packet = [PacketActivatePlayer packetWithPeerID:peerID];
+        [self sendPacketToAllClients:packet];
+    }
+    
+    [self.delegate game:self didActivatePlayer:[self activePlayer]];
+}
+
 #pragma mark - GKSessionDelegate
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
@@ -509,5 +533,17 @@ GameState;
     
     [self.delegate gameShouldDealCards:self startingWithPlayer:startingPlayer];
 }
+
+- (void)handleActivatePlayerPacket:(PacketActivatePlayer *)packet
+{
+    NSString *peerID = packet.peerID;
+    
+    Player *newPlayer = [self playerWithPeerID:peerID];
+    if(!newPlayer) return;
+    
+    _activePlayerPosition = newPlayer.position;
+    [self activatePlayerAtPosition:_activePlayerPosition];
+}
+
 
 @end

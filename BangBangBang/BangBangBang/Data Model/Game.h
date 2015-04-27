@@ -19,6 +19,7 @@
 - (void)gameDidBegin:(Game *)game;
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer;
 - (void)gameShouldDealCards:(Game *)game startingWithPlayer:(Player *)startingPlayer;
+- (void)game:(Game *)game didActivatePlayer:(Player *)player;
 
 @end
 
@@ -31,5 +32,7 @@
 - (void)startServerGameWithSession:(GKSession *)session playerName:(NSString *)name clients:(NSArray *)clients;
 - (void)quitGameWithReason:(QuitReason)reason;
 - (Player *)playerAtPosition:(PlayerPosition)position;
+- (void)beginRound;
+- (Player *)activePlayer;
 
 @end

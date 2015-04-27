@@ -206,6 +206,7 @@
 		8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17496A1AD1269400AB29CE /* GameViewController.m */; };
 		8B1749711AD1282E00AB29CE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1749701AD1282E00AB29CE /* Game.m */; };
 		8B5B85821AEDDD7C00DB2BAE /* PacketDealCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */; };
+		8BF960821AEE17B9000B7A21 /* PacketActivatePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF960811AEE17B9000B7A21 /* PacketActivatePlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,6 +446,8 @@
 		8B1749701AD1282E00AB29CE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = "Data Model/Game.m"; sourceTree = "<group>"; };
 		8B5B85801AEDDD7C00DB2BAE /* PacketDealCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketDealCards.h; path = Networking/PacketDealCards.h; sourceTree = "<group>"; };
 		8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketDealCards.m; path = Networking/PacketDealCards.m; sourceTree = "<group>"; };
+		8BF960801AEE17B9000B7A21 /* PacketActivatePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketActivatePlayer.h; path = Networking/PacketActivatePlayer.h; sourceTree = "<group>"; };
+		8BF960811AEE17B9000B7A21 /* PacketActivatePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketActivatePlayer.m; path = Networking/PacketActivatePlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +486,8 @@
 				536656561ADCBF92002C4391 /* PacketSignInResponse.m */,
 				8B5B85801AEDDD7C00DB2BAE /* PacketDealCards.h */,
 				8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */,
+				8BF960801AEE17B9000B7A21 /* PacketActivatePlayer.h */,
+				8BF960811AEE17B9000B7A21 /* PacketActivatePlayer.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1104,6 +1109,7 @@
 				535B7D0F1AD77CA100868B63 /* NSData+SnapAdditions.m in Sources */,
 				53E3219F1ACAA6D50027AFB3 /* MainViewController.m in Sources */,
 				5300F2921ACBCE3500E09973 /* MatchmakingClient.m in Sources */,
+				8BF960821AEE17B9000B7A21 /* PacketActivatePlayer.m in Sources */,
 				53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */,
 				5339F95A1ADCC439005E808D /* Stack.m in Sources */,
 				53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */,

@@ -395,6 +395,35 @@
     }
 }
 
+- (void)afterDealing
+{
+    [_dealingCardsSound stop];
+    self.snapButton.hidden = NO;
+    [self.game beginRound];
+}
+
+
+- (void)showIndicatorForActivePlayer
+{
+    [self hideActivePlayerIndicator];
+    
+    PlayerPosition position = [self.game activePlayer].position;
+    switch (position) {
+        case PlayerPositionBottom: self.playerActiveBottomImageView.hidden = NO; break;
+        case PlayerPositionLeft: self.playerActiveLeftImageView.hidden = NO; break;
+        case PlayerPositionTop: self.playerActiveTopImageView.hidden = NO; break;
+        case PlayerPositionRight: self.playerActiveRightImageView.hidden = NO; break;
+        default: break;
+    }
+    
+    if (position == PlayerPositionBottom) {
+        self.centerLabel.text = NSLocalizedString(@"Your turn : tap stack", @"Status text : your turn");
+    } else {
+        self.centerLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@ turn", @"Status text : other player's turn"), [self.game activePlayer].name];
+    }
+}
+
+
 #pragma mark - Sounds
 
 - (void)loadSounds
@@ -408,12 +437,6 @@
     _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     _dealingCardsSound.numberOfLoops = 1;
     [_dealingCardsSound prepareToPlay];
-}
-
-- (void)afterDealing
-{
-    [_dealingCardsSound stop];
-    self.snapButton.hidden = NO;
 }
 
 #pragma mark - GameDelegate
@@ -475,6 +498,12 @@
     }
     
     [self performSelector:@selector(afterDealing) withObject:nil afterDelay:delay];
+}
+
+- (void)game:(Game *)game didActivatePlayer:(Player *)player
+{
+    [self showIndicatorForActivePlayer];
+    self.snapButton.hidden = YES;
 }
 
 #pragma mark - AlertViewDelegate

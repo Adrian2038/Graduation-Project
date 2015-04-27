@@ -12,6 +12,7 @@
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
 #import "PacketDealCards.h"
+#import "PacketActivatePlayer.h"
 #import "Card.h"
 
 const size_t PACKET_HEADER_SIZE = 10;
@@ -65,8 +66,13 @@ const size_t PACKET_HEADER_SIZE = 10;
         case PacketTypeOtherClientQuit:
             packet = [PacketOtherClientQuit packetWithData:data];
             break;
+            
         case PacketTypeDealCards:
             packet = [PacketDealCards packetWithData:data];
+            break;
+        
+        case PacketTypeActivatePlayer:
+            packet = [PacketActivatePlayer packetWithData:data];
             break;
             
         default:
