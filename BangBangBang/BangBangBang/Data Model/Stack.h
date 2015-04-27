@@ -15,5 +15,6 @@
 - (NSArray *)array;
 - (Card *)cardAtIndex:(NSUInteger)index;
 - (void)addCardsFromArray:(NSArray *)array;
+- (Card *)topmostCard;
 
 @end

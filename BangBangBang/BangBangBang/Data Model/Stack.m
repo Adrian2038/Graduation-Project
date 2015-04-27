@@ -57,4 +57,9 @@
 {
     _cards = [array mutableCopy];
 }
+
+- (Card *)topmostCard
+{
+    return [_cards lastObject];
+}
 @end

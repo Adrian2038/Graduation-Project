@@ -22,6 +22,7 @@
 {
     UIAlertView *_alertView;
     AVAudioPlayer *_dealingCardsSound;
+    UIImageView *_tappedView;
 }
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
@@ -118,18 +119,22 @@
 
 - (IBAction)turnOverPressed:(id)sender
 {
+    [self showTappedView];
 }
 
 - (IBAction)turnOverEnter:(id)sender
 {
+    [self showTappedView];
 }
 
 - (IBAction)turnOverExit:(id)sender
 {
+    [self hideTappedView];
 }
 
 - (IBAction)turnOverAction:(id)sender
 {
+    [self hideTappedView];
 }
 
 - (IBAction)snapAction:(id)sender
@@ -423,6 +428,41 @@
     }
 }
 
+- (void)showTappedView
+{
+    Player *player = [self.game playerAtPosition:PlayerPositionBottom];
+    Card *card = [player.closedCards topmostCard];
+    if (card) {
+        CardView *cardView = [self cardViewForCard:card];
+        if (!_tappedView) {
+            _tappedView = [[UIImageView alloc] initWithFrame:cardView.bounds];
+            _tappedView.backgroundColor = [UIColor clearColor];
+            _tappedView.image = [UIImage imageNamed:@"Darken"];
+            _tappedView.alpha = 0.6f;
+            [self.view addSubview:_tappedView];
+        } else {
+            _tappedView.hidden = NO;
+        }
+        
+        _tappedView.center = cardView.center;
+        _tappedView.transform = cardView.transform;
+    }
+}
+
+- (void)hideTappedView
+{
+    _tappedView.hidden = YES;
+}
+
+- (CardView *)cardViewForCard:(Card *)card
+{
+    for (CardView *cardView in self.cardContainerView.subviews) {
+        if (cardView.card == card) {
+            return cardView;
+        }
+    }
+    return nil;
+}
 
 #pragma mark - Sounds
 
