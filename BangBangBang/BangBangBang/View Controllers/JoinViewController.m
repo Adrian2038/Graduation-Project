@@ -164,7 +164,20 @@
     [self.delegate joinViewController:self didDisconnectWithReason:_quitReason];
 }
 
-- (void)matchmakingClient:(MatchmakingClient *)client didConnecToServer:(NSString *)peerID
+// Something strange here Ps: didConnecToServer  miss the alph t WTF
+//- (void)matchmakingClient:(MatchmakingClient *)client didConnecToServer:(NSString *)peerID
+//{
+//    NSString *name = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//    if (name.length == 0) {
+//        name = _matchmakingClient.session.displayName;
+//    }
+//    [self.delegate joinViewController:self
+//                 startGameWithSession:_matchmakingClient.session
+//                           playerName:name
+//                               server:peerID];
+//}
+
+- (void)matchmakingClient:(MatchmakingClient *)client didConnectToServer:(NSString *)peerID
 {
     NSString *name = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if (name.length == 0) {
@@ -174,6 +187,7 @@
                  startGameWithSession:_matchmakingClient.session
                            playerName:name
                                server:peerID];
+
 }
 
 
