@@ -21,6 +21,7 @@
 
 {
     UIAlertView *_alertView;
+    AVAudioPlayer *_dealingCardsSound;
 }
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
@@ -73,7 +74,7 @@
     [self hidePlayerLabels];
     [self hideActivePlayerIndicator];
     [self hideSnapIndicators];
-    
+    [self loadSounds];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -394,6 +395,26 @@
     }
 }
 
+#pragma mark - Sounds
+
+- (void)loadSounds
+{
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    audioSession.delegate = nil;
+    [audioSession setCategory:AVAudioSessionCategoryAmbient error:NULL];
+    [audioSession setActive:YES error:NULL];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Dealing" withExtension:@"caf"];
+    _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    _dealingCardsSound.numberOfLoops = 1;
+    [_dealingCardsSound prepareToPlay];
+}
+
+- (void)afterDealing
+{
+    [_dealingCardsSound stop];
+    self.snapButton.hidden = NO;
+}
 
 #pragma mark - GameDelegate
 
@@ -435,6 +456,11 @@
     
     NSTimeInterval delay = 1.0f;
     
+    _dealingCardsSound.currentTime = 0.0f;
+    [_dealingCardsSound prepareToPlay];
+    [_dealingCardsSound performSelector:@selector(play) withObject:nil afterDelay:delay];
+    
+    
     for (int t = 0; t < 26; ++t) {
         for (PlayerPosition p = startingPlayer.position; p < startingPlayer.position + 4; ++p) {
             Player *player = [self.game playerAtPosition:p % 4];
@@ -447,6 +473,8 @@
             }
         }
     }
+    
+    [self performSelector:@selector(afterDealing) withObject:nil afterDelay:delay];
 }
 
 #pragma mark - AlertViewDelegate
@@ -454,7 +482,9 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != alertView.cancelButtonIndex) {
-        [self.delegate gameViewController:self didQuitWithReason:QuitReasonUserQuit];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        
+        [self.game quitGameWithReason:QuitReasonUserQuit];
     }
 }
 
@@ -463,6 +493,9 @@
 - (void)dealloc
 {
     NSLog(@"dealloc %@", self);
+    
+    [_dealingCardsSound stop];
+    [[AVAudioSession sharedInstance] setActive:NO error:NULL];
 }
 
 

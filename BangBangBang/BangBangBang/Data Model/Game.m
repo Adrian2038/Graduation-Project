@@ -12,6 +12,7 @@
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
+#import "PacketDealCards.h"
 #import "Card.h"
 #import "Deck.h"
 #import "Player.h"
@@ -187,6 +188,13 @@ GameState;
             [self quitGameWithReason:QuitReasonServerQuit];
             break;
             
+        case PacketTypeDealCards:
+            if (_state == GameStateDealing)
+            {
+                [self handleDealCardsPacket:(PacketDealCards *)packet];
+            }
+            break;
+            
         default:
             NSLog(@"Client received unexpected packet: %@", packet);
             break;
@@ -228,6 +236,12 @@ GameState;
             if (_state == GameStateWaitingForReady && [self receivedResponsesFromAllPlayers])
             {
                 [self beginGame];
+            }
+            break;
+        case PacketTypeClientDealtCards:
+            if (_state == GameStateDealing && [self receivedResponsesFromAllPlayers])
+            {
+                _state = GameStatePlaying;
             }
             break;
             
@@ -290,6 +304,17 @@ GameState;
         }
     }
     Player *startingPlayer = [self activePlayer];
+    
+    NSMutableDictionary *playerCards = [NSMutableDictionary dictionaryWithCapacity:4];
+    [_players enumerateKeysAndObjectsUsingBlock:^(id key, Player *obj, BOOL *stop)
+     {
+         NSArray *array = [obj.closedCards array];
+         [playerCards setObject:array forKey:obj.peerID];
+     }];
+    
+    PacketDealCards *packet = [PacketDealCards packetWithCards:playerCards startingWithPlayerPeerID:startingPlayer.peerID];
+    [self sendPacketToAllClients:packet];
+    
     [self.delegate gameShouldDealCards:self startingWithPlayer:startingPlayer];
 }
 
@@ -464,6 +489,25 @@ GameState;
             }
         }
     }
+}
+
+- (void)handleDealCardsPacket:(PacketDealCards *)packet
+{
+    [packet.cards enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+     {
+         Player *player = [self playerWithPeerID:key];
+         [player.closedCards addCardsFromArray:obj];
+     }];
+    
+    Player *startingPlayer = [self playerWithPeerID:packet.startingPeerID];
+    _activePlayerPosition = startingPlayer.position;
+    
+    Packet *responsePacket = [Packet packetWithType:PacketTypeClientDealtCards];
+    [self sendPacketToServer:responsePacket];
+    
+    _state = GameStatePlaying;
+    
+    [self.delegate gameShouldDealCards:self startingWithPlayer:startingPlayer];
 }
 
 @end

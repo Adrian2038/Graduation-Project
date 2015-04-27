@@ -205,6 +205,7 @@
 		53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */; };
 		8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17496A1AD1269400AB29CE /* GameViewController.m */; };
 		8B1749711AD1282E00AB29CE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1749701AD1282E00AB29CE /* Game.m */; };
+		8B5B85821AEDDD7C00DB2BAE /* PacketDealCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -442,6 +443,8 @@
 		8B17496A1AD1269400AB29CE /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = "View Controllers/GameViewController.m"; sourceTree = "<group>"; };
 		8B17496F1AD1282E00AB29CE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = "Data Model/Game.h"; sourceTree = "<group>"; };
 		8B1749701AD1282E00AB29CE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = "Data Model/Game.m"; sourceTree = "<group>"; };
+		8B5B85801AEDDD7C00DB2BAE /* PacketDealCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketDealCards.h; path = Networking/PacketDealCards.h; sourceTree = "<group>"; };
+		8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketDealCards.m; path = Networking/PacketDealCards.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +481,8 @@
 				536656541ADCBF92002C4391 /* PacketServerReady.m */,
 				536656551ADCBF92002C4391 /* PacketSignInResponse.h */,
 				536656561ADCBF92002C4391 /* PacketSignInResponse.m */,
+				8B5B85801AEDDD7C00DB2BAE /* PacketDealCards.h */,
+				8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1105,6 +1110,7 @@
 				536656591ADCBF92002C4391 /* PacketServerReady.m in Sources */,
 				5366563F1ADCAF8E002C4391 /* Card.m in Sources */,
 				53E321791ACAA6170027AFB3 /* main.m in Sources */,
+				8B5B85821AEDDD7C00DB2BAE /* PacketDealCards.m in Sources */,
 				5300F2961ACBD43000E09973 /* PeerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
