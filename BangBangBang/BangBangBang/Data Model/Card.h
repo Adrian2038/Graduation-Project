@@ -27,6 +27,8 @@ Suit;
 @property (nonatomic, assign, readonly) Suit suit;
 @property (nonatomic, assign, readonly) NSInteger value;
 
+@property (nonatomic, assign) BOOL isTurnedOver;
+
 - (id)initWithSuit:(Suit)suit value:(NSInteger)value;
 
 

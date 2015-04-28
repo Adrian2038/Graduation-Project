@@ -20,6 +20,8 @@
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer;
 - (void)gameShouldDealCards:(Game *)game startingWithPlayer:(Player *)startingPlayer;
 - (void)game:(Game *)game didActivatePlayer:(Player *)player;
+- (void)game:(Game *)game player:(Player *)player turnedOverCard:(Card *)card;
+
 
 @end
 
@@ -34,5 +36,6 @@
 - (Player *)playerAtPosition:(PlayerPosition)position;
 - (void)beginRound;
 - (Player *)activePlayer;
+- (void)turnCardForPlayerAtBottom;
 
 @end

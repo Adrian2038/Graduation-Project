@@ -28,6 +28,19 @@
     return [NSString stringWithFormat:@"%@ peerID = %@, name = %@, position = %d", [super description], self.peerID, self.name, self.position];
 }
 
+- (Card *)turnOverTopCard
+{
+    NSAssert([self.closedCards cardCount] > 0, @"No more cards");
+    
+    Card *card = [self.closedCards topmostCard];
+    card.isTurnedOver = YES;
+    [self.openCards addCardToTop:card];
+    [self.closedCards removeTopmostCard];
+    
+    return card;
+}
+
+
 #pragma mark - Dealloc
 
 - (void)dealloc

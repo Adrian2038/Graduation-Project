@@ -30,4 +30,6 @@ PlayerPosition;
 @property (nonatomic, strong, readonly) Stack *closedCards;
 @property (nonatomic, strong, readonly) Stack *openCards;
 
+- (Card *)turnOverTopCard;
+
 @end

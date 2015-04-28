@@ -22,6 +22,7 @@
 {
     UIAlertView *_alertView;
     AVAudioPlayer *_dealingCardsSound;
+    AVAudioPlayer *_turnCardSound;
     UIImageView *_tappedView;
 }
 
@@ -135,6 +136,7 @@
 - (IBAction)turnOverAction:(id)sender
 {
     [self hideTappedView];
+    [self.game turnCardForPlayerAtBottom];
 }
 
 - (IBAction)snapAction:(id)sender
@@ -475,8 +477,12 @@
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Dealing" withExtension:@"caf"];
     _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    _dealingCardsSound.numberOfLoops = 1;
+    _dealingCardsSound.numberOfLoops = -1;
     [_dealingCardsSound prepareToPlay];
+    
+    url = [[NSBundle mainBundle] URLForResource:@"TurnCard" withExtension:@"caf"];
+    _turnCardSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [_turnCardSound prepareToPlay];
 }
 
 #pragma mark - GameDelegate
@@ -545,6 +551,15 @@
     [self showIndicatorForActivePlayer];
     self.snapButton.hidden = YES;
 }
+
+- (void)game:(Game *)game player:(Player *)player turnedOverCard:(Card *)card
+{
+    [_turnCardSound play];
+    
+    CardView *cardView = [self cardViewForCard:card];
+    [cardView animateTurningOverForPlayer:player];
+}
+
 
 #pragma mark - AlertViewDelegate
 

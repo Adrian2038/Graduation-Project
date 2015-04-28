@@ -545,5 +545,23 @@ GameState;
     [self activatePlayerAtPosition:_activePlayerPosition];
 }
 
+- (void)turnCardForPlayerAtBottom
+{
+    if (_state == GameStatePlaying
+        && _activePlayerPosition == PlayerPositionBottom
+        && [[self activePlayer].closedCards cardCount] > 0)
+    {
+        [self turnCardForPlayer:[self activePlayer]];
+    }
+}
+
+- (void)turnCardForPlayer:(Player *)player
+{
+    NSAssert([player.closedCards cardCount] > 0, @"Player has no more cards");
+    
+    Card *card = [player turnOverTopCard];
+    [self.delegate game:self player:player turnedOverCard:card];
+}
+
 
 @end
