@@ -381,6 +381,25 @@ GameState;
     [self.delegate game:self didActivatePlayer:[self activePlayer]];
 }
 
+- (void)activateNextPlayer
+{
+    NSAssert(self.isServer, @"Must be server");
+    
+    while (true)
+    {
+        _activePlayerPosition++;
+        if (_activePlayerPosition > PlayerPositionRight)
+            _activePlayerPosition = PlayerPositionBottom;
+        
+        Player *nextPlayer = [self activePlayer];
+        if (nextPlayer != nil)
+        {
+            [self activatePlayerAtPosition:_activePlayerPosition];
+            return;
+        }
+    }
+}
+
 #pragma mark - GKSessionDelegate
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
@@ -551,7 +570,7 @@ GameState;
         && _activePlayerPosition == PlayerPositionBottom
         && [[self activePlayer].closedCards cardCount] > 0)
     {
-        [self turnCardForPlayer:[self activePlayer]];
+        [self turnCardForActivePlayer];
     }
 }
 
@@ -562,6 +581,17 @@ GameState;
     Card *card = [player turnOverTopCard];
     [self.delegate game:self player:player turnedOverCard:card];
 }
+
+
+- (void)turnCardForActivePlayer
+{
+    [self turnCardForPlayer:[self activePlayer]];
+    
+    if (self.isServer) {
+        [self performSelector:@selector(activateNextPlayer) withObject:nil afterDelay:0.5f];
+    }
+}
+
 
 
 @end
