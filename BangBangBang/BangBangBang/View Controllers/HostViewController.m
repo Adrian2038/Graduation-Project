@@ -18,7 +18,6 @@
 @interface HostViewController ()
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingServerDelegate>
 
-
 {
     MatchmakingServer *_matchmakingServer;
     QuitReason _quitReason;

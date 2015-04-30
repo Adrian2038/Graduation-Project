@@ -42,6 +42,8 @@ GameState;
     
     PlayerPosition _startingPlayerPosition;
     PlayerPosition _activePlayerPosition;
+    
+    BOOL _firstTime;
 }
 
 @synthesize delegate = _delegate;
@@ -257,6 +259,13 @@ GameState;
             [self clientDidDisconnect:player.peerID];
             break;
             
+        case PacketTypeClientTurnedCard:
+            if (_state == GameStatePlaying && player == [self activePlayer])
+            {
+                [self turnCardForActivePlayer];
+            }
+            break;
+            
         default:
             NSLog(@"Server received unexpected packet: %@", packet);
             break;
@@ -270,6 +279,8 @@ GameState;
 
 - (void)beginGame
 {
+    _firstTime = YES;
+    
     _state = GameStateDealing;
     [self.delegate gameDidBegin:self];
     
@@ -555,12 +566,25 @@ GameState;
 
 - (void)handleActivatePlayerPacket:(PacketActivatePlayer *)packet
 {
+    if (_firstTime) {
+        _firstTime = NO;
+        return;
+    }
+    
     NSString *peerID = packet.peerID;
     
     Player *newPlayer = [self playerWithPeerID:peerID];
     if(!newPlayer) return;
+        
+    [self performSelector:@selector(activatePlayerWithPeerID:) withObject:peerID afterDelay:0.5f];
+}
+
+- (void)activatePlayerWithPeerID:(NSString *)peerID
+{
+    NSAssert(!self.isServer, @"Must be client");
     
-    _activePlayerPosition = newPlayer.position;
+    Player *player = [self playerWithPeerID:peerID];
+    _activePlayerPosition = player.position;
     [self activatePlayerAtPosition:_activePlayerPosition];
 }
 
@@ -571,6 +595,12 @@ GameState;
         && [[self activePlayer].closedCards cardCount] > 0)
     {
         [self turnCardForActivePlayer];
+        
+        if (!self.isServer)
+        {
+            Packet *packet = [Packet packetWithType:PacketTypeClientTurnedCard];
+            [self sendPacketToServer:packet];
+        }
     }
 }
 
