@@ -203,9 +203,95 @@
 		53E321F21ACAA7330027AFB3 /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53E321F11ACAA7330027AFB3 /* Action_Man.ttf */; };
 		53E321F61ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321F51ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m */; };
 		53E321F91ACAACF30027AFB3 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */; };
+		8B07AB4B1AF370C800D49C62 /* Background_Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAF81AF370C800D49C62 /* Background_Back.png */; };
+		8B07AB4C1AF370C800D49C62 /* Background_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAF91AF370C800D49C62 /* Background_Front.png */; };
+		8B07AB4D1AF370C800D49C62 /* Green Open Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFA1AF370C800D49C62 /* Green Open Diamond 1.png */; };
+		8B07AB4E1AF370C800D49C62 /* Green Open Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFB1AF370C800D49C62 /* Green Open Diamond 2.png */; };
+		8B07AB4F1AF370C800D49C62 /* Green Open Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFC1AF370C800D49C62 /* Green Open Diamond 3.png */; };
+		8B07AB501AF370C800D49C62 /* Green Open Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFD1AF370C800D49C62 /* Green Open Oval 1.png */; };
+		8B07AB511AF370C800D49C62 /* Green Open Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFE1AF370C800D49C62 /* Green Open Oval 2.png */; };
+		8B07AB521AF370C800D49C62 /* Green Open Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AAFF1AF370C800D49C62 /* Green Open Oval 3.png */; };
+		8B07AB531AF370C800D49C62 /* Green Open Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB001AF370C800D49C62 /* Green Open Squiggle 1.png */; };
+		8B07AB541AF370C800D49C62 /* Green Open Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB011AF370C800D49C62 /* Green Open Squiggle 2.png */; };
+		8B07AB551AF370C800D49C62 /* Green Open Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB021AF370C800D49C62 /* Green Open Squiggle 3.png */; };
+		8B07AB561AF370C800D49C62 /* Green Solid Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB031AF370C800D49C62 /* Green Solid Diamond 1.png */; };
+		8B07AB571AF370C800D49C62 /* Green Solid Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB041AF370C800D49C62 /* Green Solid Diamond 2.png */; };
+		8B07AB581AF370C800D49C62 /* Green Solid Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB051AF370C800D49C62 /* Green Solid Diamond 3.png */; };
+		8B07AB591AF370C800D49C62 /* Green Solid Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB061AF370C800D49C62 /* Green Solid Oval 1.png */; };
+		8B07AB5A1AF370C800D49C62 /* Green Solid Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB071AF370C800D49C62 /* Green Solid Oval 2.png */; };
+		8B07AB5B1AF370C800D49C62 /* Green Solid Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB081AF370C800D49C62 /* Green Solid Oval 3.png */; };
+		8B07AB5C1AF370C800D49C62 /* Green Solid Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB091AF370C800D49C62 /* Green Solid Squiggle 1.png */; };
+		8B07AB5D1AF370C800D49C62 /* Green Solid Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0A1AF370C800D49C62 /* Green Solid Squiggle 2.png */; };
+		8B07AB5E1AF370C800D49C62 /* Green Solid Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0B1AF370C800D49C62 /* Green Solid Squiggle 3.png */; };
+		8B07AB5F1AF370C800D49C62 /* Green Striped Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0C1AF370C800D49C62 /* Green Striped Diamond 1.png */; };
+		8B07AB601AF370C800D49C62 /* Green Striped Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0D1AF370C800D49C62 /* Green Striped Diamond 2.png */; };
+		8B07AB611AF370C800D49C62 /* Green Striped Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0E1AF370C800D49C62 /* Green Striped Diamond 3.png */; };
+		8B07AB621AF370C800D49C62 /* Green Striped Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB0F1AF370C800D49C62 /* Green Striped Oval 1.png */; };
+		8B07AB631AF370C800D49C62 /* Green Striped Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB101AF370C800D49C62 /* Green Striped Oval 2.png */; };
+		8B07AB641AF370C800D49C62 /* Green Striped Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB111AF370C800D49C62 /* Green Striped Oval 3.png */; };
+		8B07AB651AF370C800D49C62 /* Green Striped Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB121AF370C800D49C62 /* Green Striped Squiggle 1.png */; };
+		8B07AB661AF370C800D49C62 /* Green Striped Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB131AF370C800D49C62 /* Green Striped Squiggle 2.png */; };
+		8B07AB671AF370C800D49C62 /* Green Striped Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB141AF370C800D49C62 /* Green Striped Squiggle 3.png */; };
+		8B07AB681AF370C800D49C62 /* Purple Open Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB151AF370C800D49C62 /* Purple Open Diamond 1.png */; };
+		8B07AB691AF370C800D49C62 /* Purple Open Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB161AF370C800D49C62 /* Purple Open Diamond 2.png */; };
+		8B07AB6A1AF370C800D49C62 /* Purple Open Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB171AF370C800D49C62 /* Purple Open Diamond 3.png */; };
+		8B07AB6B1AF370C800D49C62 /* Purple Open Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB181AF370C800D49C62 /* Purple Open Oval 1.png */; };
+		8B07AB6C1AF370C800D49C62 /* Purple Open Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB191AF370C800D49C62 /* Purple Open Oval 2.png */; };
+		8B07AB6D1AF370C800D49C62 /* Purple Open Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1A1AF370C800D49C62 /* Purple Open Oval 3.png */; };
+		8B07AB6E1AF370C800D49C62 /* Purple Open Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1B1AF370C800D49C62 /* Purple Open Squiggle 1.png */; };
+		8B07AB6F1AF370C800D49C62 /* Purple Open Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1C1AF370C800D49C62 /* Purple Open Squiggle 2.png */; };
+		8B07AB701AF370C800D49C62 /* Purple Open Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1D1AF370C800D49C62 /* Purple Open Squiggle 3.png */; };
+		8B07AB711AF370C800D49C62 /* Purple Solid Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1E1AF370C800D49C62 /* Purple Solid Diamond 1.png */; };
+		8B07AB721AF370C800D49C62 /* Purple Solid Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB1F1AF370C800D49C62 /* Purple Solid Diamond 2.png */; };
+		8B07AB731AF370C800D49C62 /* Purple Solid Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB201AF370C800D49C62 /* Purple Solid Diamond 3.png */; };
+		8B07AB741AF370C800D49C62 /* Purple Solid Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB211AF370C800D49C62 /* Purple Solid Oval 1.png */; };
+		8B07AB751AF370C800D49C62 /* Purple Solid Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB221AF370C800D49C62 /* Purple Solid Oval 2.png */; };
+		8B07AB761AF370C800D49C62 /* Purple Solid Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB231AF370C800D49C62 /* Purple Solid Oval 3.png */; };
+		8B07AB771AF370C800D49C62 /* Purple Solid Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB241AF370C800D49C62 /* Purple Solid Squiggle 1.png */; };
+		8B07AB781AF370C800D49C62 /* Purple Solid Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB251AF370C800D49C62 /* Purple Solid Squiggle 2.png */; };
+		8B07AB791AF370C800D49C62 /* Purple Solid Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB261AF370C800D49C62 /* Purple Solid Squiggle 3.png */; };
+		8B07AB7A1AF370C800D49C62 /* Purple Striped Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB271AF370C800D49C62 /* Purple Striped Diamond 1.png */; };
+		8B07AB7B1AF370C800D49C62 /* Purple Striped Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB281AF370C800D49C62 /* Purple Striped Diamond 2.png */; };
+		8B07AB7C1AF370C800D49C62 /* Purple Striped Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB291AF370C800D49C62 /* Purple Striped Diamond 3.png */; };
+		8B07AB7D1AF370C800D49C62 /* Purple Striped Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2A1AF370C800D49C62 /* Purple Striped Oval 1.png */; };
+		8B07AB7E1AF370C800D49C62 /* Purple Striped Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2B1AF370C800D49C62 /* Purple Striped Oval 2.png */; };
+		8B07AB7F1AF370C800D49C62 /* Purple Striped Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2C1AF370C800D49C62 /* Purple Striped Oval 3.png */; };
+		8B07AB801AF370C800D49C62 /* Purple Striped Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2D1AF370C800D49C62 /* Purple Striped Squiggle 1.png */; };
+		8B07AB811AF370C800D49C62 /* Purple Striped Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2E1AF370C800D49C62 /* Purple Striped Squiggle 2.png */; };
+		8B07AB821AF370C800D49C62 /* Purple Striped Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB2F1AF370C800D49C62 /* Purple Striped Squiggle 3.png */; };
+		8B07AB831AF370C800D49C62 /* Red Open Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB301AF370C800D49C62 /* Red Open Diamond 1.png */; };
+		8B07AB841AF370C800D49C62 /* Red Open Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB311AF370C800D49C62 /* Red Open Diamond 2.png */; };
+		8B07AB851AF370C800D49C62 /* Red Open Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB321AF370C800D49C62 /* Red Open Diamond 3.png */; };
+		8B07AB861AF370C800D49C62 /* Red Open Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB331AF370C800D49C62 /* Red Open Oval 1.png */; };
+		8B07AB871AF370C800D49C62 /* Red Open Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB341AF370C800D49C62 /* Red Open Oval 2.png */; };
+		8B07AB881AF370C800D49C62 /* Red Open Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB351AF370C800D49C62 /* Red Open Oval 3.png */; };
+		8B07AB891AF370C800D49C62 /* Red Open Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB361AF370C800D49C62 /* Red Open Squiggle 1.png */; };
+		8B07AB8A1AF370C800D49C62 /* Red Open Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB371AF370C800D49C62 /* Red Open Squiggle 2.png */; };
+		8B07AB8B1AF370C800D49C62 /* Red Open Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB381AF370C800D49C62 /* Red Open Squiggle 3.png */; };
+		8B07AB8C1AF370C800D49C62 /* Red Solid Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB391AF370C800D49C62 /* Red Solid Diamond 1.png */; };
+		8B07AB8D1AF370C800D49C62 /* Red Solid Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3A1AF370C800D49C62 /* Red Solid Diamond 2.png */; };
+		8B07AB8E1AF370C800D49C62 /* Red Solid Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3B1AF370C800D49C62 /* Red Solid Diamond 3.png */; };
+		8B07AB8F1AF370C800D49C62 /* Red Solid Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3C1AF370C800D49C62 /* Red Solid Oval 1.png */; };
+		8B07AB901AF370C800D49C62 /* Red Solid Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3D1AF370C800D49C62 /* Red Solid Oval 2.png */; };
+		8B07AB911AF370C800D49C62 /* Red Solid Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3E1AF370C800D49C62 /* Red Solid Oval 3.png */; };
+		8B07AB921AF370C800D49C62 /* Red Solid Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB3F1AF370C800D49C62 /* Red Solid Squiggle 1.png */; };
+		8B07AB931AF370C800D49C62 /* Red Solid Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB401AF370C800D49C62 /* Red Solid Squiggle 2.png */; };
+		8B07AB941AF370C800D49C62 /* Red Solid Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB411AF370C800D49C62 /* Red Solid Squiggle 3.png */; };
+		8B07AB951AF370C800D49C62 /* Red Striped Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB421AF370C800D49C62 /* Red Striped Diamond 1.png */; };
+		8B07AB961AF370C800D49C62 /* Red Striped Diamond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB431AF370C800D49C62 /* Red Striped Diamond 2.png */; };
+		8B07AB971AF370C800D49C62 /* Red Striped Diamond 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB441AF370C800D49C62 /* Red Striped Diamond 3.png */; };
+		8B07AB981AF370C800D49C62 /* Red Striped Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB451AF370C800D49C62 /* Red Striped Oval 1.png */; };
+		8B07AB991AF370C800D49C62 /* Red Striped Oval 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB461AF370C800D49C62 /* Red Striped Oval 2.png */; };
+		8B07AB9A1AF370C800D49C62 /* Red Striped Oval 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB471AF370C800D49C62 /* Red Striped Oval 3.png */; };
+		8B07AB9B1AF370C800D49C62 /* Red Striped Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB481AF370C800D49C62 /* Red Striped Squiggle 1.png */; };
+		8B07AB9C1AF370C800D49C62 /* Red Striped Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB491AF370C800D49C62 /* Red Striped Squiggle 2.png */; };
+		8B07AB9D1AF370C800D49C62 /* Red Striped Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B07AB4A1AF370C800D49C62 /* Red Striped Squiggle 3.png */; };
 		8B17496C1AD1269400AB29CE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17496A1AD1269400AB29CE /* GameViewController.m */; };
 		8B1749711AD1282E00AB29CE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1749701AD1282E00AB29CE /* Game.m */; };
 		8B5B85821AEDDD7C00DB2BAE /* PacketDealCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */; };
+		8B75B29D1AF1D5E8001C07F9 /* Green Striped Oval 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B75B29A1AF1D5E8001C07F9 /* Green Striped Oval 1.png */; };
+		8B75B29E1AF1D5E8001C07F9 /* Purple Open Diaimond 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B75B29B1AF1D5E8001C07F9 /* Purple Open Diaimond 2.png */; };
+		8B75B29F1AF1D5E8001C07F9 /* Red Solid Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B75B29C1AF1D5E8001C07F9 /* Red Solid Squiggle 3.png */; };
 		8BF960821AEE17B9000B7A21 /* PacketActivatePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF960811AEE17B9000B7A21 /* PacketActivatePlayer.m */; };
 /* End PBXBuildFile section */
 
@@ -440,12 +526,98 @@
 		53E321F51ACAAC5E0027AFB3 /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SnapAdditions.m"; path = "Categories/UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
 		53E321F71ACAACF30027AFB3 /* UIButton+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+SnapAdditions.h"; path = "Categories/UIButton+SnapAdditions.h"; sourceTree = "<group>"; };
 		53E321F81ACAACF30027AFB3 /* UIButton+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SnapAdditions.m"; path = "Categories/UIButton+SnapAdditions.m"; sourceTree = "<group>"; };
+		8B07AAF81AF370C800D49C62 /* Background_Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_Back.png; sourceTree = "<group>"; };
+		8B07AAF91AF370C800D49C62 /* Background_Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_Front.png; sourceTree = "<group>"; };
+		8B07AAFA1AF370C800D49C62 /* Green Open Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AAFB1AF370C800D49C62 /* Green Open Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AAFC1AF370C800D49C62 /* Green Open Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AAFD1AF370C800D49C62 /* Green Open Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Oval 1.png"; sourceTree = "<group>"; };
+		8B07AAFE1AF370C800D49C62 /* Green Open Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Oval 2.png"; sourceTree = "<group>"; };
+		8B07AAFF1AF370C800D49C62 /* Green Open Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB001AF370C800D49C62 /* Green Open Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB011AF370C800D49C62 /* Green Open Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB021AF370C800D49C62 /* Green Open Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB031AF370C800D49C62 /* Green Solid Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB041AF370C800D49C62 /* Green Solid Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB051AF370C800D49C62 /* Green Solid Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB061AF370C800D49C62 /* Green Solid Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB071AF370C800D49C62 /* Green Solid Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB081AF370C800D49C62 /* Green Solid Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB091AF370C800D49C62 /* Green Solid Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB0A1AF370C800D49C62 /* Green Solid Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB0B1AF370C800D49C62 /* Green Solid Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Solid Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB0C1AF370C800D49C62 /* Green Striped Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB0D1AF370C800D49C62 /* Green Striped Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB0E1AF370C800D49C62 /* Green Striped Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB0F1AF370C800D49C62 /* Green Striped Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB101AF370C800D49C62 /* Green Striped Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB111AF370C800D49C62 /* Green Striped Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB121AF370C800D49C62 /* Green Striped Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB131AF370C800D49C62 /* Green Striped Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB141AF370C800D49C62 /* Green Striped Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB151AF370C800D49C62 /* Purple Open Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB161AF370C800D49C62 /* Purple Open Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB171AF370C800D49C62 /* Purple Open Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB181AF370C800D49C62 /* Purple Open Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB191AF370C800D49C62 /* Purple Open Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB1A1AF370C800D49C62 /* Purple Open Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB1B1AF370C800D49C62 /* Purple Open Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB1C1AF370C800D49C62 /* Purple Open Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB1D1AF370C800D49C62 /* Purple Open Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB1E1AF370C800D49C62 /* Purple Solid Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB1F1AF370C800D49C62 /* Purple Solid Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB201AF370C800D49C62 /* Purple Solid Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB211AF370C800D49C62 /* Purple Solid Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB221AF370C800D49C62 /* Purple Solid Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB231AF370C800D49C62 /* Purple Solid Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB241AF370C800D49C62 /* Purple Solid Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB251AF370C800D49C62 /* Purple Solid Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB261AF370C800D49C62 /* Purple Solid Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Solid Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB271AF370C800D49C62 /* Purple Striped Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB281AF370C800D49C62 /* Purple Striped Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB291AF370C800D49C62 /* Purple Striped Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB2A1AF370C800D49C62 /* Purple Striped Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB2B1AF370C800D49C62 /* Purple Striped Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB2C1AF370C800D49C62 /* Purple Striped Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB2D1AF370C800D49C62 /* Purple Striped Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB2E1AF370C800D49C62 /* Purple Striped Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB2F1AF370C800D49C62 /* Purple Striped Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Striped Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB301AF370C800D49C62 /* Red Open Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB311AF370C800D49C62 /* Red Open Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB321AF370C800D49C62 /* Red Open Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB331AF370C800D49C62 /* Red Open Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB341AF370C800D49C62 /* Red Open Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB351AF370C800D49C62 /* Red Open Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB361AF370C800D49C62 /* Red Open Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB371AF370C800D49C62 /* Red Open Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB381AF370C800D49C62 /* Red Open Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Open Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB391AF370C800D49C62 /* Red Solid Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB3A1AF370C800D49C62 /* Red Solid Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB3B1AF370C800D49C62 /* Red Solid Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB3C1AF370C800D49C62 /* Red Solid Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB3D1AF370C800D49C62 /* Red Solid Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB3E1AF370C800D49C62 /* Red Solid Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB3F1AF370C800D49C62 /* Red Solid Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB401AF370C800D49C62 /* Red Solid Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB411AF370C800D49C62 /* Red Solid Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Squiggle 3.png"; sourceTree = "<group>"; };
+		8B07AB421AF370C800D49C62 /* Red Striped Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Diamond 1.png"; sourceTree = "<group>"; };
+		8B07AB431AF370C800D49C62 /* Red Striped Diamond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Diamond 2.png"; sourceTree = "<group>"; };
+		8B07AB441AF370C800D49C62 /* Red Striped Diamond 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Diamond 3.png"; sourceTree = "<group>"; };
+		8B07AB451AF370C800D49C62 /* Red Striped Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Oval 1.png"; sourceTree = "<group>"; };
+		8B07AB461AF370C800D49C62 /* Red Striped Oval 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Oval 2.png"; sourceTree = "<group>"; };
+		8B07AB471AF370C800D49C62 /* Red Striped Oval 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Oval 3.png"; sourceTree = "<group>"; };
+		8B07AB481AF370C800D49C62 /* Red Striped Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 1.png"; sourceTree = "<group>"; };
+		8B07AB491AF370C800D49C62 /* Red Striped Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 2.png"; sourceTree = "<group>"; };
+		8B07AB4A1AF370C800D49C62 /* Red Striped Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 3.png"; sourceTree = "<group>"; };
 		8B1749691AD1269400AB29CE /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = "View Controllers/GameViewController.h"; sourceTree = "<group>"; };
 		8B17496A1AD1269400AB29CE /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = "View Controllers/GameViewController.m"; sourceTree = "<group>"; };
 		8B17496F1AD1282E00AB29CE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = "Data Model/Game.h"; sourceTree = "<group>"; };
 		8B1749701AD1282E00AB29CE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = "Data Model/Game.m"; sourceTree = "<group>"; };
 		8B5B85801AEDDD7C00DB2BAE /* PacketDealCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketDealCards.h; path = Networking/PacketDealCards.h; sourceTree = "<group>"; };
 		8B5B85811AEDDD7C00DB2BAE /* PacketDealCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketDealCards.m; path = Networking/PacketDealCards.m; sourceTree = "<group>"; };
+		8B75B29A1AF1D5E8001C07F9 /* Green Striped Oval 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Striped Oval 1.png"; sourceTree = "<group>"; };
+		8B75B29B1AF1D5E8001C07F9 /* Purple Open Diaimond 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple Open Diaimond 2.png"; sourceTree = "<group>"; };
+		8B75B29C1AF1D5E8001C07F9 /* Red Solid Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Solid Squiggle 3.png"; sourceTree = "<group>"; };
 		8BF960801AEE17B9000B7A21 /* PacketActivatePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketActivatePlayer.h; path = Networking/PacketActivatePlayer.h; sourceTree = "<group>"; };
 		8BF960811AEE17B9000B7A21 /* PacketActivatePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketActivatePlayer.m; path = Networking/PacketActivatePlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -697,6 +869,7 @@
 		53E321761ACAA6170027AFB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B07AAF71AF370C800D49C62 /* Set_Images */,
 				531C07DA1ADB9B28000E852C /* Resources for Part 4 */,
 				5300F2891ACBCAB000E09973 /* GameKit.framework */,
 				53E3217A1ACAA6170027AFB3 /* AppDelegate.h */,
@@ -707,6 +880,9 @@
 				53E321781ACAA6170027AFB3 /* main.m */,
 				53E321F11ACAA7330027AFB3 /* Action_Man.ttf */,
 				5300F28B1ACBCAE600E09973 /* BangBangBangPch.pch */,
+				8B75B29A1AF1D5E8001C07F9 /* Green Striped Oval 1.png */,
+				8B75B29B1AF1D5E8001C07F9 /* Purple Open Diaimond 2.png */,
+				8B75B29C1AF1D5E8001C07F9 /* Red Solid Squiggle 3.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -804,6 +980,96 @@
 				535B7D0E1AD77CA100868B63 /* NSData+SnapAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		8B07AAF71AF370C800D49C62 /* Set_Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B07AAF81AF370C800D49C62 /* Background_Back.png */,
+				8B07AAF91AF370C800D49C62 /* Background_Front.png */,
+				8B07AAFA1AF370C800D49C62 /* Green Open Diamond 1.png */,
+				8B07AAFB1AF370C800D49C62 /* Green Open Diamond 2.png */,
+				8B07AAFC1AF370C800D49C62 /* Green Open Diamond 3.png */,
+				8B07AAFD1AF370C800D49C62 /* Green Open Oval 1.png */,
+				8B07AAFE1AF370C800D49C62 /* Green Open Oval 2.png */,
+				8B07AAFF1AF370C800D49C62 /* Green Open Oval 3.png */,
+				8B07AB001AF370C800D49C62 /* Green Open Squiggle 1.png */,
+				8B07AB011AF370C800D49C62 /* Green Open Squiggle 2.png */,
+				8B07AB021AF370C800D49C62 /* Green Open Squiggle 3.png */,
+				8B07AB031AF370C800D49C62 /* Green Solid Diamond 1.png */,
+				8B07AB041AF370C800D49C62 /* Green Solid Diamond 2.png */,
+				8B07AB051AF370C800D49C62 /* Green Solid Diamond 3.png */,
+				8B07AB061AF370C800D49C62 /* Green Solid Oval 1.png */,
+				8B07AB071AF370C800D49C62 /* Green Solid Oval 2.png */,
+				8B07AB081AF370C800D49C62 /* Green Solid Oval 3.png */,
+				8B07AB091AF370C800D49C62 /* Green Solid Squiggle 1.png */,
+				8B07AB0A1AF370C800D49C62 /* Green Solid Squiggle 2.png */,
+				8B07AB0B1AF370C800D49C62 /* Green Solid Squiggle 3.png */,
+				8B07AB0C1AF370C800D49C62 /* Green Striped Diamond 1.png */,
+				8B07AB0D1AF370C800D49C62 /* Green Striped Diamond 2.png */,
+				8B07AB0E1AF370C800D49C62 /* Green Striped Diamond 3.png */,
+				8B07AB0F1AF370C800D49C62 /* Green Striped Oval 1.png */,
+				8B07AB101AF370C800D49C62 /* Green Striped Oval 2.png */,
+				8B07AB111AF370C800D49C62 /* Green Striped Oval 3.png */,
+				8B07AB121AF370C800D49C62 /* Green Striped Squiggle 1.png */,
+				8B07AB131AF370C800D49C62 /* Green Striped Squiggle 2.png */,
+				8B07AB141AF370C800D49C62 /* Green Striped Squiggle 3.png */,
+				8B07AB151AF370C800D49C62 /* Purple Open Diamond 1.png */,
+				8B07AB161AF370C800D49C62 /* Purple Open Diamond 2.png */,
+				8B07AB171AF370C800D49C62 /* Purple Open Diamond 3.png */,
+				8B07AB181AF370C800D49C62 /* Purple Open Oval 1.png */,
+				8B07AB191AF370C800D49C62 /* Purple Open Oval 2.png */,
+				8B07AB1A1AF370C800D49C62 /* Purple Open Oval 3.png */,
+				8B07AB1B1AF370C800D49C62 /* Purple Open Squiggle 1.png */,
+				8B07AB1C1AF370C800D49C62 /* Purple Open Squiggle 2.png */,
+				8B07AB1D1AF370C800D49C62 /* Purple Open Squiggle 3.png */,
+				8B07AB1E1AF370C800D49C62 /* Purple Solid Diamond 1.png */,
+				8B07AB1F1AF370C800D49C62 /* Purple Solid Diamond 2.png */,
+				8B07AB201AF370C800D49C62 /* Purple Solid Diamond 3.png */,
+				8B07AB211AF370C800D49C62 /* Purple Solid Oval 1.png */,
+				8B07AB221AF370C800D49C62 /* Purple Solid Oval 2.png */,
+				8B07AB231AF370C800D49C62 /* Purple Solid Oval 3.png */,
+				8B07AB241AF370C800D49C62 /* Purple Solid Squiggle 1.png */,
+				8B07AB251AF370C800D49C62 /* Purple Solid Squiggle 2.png */,
+				8B07AB261AF370C800D49C62 /* Purple Solid Squiggle 3.png */,
+				8B07AB271AF370C800D49C62 /* Purple Striped Diamond 1.png */,
+				8B07AB281AF370C800D49C62 /* Purple Striped Diamond 2.png */,
+				8B07AB291AF370C800D49C62 /* Purple Striped Diamond 3.png */,
+				8B07AB2A1AF370C800D49C62 /* Purple Striped Oval 1.png */,
+				8B07AB2B1AF370C800D49C62 /* Purple Striped Oval 2.png */,
+				8B07AB2C1AF370C800D49C62 /* Purple Striped Oval 3.png */,
+				8B07AB2D1AF370C800D49C62 /* Purple Striped Squiggle 1.png */,
+				8B07AB2E1AF370C800D49C62 /* Purple Striped Squiggle 2.png */,
+				8B07AB2F1AF370C800D49C62 /* Purple Striped Squiggle 3.png */,
+				8B07AB301AF370C800D49C62 /* Red Open Diamond 1.png */,
+				8B07AB311AF370C800D49C62 /* Red Open Diamond 2.png */,
+				8B07AB321AF370C800D49C62 /* Red Open Diamond 3.png */,
+				8B07AB331AF370C800D49C62 /* Red Open Oval 1.png */,
+				8B07AB341AF370C800D49C62 /* Red Open Oval 2.png */,
+				8B07AB351AF370C800D49C62 /* Red Open Oval 3.png */,
+				8B07AB361AF370C800D49C62 /* Red Open Squiggle 1.png */,
+				8B07AB371AF370C800D49C62 /* Red Open Squiggle 2.png */,
+				8B07AB381AF370C800D49C62 /* Red Open Squiggle 3.png */,
+				8B07AB391AF370C800D49C62 /* Red Solid Diamond 1.png */,
+				8B07AB3A1AF370C800D49C62 /* Red Solid Diamond 2.png */,
+				8B07AB3B1AF370C800D49C62 /* Red Solid Diamond 3.png */,
+				8B07AB3C1AF370C800D49C62 /* Red Solid Oval 1.png */,
+				8B07AB3D1AF370C800D49C62 /* Red Solid Oval 2.png */,
+				8B07AB3E1AF370C800D49C62 /* Red Solid Oval 3.png */,
+				8B07AB3F1AF370C800D49C62 /* Red Solid Squiggle 1.png */,
+				8B07AB401AF370C800D49C62 /* Red Solid Squiggle 2.png */,
+				8B07AB411AF370C800D49C62 /* Red Solid Squiggle 3.png */,
+				8B07AB421AF370C800D49C62 /* Red Striped Diamond 1.png */,
+				8B07AB431AF370C800D49C62 /* Red Striped Diamond 2.png */,
+				8B07AB441AF370C800D49C62 /* Red Striped Diamond 3.png */,
+				8B07AB451AF370C800D49C62 /* Red Striped Oval 1.png */,
+				8B07AB461AF370C800D49C62 /* Red Striped Oval 2.png */,
+				8B07AB471AF370C800D49C62 /* Red Striped Oval 3.png */,
+				8B07AB481AF370C800D49C62 /* Red Striped Squiggle 1.png */,
+				8B07AB491AF370C800D49C62 /* Red Striped Squiggle 2.png */,
+				8B07AB4A1AF370C800D49C62 /* Red Striped Squiggle 3.png */,
+			);
+			path = Set_Images;
 			sourceTree = "<group>";
 		};
 		8B17496E1AD1281600AB29CE /* Data Model */ = {
@@ -907,112 +1173,169 @@
 				531C08881ADB9B28000E852C /* Diamonds 4@2x.png in Resources */,
 				53E321EB1ACAA7200027AFB3 /* Logo S.png in Resources */,
 				53E321D81ACAA7200027AFB3 /* Felt.png in Resources */,
+				8B07AB8A1AF370C800D49C62 /* Red Open Squiggle 2.png in Resources */,
 				53E321DA1ACAA7200027AFB3 /* Icon-72.png in Resources */,
 				531C08A11ADB9B28000E852C /* Hearts 4.png in Resources */,
 				531C08AD1ADB9B28000E852C /* Hearts Ace.png in Resources */,
+				8B07AB5F1AF370C800D49C62 /* Green Striped Diamond 1.png in Resources */,
+				8B07AB581AF370C800D49C62 /* Green Solid Diamond 3.png in Resources */,
 				53E321E41ACAA7200027AFB3 /* Logo A@2x.png in Resources */,
+				8B07AB601AF370C800D49C62 /* Green Striped Diamond 2.png in Resources */,
 				531C08871ADB9B28000E852C /* Diamonds 4.png in Resources */,
 				531C08BC1ADB9B28000E852C /* SnapButtonPressed@2x.png in Resources */,
 				531C08821ADB9B28000E852C /* Diamonds 10@2x.png in Resources */,
 				531C08861ADB9B28000E852C /* Diamonds 3@2x.png in Resources */,
+				8B07AB5A1AF370C800D49C62 /* Green Solid Oval 2.png in Resources */,
 				531C089D1ADB9B28000E852C /* Hearts 2.png in Resources */,
 				531B58821ACB9ED800CEB87E /* HostViewController.xib in Resources */,
+				8B07AB701AF370C800D49C62 /* Purple Open Squiggle 3.png in Resources */,
+				8B07AB931AF370C800D49C62 /* Red Solid Squiggle 2.png in Resources */,
 				531C08711ADB9B28000E852C /* Clubs 8.png in Resources */,
 				531C08BD1ADB9B28000E852C /* SnapIndicator.png in Resources */,
 				53E321E81ACAA7200027AFB3 /* Logo N@2x.png in Resources */,
+				8B07AB531AF370C800D49C62 /* Green Open Squiggle 1.png in Resources */,
 				531C08971ADB9B28000E852C /* Diamonds King.png in Resources */,
+				8B07AB551AF370C800D49C62 /* Green Open Squiggle 3.png in Resources */,
+				8B07AB911AF370C800D49C62 /* Red Solid Oval 3.png in Resources */,
 				531C08DA1ADB9B28000E852C /* WrongSnap@2x.png in Resources */,
 				531C08BF1ADB9B28000E852C /* Spades 10.png in Resources */,
 				531C08681ADB9B28000E852C /* Clubs 3@2x.png in Resources */,
+				8B07AB6C1AF370C800D49C62 /* Purple Open Oval 2.png in Resources */,
+				8B07AB591AF370C800D49C62 /* Green Solid Oval 1.png in Resources */,
 				531C08DE1ADB9B28000E852C /* TurnCard.caf in Resources */,
 				53E321CC1ACAA7200027AFB3 /* ButtonPressed.png in Resources */,
+				8B07AB4D1AF370C800D49C62 /* Green Open Diamond 1.png in Resources */,
+				8B07AB751AF370C800D49C62 /* Purple Solid Oval 2.png in Resources */,
+				8B07AB801AF370C800D49C62 /* Purple Striped Squiggle 1.png in Resources */,
+				8B07AB661AF370C800D49C62 /* Green Striped Squiggle 2.png in Resources */,
 				531C08B11ADB9B28000E852C /* Hearts King.png in Resources */,
 				531C088E1ADB9B28000E852C /* Diamonds 7@2x.png in Resources */,
 				53E321D41ACAA7200027AFB3 /* ExitButton.png in Resources */,
 				53E321D91ACAA7200027AFB3 /* Felt@2x.png in Resources */,
+				8B07AB7C1AF370C800D49C62 /* Purple Striped Diamond 3.png in Resources */,
 				531C08C81ADB9B28000E852C /* Spades 5@2x.png in Resources */,
+				8B07AB781AF370C800D49C62 /* Purple Solid Squiggle 2.png in Resources */,
 				531C08DC1ADB9B28000E852C /* CorrectMatch.caf in Resources */,
 				531C08D11ADB9B28000E852C /* Spades Ace.png in Resources */,
 				531C08601ADB9B28000E852C /* ActivePlayer@2x.png in Resources */,
+				8B07AB811AF370C800D49C62 /* Purple Striped Squiggle 2.png in Resources */,
 				531C088D1ADB9B28000E852C /* Diamonds 7.png in Resources */,
 				53E321871ACAA6170027AFB3 /* LaunchScreen.xib in Resources */,
 				531C08D81ADB9B28000E852C /* Spades Queen@2x.png in Resources */,
 				53E321D01ACAA7200027AFB3 /* CellBackgroundSelected.png in Resources */,
 				531C08A71ADB9B28000E852C /* Hearts 7.png in Resources */,
+				8B07AB7E1AF370C800D49C62 /* Purple Striped Oval 2.png in Resources */,
+				8B07AB8D1AF370C800D49C62 /* Red Solid Diamond 2.png in Resources */,
 				53E321D61ACAA7200027AFB3 /* ExitButtonPressed.png in Resources */,
 				531C08781ADB9B28000E852C /* Clubs Jack@2x.png in Resources */,
 				53E321EF1ACAA7200027AFB3 /* TextField.png in Resources */,
 				53E321DE1ACAA7200027AFB3 /* Icon-Small.png in Resources */,
 				531C088B1ADB9B28000E852C /* Diamonds 6.png in Resources */,
+				8B07AB941AF370C800D49C62 /* Red Solid Squiggle 3.png in Resources */,
 				531C087B1ADB9B28000E852C /* Clubs Queen.png in Resources */,
 				531C08671ADB9B28000E852C /* Clubs 3.png in Resources */,
 				53E321CF1ACAA7200027AFB3 /* CellBackground@2x.png in Resources */,
 				531C08B51ADB9B28000E852C /* NextRoundButton.png in Resources */,
 				531C08CF1ADB9B28000E852C /* Spades 9.png in Resources */,
+				8B07AB6D1AF370C800D49C62 /* Purple Open Oval 3.png in Resources */,
 				53E321E11ACAA7200027AFB3 /* Icon@2x.png in Resources */,
 				53E321DD1ACAA7200027AFB3 /* Icon-Small-50@2x.png in Resources */,
+				8B07AB881AF370C800D49C62 /* Red Open Oval 3.png in Resources */,
 				531C08CE1ADB9B28000E852C /* Spades 8@2x.png in Resources */,
 				53E321F01ACAA7200027AFB3 /* TextField@2x.png in Resources */,
 				531C08A21ADB9B28000E852C /* Hearts 4@2x.png in Resources */,
 				531C08B21ADB9B28000E852C /* Hearts King@2x.png in Resources */,
+				8B07AB7B1AF370C800D49C62 /* Purple Striped Diamond 2.png in Resources */,
 				531C08CD1ADB9B28000E852C /* Spades 8.png in Resources */,
 				531C08B31ADB9B28000E852C /* Hearts Queen.png in Resources */,
 				5300F2881ACBA7EB00E09973 /* JoinViewController.xib in Resources */,
 				531C08931ADB9B28000E852C /* Diamonds Ace.png in Resources */,
+				8B07AB641AF370C800D49C62 /* Green Striped Oval 3.png in Resources */,
 				531C08C41ADB9B28000E852C /* Spades 3@2x.png in Resources */,
 				53E321D31ACAA7200027AFB3 /* Default@2x.png in Resources */,
 				531C08AF1ADB9B28000E852C /* Hearts Jack.png in Resources */,
+				8B75B29F1AF1D5E8001C07F9 /* Red Solid Squiggle 3.png in Resources */,
+				8B07AB841AF370C800D49C62 /* Red Open Diamond 2.png in Resources */,
+				8B07AB741AF370C800D49C62 /* Purple Solid Oval 1.png in Resources */,
 				53E321ED1ACAA7200027AFB3 /* TableViewBorder.png in Resources */,
 				531C086C1ADB9B28000E852C /* Clubs 5@2x.png in Resources */,
+				8B07AB5D1AF370C800D49C62 /* Green Solid Squiggle 2.png in Resources */,
+				8B07AB8B1AF370C800D49C62 /* Red Open Squiggle 3.png in Resources */,
 				531C08BA1ADB9B28000E852C /* SnapButton@2x.png in Resources */,
+				8B07AB711AF370C800D49C62 /* Purple Solid Diamond 1.png in Resources */,
 				53E321EA1ACAA7200027AFB3 /* Logo P@2x.png in Resources */,
 				531C087C1ADB9B28000E852C /* Clubs Queen@2x.png in Resources */,
 				531C08751ADB9B28000E852C /* Clubs Ace.png in Resources */,
 				53E321E31ACAA7200027AFB3 /* Logo A.png in Resources */,
 				531C08A91ADB9B28000E852C /* Hearts 8.png in Resources */,
+				8B07AB9D1AF370C800D49C62 /* Red Striped Squiggle 3.png in Resources */,
+				8B07AB731AF370C800D49C62 /* Purple Solid Diamond 3.png in Resources */,
 				531C08D21ADB9B28000E852C /* Spades Ace@2x.png in Resources */,
 				53E321EC1ACAA7200027AFB3 /* Logo S@2x.png in Resources */,
+				8B07AB6A1AF370C800D49C62 /* Purple Open Diamond 3.png in Resources */,
 				531C088A1ADB9B28000E852C /* Diamonds 5@2x.png in Resources */,
+				8B07AB651AF370C800D49C62 /* Green Striped Squiggle 1.png in Resources */,
 				53E321CD1ACAA7200027AFB3 /* ButtonPressed@2x.png in Resources */,
 				53E321D71ACAA7200027AFB3 /* ExitButtonPressed@2x.png in Resources */,
+				8B07AB831AF370C800D49C62 /* Red Open Diamond 1.png in Resources */,
 				531C08621ADB9B28000E852C /* Back@2x.png in Resources */,
 				53E321CB1ACAA7200027AFB3 /* Button@2x.png in Resources */,
 				531C08D31ADB9B28000E852C /* Spades Jack.png in Resources */,
 				531C089F1ADB9B28000E852C /* Hearts 3.png in Resources */,
 				531C08D51ADB9B28000E852C /* Spades King.png in Resources */,
+				8B07AB981AF370C800D49C62 /* Red Striped Oval 1.png in Resources */,
+				8B07AB8E1AF370C800D49C62 /* Red Solid Diamond 3.png in Resources */,
 				531C08851ADB9B28000E852C /* Diamonds 3.png in Resources */,
+				8B07AB921AF370C800D49C62 /* Red Solid Squiggle 1.png in Resources */,
+				8B07AB6F1AF370C800D49C62 /* Purple Open Squiggle 2.png in Resources */,
 				531C087E1ADB9B28000E852C /* CorrectSnap@2x.png in Resources */,
+				8B75B29D1AF1D5E8001C07F9 /* Green Striped Oval 1.png in Resources */,
+				8B07AB671AF370C800D49C62 /* Green Striped Squiggle 3.png in Resources */,
 				531C08991ADB9B28000E852C /* Diamonds Queen.png in Resources */,
+				8B07AB6E1AF370C800D49C62 /* Purple Open Squiggle 1.png in Resources */,
 				531C086E1ADB9B28000E852C /* Clubs 6@2x.png in Resources */,
 				53E321DC1ACAA7200027AFB3 /* Icon-Small-50.png in Resources */,
+				8B07AB5C1AF370C800D49C62 /* Green Solid Squiggle 1.png in Resources */,
+				8B07AB971AF370C800D49C62 /* Red Striped Diamond 3.png in Resources */,
 				531C08DD1ADB9B28000E852C /* Dealing.caf in Resources */,
 				531C086A1ADB9B28000E852C /* Clubs 4@2x.png in Resources */,
+				8B07AB951AF370C800D49C62 /* Red Striped Diamond 1.png in Resources */,
 				53E321CA1ACAA7200027AFB3 /* Button.png in Resources */,
+				8B07AB7D1AF370C800D49C62 /* Purple Striped Oval 1.png in Resources */,
 				531C08DF1ADB9B28000E852C /* WrongMatch.caf in Resources */,
 				531C08AB1ADB9B28000E852C /* Hearts 9.png in Resources */,
+				8B07AB5E1AF370C800D49C62 /* Green Solid Squiggle 3.png in Resources */,
 				531C08901ADB9B28000E852C /* Diamonds 8@2x.png in Resources */,
 				531C08D71ADB9B28000E852C /* Spades Queen.png in Resources */,
 				531C089C1ADB9B28000E852C /* Hearts 10@2x.png in Resources */,
 				531C085F1ADB9B28000E852C /* ActivePlayer.png in Resources */,
 				531C08A61ADB9B28000E852C /* Hearts 6@2x.png in Resources */,
+				8B07AB611AF370C800D49C62 /* Green Striped Diamond 3.png in Resources */,
 				531C08C61ADB9B28000E852C /* Spades 4@2x.png in Resources */,
+				8B07AB561AF370C800D49C62 /* Green Solid Diamond 1.png in Resources */,
 				531C08661ADB9B28000E852C /* Clubs 2@2x.png in Resources */,
 				531C08D91ADB9B28000E852C /* WrongSnap.png in Resources */,
 				531C08AC1ADB9B28000E852C /* Hearts 9@2x.png in Resources */,
+				8B07AB631AF370C800D49C62 /* Green Striped Oval 2.png in Resources */,
 				531C08741ADB9B28000E852C /* Clubs 9@2x.png in Resources */,
 				531C08C51ADB9B28000E852C /* Spades 4.png in Resources */,
 				53E321E91ACAA7200027AFB3 /* Logo P.png in Resources */,
 				531C08641ADB9B28000E852C /* Clubs 10@2x.png in Resources */,
+				8B07AB571AF370C800D49C62 /* Green Solid Diamond 2.png in Resources */,
 				53E321DB1ACAA7200027AFB3 /* Icon-72@2x.png in Resources */,
 				53E321D21ACAA7200027AFB3 /* Default.png in Resources */,
+				8B07AB9C1AF370C800D49C62 /* Red Striped Squiggle 2.png in Resources */,
 				531C086F1ADB9B28000E852C /* Clubs 7.png in Resources */,
 				531C08721ADB9B28000E852C /* Clubs 8@2x.png in Resources */,
+				8B07AB8C1AF370C800D49C62 /* Red Solid Diamond 1.png in Resources */,
 				531C08981ADB9B28000E852C /* Diamonds King@2x.png in Resources */,
 				531C08A81ADB9B28000E852C /* Hearts 7@2x.png in Resources */,
 				531C08B71ADB9B28000E852C /* NextRoundButtonPressed.png in Resources */,
 				531C08A01ADB9B28000E852C /* Hearts 3@2x.png in Resources */,
+				8B07AB9B1AF370C800D49C62 /* Red Striped Squiggle 1.png in Resources */,
 				53E321EE1ACAA7200027AFB3 /* TableViewBorder@2x.png in Resources */,
 				531C08C71ADB9B28000E852C /* Spades 5.png in Resources */,
+				8B07AB991AF370C800D49C62 /* Red Striped Oval 2.png in Resources */,
 				531C087F1ADB9B28000E852C /* Darken.png in Resources */,
 				531C08911ADB9B28000E852C /* Diamonds 9.png in Resources */,
 				531C086D1ADB9B28000E852C /* Clubs 6.png in Resources */,
@@ -1020,63 +1343,92 @@
 				531C088C1ADB9B28000E852C /* Diamonds 6@2x.png in Resources */,
 				531C08771ADB9B28000E852C /* Clubs Jack.png in Resources */,
 				531C08A41ADB9B28000E852C /* Hearts 5@2x.png in Resources */,
+				8B07AB961AF370C800D49C62 /* Red Striped Diamond 2.png in Resources */,
 				531C08631ADB9B28000E852C /* Clubs 10.png in Resources */,
 				53E321E71ACAA7200027AFB3 /* Logo N.png in Resources */,
 				53E321CE1ACAA7200027AFB3 /* CellBackground.png in Resources */,
 				531C08C91ADB9B28000E852C /* Spades 6.png in Resources */,
 				531C088F1ADB9B28000E852C /* Diamonds 8.png in Resources */,
+				8B07AB7F1AF370C800D49C62 /* Purple Striped Oval 3.png in Resources */,
 				531C08AA1ADB9B28000E852C /* Hearts 8@2x.png in Resources */,
+				8B07AB681AF370C800D49C62 /* Purple Open Diamond 1.png in Resources */,
 				53E321E01ACAA7200027AFB3 /* Icon.png in Resources */,
 				531C08921ADB9B28000E852C /* Diamonds 9@2x.png in Resources */,
 				531C089A1ADB9B28000E852C /* Diamonds Queen@2x.png in Resources */,
+				8B07AB691AF370C800D49C62 /* Purple Open Diamond 2.png in Resources */,
 				531C08AE1ADB9B28000E852C /* Hearts Ace@2x.png in Resources */,
+				8B07AB861AF370C800D49C62 /* Red Open Oval 1.png in Resources */,
 				531C08951ADB9B28000E852C /* Diamonds Jack.png in Resources */,
 				531C08791ADB9B28000E852C /* Clubs King.png in Resources */,
+				8B07AB4C1AF370C800D49C62 /* Background_Front.png in Resources */,
 				531C087D1ADB9B28000E852C /* CorrectSnap.png in Resources */,
+				8B07AB761AF370C800D49C62 /* Purple Solid Oval 3.png in Resources */,
 				531C08C01ADB9B28000E852C /* Spades 10@2x.png in Resources */,
 				53E321A01ACAA6D50027AFB3 /* MainViewController.xib in Resources */,
+				8B07AB8F1AF370C800D49C62 /* Red Solid Oval 1.png in Resources */,
 				531C08811ADB9B28000E852C /* Diamonds 10.png in Resources */,
 				531C08831ADB9B28000E852C /* Diamonds 2.png in Resources */,
+				8B07AB721AF370C800D49C62 /* Purple Solid Diamond 2.png in Resources */,
 				531C08DB1ADB9B28000E852C /* GameViewController.xib in Resources */,
 				531C08691ADB9B28000E852C /* Clubs 4.png in Resources */,
 				531C08D61ADB9B28000E852C /* Spades King@2x.png in Resources */,
 				531C08731ADB9B28000E852C /* Clubs 9.png in Resources */,
 				531C08B41ADB9B28000E852C /* Hearts Queen@2x.png in Resources */,
 				531C08CC1ADB9B28000E852C /* Spades 7@2x.png in Resources */,
+				8B07AB621AF370C800D49C62 /* Green Striped Oval 1.png in Resources */,
 				53E321F21ACAA7330027AFB3 /* Action_Man.ttf in Resources */,
 				531C08761ADB9B28000E852C /* Clubs Ace@2x.png in Resources */,
 				531C08C11ADB9B28000E852C /* Spades 2.png in Resources */,
+				8B07AB791AF370C800D49C62 /* Purple Solid Squiggle 3.png in Resources */,
+				8B07AB521AF370C800D49C62 /* Green Open Oval 3.png in Resources */,
+				8B07AB871AF370C800D49C62 /* Red Open Oval 2.png in Resources */,
 				531C086B1ADB9B28000E852C /* Clubs 5.png in Resources */,
 				531C08BE1ADB9B28000E852C /* SnapIndicator@2x.png in Resources */,
+				8B07AB771AF370C800D49C62 /* Purple Solid Squiggle 1.png in Resources */,
+				8B07AB6B1AF370C800D49C62 /* Purple Open Oval 1.png in Resources */,
 				531C08C21ADB9B28000E852C /* Spades 2@2x.png in Resources */,
+				8B07AB851AF370C800D49C62 /* Red Open Diamond 3.png in Resources */,
 				531C08D01ADB9B28000E852C /* Spades 9@2x.png in Resources */,
+				8B07AB511AF370C800D49C62 /* Green Open Oval 2.png in Resources */,
 				531C08B81ADB9B28000E852C /* NextRoundButtonPressed@2x.png in Resources */,
 				53E321E21ACAA7200027AFB3 /* iTunesArtwork in Resources */,
 				53E321E61ACAA7200027AFB3 /* Logo Joker@2x.png in Resources */,
 				531C08B01ADB9B28000E852C /* Hearts Jack@2x.png in Resources */,
 				531C08A51ADB9B28000E852C /* Hearts 6.png in Resources */,
+				8B07AB4B1AF370C800D49C62 /* Background_Back.png in Resources */,
 				531C08611ADB9B28000E852C /* Back.png in Resources */,
 				531C08A31ADB9B28000E852C /* Hearts 5.png in Resources */,
 				53E321E51ACAA7200027AFB3 /* Logo Joker.png in Resources */,
 				531C08701ADB9B28000E852C /* Clubs 7@2x.png in Resources */,
 				531C089E1ADB9B28000E852C /* Hearts 2@2x.png in Resources */,
+				8B75B29E1AF1D5E8001C07F9 /* Purple Open Diaimond 2.png in Resources */,
 				531C08C31ADB9B28000E852C /* Spades 3.png in Resources */,
 				531C08D41ADB9B28000E852C /* Spades Jack@2x.png in Resources */,
 				531C08CA1ADB9B28000E852C /* Spades 6@2x.png in Resources */,
 				53E321D51ACAA7200027AFB3 /* ExitButton@2x.png in Resources */,
 				531C08BB1ADB9B28000E852C /* SnapButtonPressed.png in Resources */,
 				531C08B61ADB9B28000E852C /* NextRoundButton@2x.png in Resources */,
+				8B07AB5B1AF370C800D49C62 /* Green Solid Oval 3.png in Resources */,
 				531C08B91ADB9B28000E852C /* SnapButton.png in Resources */,
 				531C087A1ADB9B28000E852C /* Clubs King@2x.png in Resources */,
 				53E321841ACAA6170027AFB3 /* Images.xcassets in Resources */,
 				53E321DF1ACAA7200027AFB3 /* Icon-Small@2x.png in Resources */,
+				8B07AB901AF370C800D49C62 /* Red Solid Oval 2.png in Resources */,
 				53E321D11ACAA7200027AFB3 /* CellBackgroundSelected@2x.png in Resources */,
+				8B07AB541AF370C800D49C62 /* Green Open Squiggle 2.png in Resources */,
+				8B07AB7A1AF370C800D49C62 /* Purple Striped Diamond 1.png in Resources */,
 				531C08941ADB9B28000E852C /* Diamonds Ace@2x.png in Resources */,
 				531C08801ADB9B28000E852C /* Darken@2x.png in Resources */,
 				531C08891ADB9B28000E852C /* Diamonds 5.png in Resources */,
 				531C08841ADB9B28000E852C /* Diamonds 2@2x.png in Resources */,
+				8B07AB891AF370C800D49C62 /* Red Open Squiggle 1.png in Resources */,
 				531C08961ADB9B28000E852C /* Diamonds Jack@2x.png in Resources */,
+				8B07AB821AF370C800D49C62 /* Purple Striped Squiggle 3.png in Resources */,
 				531C08CB1ADB9B28000E852C /* Spades 7.png in Resources */,
+				8B07AB9A1AF370C800D49C62 /* Red Striped Oval 3.png in Resources */,
+				8B07AB501AF370C800D49C62 /* Green Open Oval 1.png in Resources */,
+				8B07AB4E1AF370C800D49C62 /* Green Open Diamond 2.png in Resources */,
+				8B07AB4F1AF370C800D49C62 /* Green Open Diamond 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
