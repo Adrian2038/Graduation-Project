@@ -243,6 +243,16 @@ GameState;
 {
 	_state = GameStateDealing;
 	[self.delegate gameDidBegin:self];
+    
+    if (self.isServer)
+    {
+        [self dealCards];
+    }
+}
+
+- (void)dealCards
+{
+    
 }
 
 - (void)changeRelativePositionsOfPlayers
