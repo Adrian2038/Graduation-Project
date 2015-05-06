@@ -11,6 +11,8 @@
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
+#import "Deck.h"
+#import "Card.h"
 
 typedef enum
 {
@@ -252,7 +254,11 @@ GameState;
 
 - (void)dealCards
 {
+    NSAssert(self.isServer, @"Must be Server");
+    NSAssert(_state == GameStateDealing, @"Wrong state");
     
+    Deck *deck = [[Deck alloc] init];
+    [deck shuffle];
 }
 
 - (void)changeRelativePositionsOfPlayers
