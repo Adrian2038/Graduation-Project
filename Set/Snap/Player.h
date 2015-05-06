@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 Hollance. All rights reserved.
 //
 
+@class Card;
+@class Stack;
+
 typedef enum
 {
 	PlayerPositionBottom,  // the user
@@ -22,5 +25,6 @@ PlayerPosition;
 @property (nonatomic, copy) NSString *peerID;
 @property (nonatomic, assign) BOOL receivedResponse;
 @property (nonatomic, assign) int gamesWon;
+@property (nonatomic, strong, readonly) Stack *stack;
 
 @end

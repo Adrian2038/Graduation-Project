@@ -65,8 +65,9 @@
     
     NSAssert([self cardsRemaning] == 0, @"original cards's count must be 0");
     
-    _cards = randomCards;
     NSLog(@"random cards count = %d", randomCards.count);
+    NSLog(@"original cards count = %d", _cards.count);
+    _cards = randomCards;
     NSLog(@"shuffle _cards = %@", _cards);
 }
 

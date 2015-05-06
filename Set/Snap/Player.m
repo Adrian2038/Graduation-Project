@@ -7,6 +7,8 @@
 //
 
 #import "Player.h"
+#import "Card.h"
+#import "Stack.h"
 
 @implementation Player
 
@@ -21,6 +23,15 @@
 #ifdef DEBUG
 	NSLog(@"dealloc %@", self);
 #endif
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _stack = [[Stack alloc] init];
+    }
+    return self;
 }
 
 - (NSString *)description

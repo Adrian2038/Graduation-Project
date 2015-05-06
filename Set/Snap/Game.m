@@ -13,6 +13,7 @@
 #import "PacketOtherClientQuit.h"
 #import "Deck.h"
 #import "Card.h"
+#import "Stack.h"
 
 typedef enum
 {
@@ -259,6 +260,8 @@ GameState;
     
     Deck *deck = [[Deck alloc] init];
     [deck shuffle];
+    
+    [self.delegate gameShouldDealCards:self];
 }
 
 - (void)changeRelativePositionsOfPlayers

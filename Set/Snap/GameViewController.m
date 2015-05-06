@@ -243,6 +243,11 @@
 	self.centerLabel.text = NSLocalizedString(@"正在等待其他游戏玩家...", @"Status text: waiting for clients");
 }
 
+- (void)gameShouldDealCards:(Game *)game
+{
+    self.centerLabel.text = NSLocalizedString(@"游戏处理中...", @"Status text: dealing");
+}
+
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer
 {
 	[self hidePlayerLabelsForPlayer:disconnectedPlayer];
