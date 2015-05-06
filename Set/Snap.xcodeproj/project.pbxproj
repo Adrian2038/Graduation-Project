@@ -192,6 +192,7 @@
 		8B83CB1A1AFA3C9D000DB4D4 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B83CB191AFA3C9D000DB4D4 /* Card.m */; };
 		8B83CB1D1AFA3FFD000DB4D4 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B83CB1C1AFA3FFD000DB4D4 /* Deck.m */; };
 		8B83CB201AFA4D3E000DB4D4 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B83CB1F1AFA4D3E000DB4D4 /* Stack.m */; };
+		8B83CB231AFA549F000DB4D4 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B83CB221AFA549F000DB4D4 /* CardView.m */; };
 		8BBD949F1AF9F3C40080113C /* Background_Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD944C1AF9F3C40080113C /* Background_Back.png */; };
 		8BBD94A01AF9F3C40080113C /* Background_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD944D1AF9F3C40080113C /* Background_Front.png */; };
 		8BBD94A11AF9F3C40080113C /* Green Open Diamond 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD944E1AF9F3C40080113C /* Green Open Diamond 1.png */; };
@@ -490,6 +491,8 @@
 		8B83CB1C1AFA3FFD000DB4D4 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Snap/Deck.m; sourceTree = "<group>"; };
 		8B83CB1E1AFA4D3E000DB4D4 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Snap/Stack.h; sourceTree = "<group>"; };
 		8B83CB1F1AFA4D3E000DB4D4 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Snap/Stack.m; sourceTree = "<group>"; };
+		8B83CB211AFA549F000DB4D4 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Snap/CardView.h; sourceTree = "<group>"; };
+		8B83CB221AFA549F000DB4D4 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Snap/CardView.m; sourceTree = "<group>"; };
 		8BBD944C1AF9F3C40080113C /* Background_Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_Back.png; sourceTree = "<group>"; };
 		8BBD944D1AF9F3C40080113C /* Background_Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_Front.png; sourceTree = "<group>"; };
 		8BBD944E1AF9F3C40080113C /* Green Open Diamond 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Open Diamond 1.png"; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 			children = (
 				35E647081570328F00F1073A /* PeerCell.h */,
 				35E647091570328F00F1073A /* PeerCell.m */,
+				8B83CB211AFA549F000DB4D4 /* CardView.h */,
+				8B83CB221AFA549F000DB4D4 /* CardView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1316,6 +1321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B83CB231AFA549F000DB4D4 /* CardView.m in Sources */,
 				8B83CB1D1AFA3FFD000DB4D4 /* Deck.m in Sources */,
 				7B67D9E714C9C6AD00254619 /* main.m in Sources */,
 				7B67D9EB14C9C6AD00254619 /* AppDelegate.m in Sources */,
