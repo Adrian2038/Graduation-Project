@@ -282,6 +282,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
     {
         CardView *cardView = [[CardView alloc] initWithFrame:CGRectMake(0, 0, cardWidth, cardHeight)];
         cardView.card = [deck draw];
+        [cardView loadCards];
         [self.cardContainerView addSubview:cardView];
         [cardView animationDealingToPosition:[self pointForCardViewCount:cardCount] withDelay:delay];
         NSLog(@"cardView's card = %@", cardView.card);

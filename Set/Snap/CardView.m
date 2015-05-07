@@ -17,7 +17,7 @@ const CGFloat cardHeight = 50.0f;
 
 {
     // I may not need the back image view;
-    UIImageView *_backImageView;               // back image view
+//    UIImageView *_backImageView;               // back image view
     UIImageView *_frontImageView;              // front image view.
     CGFloat _angle;
 }
@@ -32,18 +32,62 @@ const CGFloat cardHeight = 50.0f;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        [self loadBack];
     }
     return self;
 }
 
-- (void)loadBack
+- (void)loadCards
 {
-    if (!_backImageView) {
-        _backImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        _backImageView.image = [UIImage imageNamed:@"Red Solid Diamond 1"];
-        _backImageView.contentMode = UIViewContentModeScaleToFill;
-        [self addSubview:_backImageView];
+    if (!_frontImageView) {
+        _frontImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _frontImageView.contentMode = UIViewContentModeScaleToFill;
+        [self addSubview:_frontImageView];
+        
+//        Green Open Diamond 2
+        
+        NSString *colorString = nil;
+        
+        switch (self.card.color)
+        {
+            case SetColorRed:colorString = @"Red"; break;
+            case SetColorGreen:colorString = @"Green"; break;
+            case SetColorPurple:colorString = @"Purple"; break;
+            default: break;
+        }
+        
+        NSString *shadingString = nil;
+        
+        switch (self.card.shading)
+        {
+            case SetShadingSolid: shadingString = @"Solid"; break;
+            case SetShadingStriped: shadingString = @"Striped"; break;
+            case SetShadingOpen: shadingString = @"Open"; break;
+            default: break;
+        }
+        
+        NSString *symbolString = nil;
+        
+        switch (self.card.symbol)
+        {
+            case SetSymbolDiamond: symbolString = @"Diamond"; break;
+            case SetSymbolSquiggle: symbolString = @"Squiggle"; break;
+            case SetSymbolOval: symbolString = @"Oval"; break;
+            default: break;
+        }
+        
+        NSString *valueString = 0;
+        
+        switch (self.card.value)
+        {
+            case 1: valueString = @"1"; break;
+            case 2: valueString = @"2"; break;
+            case 3: valueString = @"3"; break;
+            default: break;
+        }
+        
+        NSString *cardContent = [NSString stringWithFormat:@"%@ %@ %@ %@",
+                                 colorString, shadingString, symbolString, valueString];
+        _frontImageView.image = [UIImage imageNamed:cardContent];
     }
 }
 

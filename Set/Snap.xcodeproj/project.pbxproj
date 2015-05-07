@@ -280,6 +280,7 @@
 		8BF23A501AFB4697006B0B1B /* Dealing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4C1AFB4697006B0B1B /* Dealing.caf */; };
 		8BF23A511AFB4697006B0B1B /* TurnCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4D1AFB4697006B0B1B /* TurnCard.caf */; };
 		8BF23A521AFB4697006B0B1B /* WrongMatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4E1AFB4697006B0B1B /* WrongMatch.caf */; };
+		8BF23A551AFB4F2D006B0B1B /* PacketDealCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF23A541AFB4F2D006B0B1B /* PacketDealCards.m */; };
 		E110A100156EC8DD0045AB96 /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E110A0FF156EC8DD0045AB96 /* Action_Man.ttf */; };
 		E110A104156EC9230045AB96 /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E110A103156EC9230045AB96 /* UIFont+SnapAdditions.m */; };
 		E110A108156ECA130045AB96 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E110A107156ECA130045AB96 /* UIButton+SnapAdditions.m */; };
@@ -584,6 +585,8 @@
 		8BF23A4C1AFB4697006B0B1B /* Dealing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dealing.caf; sourceTree = "<group>"; };
 		8BF23A4D1AFB4697006B0B1B /* TurnCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TurnCard.caf; sourceTree = "<group>"; };
 		8BF23A4E1AFB4697006B0B1B /* WrongMatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongMatch.caf; sourceTree = "<group>"; };
+		8BF23A531AFB4F2D006B0B1B /* PacketDealCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketDealCards.h; path = Snap/PacketDealCards.h; sourceTree = "<group>"; };
+		8BF23A541AFB4F2D006B0B1B /* PacketDealCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PacketDealCards.m; path = Snap/PacketDealCards.m; sourceTree = "<group>"; };
 		E110A0FF156EC8DD0045AB96 /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		E110A102156EC9230045AB96 /* UIFont+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SnapAdditions.h"; path = "Snap/UIFont+SnapAdditions.h"; sourceTree = "<group>"; };
 		E110A103156EC9230045AB96 /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SnapAdditions.m"; path = "Snap/UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
@@ -1024,6 +1027,8 @@
 				35E647571571712A00F1073A /* PacketServerReady.m */,
 				35E6485215717D9100F1073A /* PacketOtherClientQuit.h */,
 				35E6485315717D9200F1073A /* PacketOtherClientQuit.m */,
+				8BF23A531AFB4F2D006B0B1B /* PacketDealCards.h */,
+				8BF23A541AFB4F2D006B0B1B /* PacketDealCards.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1366,6 +1371,7 @@
 				8B83CB1A1AFA3C9D000DB4D4 /* Card.m in Sources */,
 				35E647221570484100F1073A /* PacketSignInResponse.m in Sources */,
 				35E647581571712B00F1073A /* PacketServerReady.m in Sources */,
+				8BF23A551AFB4F2D006B0B1B /* PacketDealCards.m in Sources */,
 				35E6485415717D9200F1073A /* PacketOtherClientQuit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

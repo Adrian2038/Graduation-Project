@@ -21,6 +21,7 @@ const CGFloat cardHeight;
 
 @property (nonatomic, strong) Card *card;
 
+- (void)loadCards;
 - (void)animationDealingToPosition:(CGPoint)point withDelay:(NSTimeInterval)delay;
 
 @end
