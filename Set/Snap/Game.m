@@ -259,6 +259,7 @@ GameState;
     NSAssert(self.isServer, @"Must be Server");
     NSAssert(_state == GameStateDealing, @"Wrong state");
     
+    // not use yet.
     Deck *deck = [[Deck alloc] init];
     [deck shuffle];
     

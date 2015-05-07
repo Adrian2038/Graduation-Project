@@ -264,6 +264,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
     NSTimeInterval delay = 1.0f;
     
     Deck *deck = [[Deck alloc] init];
+    [deck shuffle];
     
     for (NSInteger cardCount = 1; cardCount <= 12; cardCount ++)
     {
@@ -302,6 +303,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
         y = cardViewStartPointY + cardHeight * 5/2.0f + cardViewVerticalGape * 2 ;
         point = CGPointMake(x, y);
     }
+    NSLog(@"point is x = %f ,y = %f", x, y);
     return point;
 }
 

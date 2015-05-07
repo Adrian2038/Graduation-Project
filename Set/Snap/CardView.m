@@ -32,13 +32,24 @@ const CGFloat cardHeight = 50.0f;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        [self loadBack];
     }
     return self;
 }
 
+- (void)loadBack
+{
+    if (!_backImageView) {
+        _backImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _backImageView.image = [UIImage imageNamed:@"Red Solid Diamond 1"];
+        _backImageView.contentMode = UIViewContentModeScaleToFill;
+        [self addSubview:_backImageView];
+    }
+}
+
 - (void)animationDealingToPosition:(CGPoint)point withDelay:(NSTimeInterval)delay
 {
-    self.frame = CGRectMake(-100.0f, -100.0f, cardWidth, cardHeight);
+//    self.frame = CGRectMake(-100.0f, -100.0f, cardWidth, cardHeight);
     
     [UIView animateWithDuration:0.2f
                           delay:delay
