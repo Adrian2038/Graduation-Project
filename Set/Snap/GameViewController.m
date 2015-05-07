@@ -15,7 +15,7 @@
 #import "CardView.h"
 
 
-const CGFloat cardViewStartPointX = 124.0f;
+const CGFloat cardViewStartPointX = 90.0f;
 const CGFloat cardViewStartPointY = 68.0f;
 const CGFloat cardViewHorizontalGape = 13.0f;
 const CGFloat cardViewVerticalGape = 17.0f;
@@ -256,7 +256,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
 
 - (void)gameShouldDealCards:(Game *)game
 {
-    self.centerLabel.text = NSLocalizedString(@"游戏处理中...", @"Status text: dealing");
+    self.centerLabel.text = NSLocalizedString(@"", @"Status text: dealing");
     
     self.snapButton.hidden = YES;
     self.nextRoundButton.hidden = YES;
@@ -272,11 +272,8 @@ const CGFloat cardViewVerticalGape = 17.0f;
         cardView.card = [deck draw];
         [self.cardContainerView addSubview:cardView];
         [cardView animationDealingToPosition:[self pointForCardViewCount:cardCount] withDelay:delay];
-        NSLog(@"cardView = %@", cardView);
         NSLog(@"cardView's card = %@", cardView.card);
     }
-    NSLog(@"dealing the cards");
-    NSLog(@"deck = %@", deck);
 }
 
 - (CGPoint)pointForCardViewCount:(NSInteger)count
@@ -287,23 +284,25 @@ const CGFloat cardViewVerticalGape = 17.0f;
     
     if (count >= 1 && count <= 4)
     {
-        x = cardViewStartPointX + count * cardWidth / 2.0 + cardViewHorizontalGape * (count - 1);
+        x = cardViewStartPointX + ((count - 1) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 1);
         y = cardViewStartPointY + cardHeight / 2.0f;
         point = CGPointMake(x, y);
     }
     else if (count >= 5 && count <= 8)
     {
-        x = cardViewStartPointX + (count - 4) * cardWidth / 2.0 + cardViewHorizontalGape * (count - 5);
+        x = cardViewStartPointX + ((count - 5) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 5);
         y = cardViewStartPointY + cardHeight * 3/2.0f + cardViewVerticalGape;
         point = CGPointMake(x, y);
     }
     else    // count >= 9 & count <= 12
     {
-        x = cardViewStartPointX + (count - 8) * cardWidth / 2.0 + cardViewHorizontalGape * (count - 9);
+        x = cardViewStartPointX + ((count - 9) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 9);
         y = cardViewStartPointY + cardHeight * 5/2.0f + cardViewVerticalGape * 2 ;
         point = CGPointMake(x, y);
     }
-    NSLog(@"point is x = %f ,y = %f", x, y);
     return point;
 }
 
