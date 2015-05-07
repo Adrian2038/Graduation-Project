@@ -36,6 +36,11 @@
     [_cards addObject:card];
 }
 
+- (Card *)cardAtIndex:(NSInteger)index
+{
+    return [_cards objectAtIndex:index];
+}
+
 - (NSUInteger)cardCount
 {
     return [_cards count];

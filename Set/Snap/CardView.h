@@ -15,7 +15,7 @@ const CGFloat cardWidth;
 const CGFloat cardHeight;
 
 @class Card;
-// I needn't the animat the card to the palyer's position , but animate the card to a H & V
+// I needn't animate the card to the palyer's position , but animate the card to a H & V
 
 @interface CardView : UIView
 

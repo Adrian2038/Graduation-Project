@@ -9,6 +9,17 @@
 #import "GameViewController.h"
 #import "UIFont+SnapAdditions.h"
 #import "Game.h"
+#import "Deck.h"
+#import "Card.h"
+#import "Stack.h"
+#import "CardView.h"
+
+
+const CGFloat cardViewStartPointX = 124.0f;
+const CGFloat cardViewStartPointY = 68.0f;
+const CGFloat cardViewHorizontalGape = 13.0f;
+const CGFloat cardViewVerticalGape = 17.0f;
+
 
 @interface GameViewController ()
 
@@ -246,6 +257,52 @@
 - (void)gameShouldDealCards:(Game *)game
 {
     self.centerLabel.text = NSLocalizedString(@"游戏处理中...", @"Status text: dealing");
+    
+    self.snapButton.hidden = YES;
+    self.nextRoundButton.hidden = YES;
+    
+    NSTimeInterval delay = 1.0f;
+    
+    Deck *deck = [[Deck alloc] init];
+    
+    for (NSInteger cardCount = 1; cardCount <= 12; cardCount ++)
+    {
+        CardView *cardView = [[CardView alloc] initWithFrame:CGRectMake(0, 0, cardWidth, cardHeight)];
+        cardView.card = [deck draw];
+        [self.cardContainerView addSubview:cardView];
+        [cardView animationDealingToPosition:[self pointForCardViewCount:cardCount] withDelay:delay];
+        NSLog(@"cardView = %@", cardView);
+        NSLog(@"cardView's card = %@", cardView.card);
+    }
+    NSLog(@"dealing the cards");
+    NSLog(@"deck = %@", deck);
+}
+
+- (CGPoint)pointForCardViewCount:(NSInteger)count
+{
+    CGPoint point;
+    CGFloat x;
+    CGFloat y;
+    
+    if (count >= 1 && count <= 4)
+    {
+        x = cardViewStartPointX + count * cardWidth / 2.0 + cardViewHorizontalGape * (count - 1);
+        y = cardViewStartPointY + cardHeight / 2.0f;
+        point = CGPointMake(x, y);
+    }
+    else if (count >= 5 && count <= 8)
+    {
+        x = cardViewStartPointX + (count - 4) * cardWidth / 2.0 + cardViewHorizontalGape * (count - 5);
+        y = cardViewStartPointY + cardHeight * 3/2.0f + cardViewVerticalGape;
+        point = CGPointMake(x, y);
+    }
+    else    // count >= 9 & count <= 12
+    {
+        x = cardViewStartPointX + (count - 8) * cardWidth / 2.0 + cardViewHorizontalGape * (count - 9);
+        y = cardViewStartPointY + cardHeight * 5/2.0f + cardViewVerticalGape * 2 ;
+        point = CGPointMake(x, y);
+    }
+    return point;
 }
 
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer

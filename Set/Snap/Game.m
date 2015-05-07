@@ -14,6 +14,7 @@
 #import "Deck.h"
 #import "Card.h"
 #import "Stack.h"
+#import "CardView.h"
 
 typedef enum
 {

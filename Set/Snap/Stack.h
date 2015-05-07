@@ -15,5 +15,6 @@
 - (void)addCardToTop:(Card *)card;
 - (NSUInteger)cardCount;
 - (NSArray *)array;
+- (Card *)cardAtIndex:(NSInteger)index;
 
 @end

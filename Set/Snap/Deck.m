@@ -26,8 +26,6 @@
     if (self) {
         _cards = [NSMutableArray arrayWithCapacity:81];
         [self setupCards];
-        NSLog(@"cards count = %d", _cards.count);
-        NSLog(@"original _cards = %@", _cards);
     }
     return self;
 }
@@ -65,10 +63,7 @@
     
     NSAssert([self cardsRemaning] == 0, @"original cards's count must be 0");
     
-    NSLog(@"random cards count = %d", randomCards.count);
-    NSLog(@"original cards count = %d", _cards.count);
     _cards = randomCards;
-    NSLog(@"shuffle _cards = %@", _cards);
 }
 
 - (Card *)draw
