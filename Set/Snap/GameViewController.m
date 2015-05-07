@@ -286,6 +286,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
         [self.cardContainerView addSubview:cardView];
         [cardView animationDealingToPosition:[self pointForCardViewCount:cardCount] withDelay:delay];
         NSLog(@"cardView's card = %@", cardView.card);
+        delay += 0.1;
     }
     
     [self performSelector:@selector(afterDealing) withObject:nil afterDelay:delay];

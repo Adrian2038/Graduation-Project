@@ -96,7 +96,7 @@ const CGFloat cardHeight = 50.0f;
 
 - (void)animationDealingToPosition:(CGPoint)point withDelay:(NSTimeInterval)delay
 {
-//    self.frame = CGRectMake(-100.0f, -100.0f, cardWidth, cardHeight);
+    self.frame = CGRectMake(-100.0f, -100.0f, cardWidth, cardHeight);
     
     [UIView animateWithDuration:0.2f
                           delay:delay

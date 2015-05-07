@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-// Because the Set card has four features : symbol , shading , color , number
+// Because the Set card has four features : symbol , shading , color , and number
 
 typedef enum
 {
@@ -35,9 +35,7 @@ typedef enum
 }
 SetSymbol;
 
-
 @interface Card : NSObject
-
 
 @property (nonatomic, assign, readonly) SetColor color;
 @property (nonatomic, assign, readonly) SetShading shading;

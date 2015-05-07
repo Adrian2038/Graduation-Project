@@ -248,17 +248,15 @@ GameState;
 	_state = GameStateDealing;
 	[self.delegate gameDidBegin:self];
     
-//    if (self.isServer)
-//    {
-//        [self dealCards];
-//    }
-    
-    [self dealCards];
+    if (self.isServer)
+    {
+        [self dealCards];
+    }
 }
 
 - (void)dealCards
 {
-//    NSAssert(self.isServer, @"Must be Server");
+    NSAssert(self.isServer, @"Must be Server");
     NSAssert(_state == GameStateDealing, @"Wrong state");
     
     // not use yet.
