@@ -32,6 +32,9 @@ const CGFloat cardHeight = 50.0f;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        
+        self.layer.cornerRadius = 5.0;
+        self.layer.masksToBounds = YES;
     }
     return self;
 }
@@ -43,7 +46,7 @@ const CGFloat cardHeight = 50.0f;
         _frontImageView.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:_frontImageView];
         
-//        Green Open Diamond 2
+//        Green Open Diamond 2    is model card
         
         NSString *colorString = nil;
         
