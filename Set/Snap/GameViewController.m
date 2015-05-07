@@ -54,8 +54,11 @@ const CGFloat cardViewVerticalGape = 17.0f;
 
 @end
 
-@implementation GameViewController {
+@implementation GameViewController
+
+{
     UIAlertView *_alertView;
+    AVAudioPlayer *_dealingCardsSound;
 }
 
 @synthesize delegate = _delegate;
@@ -96,6 +99,9 @@ const CGFloat cardViewVerticalGape = 17.0f;
 #ifdef DEBUG
 	NSLog(@"dealloc %@", self);
 #endif
+    
+    [_dealingCardsSound stop];
+    [[AVAudioSession sharedInstance] setActive:NO error:NULL];
 }
 
 - (void)viewDidLoad
@@ -112,6 +118,8 @@ const CGFloat cardViewVerticalGape = 17.0f;
 	[self hidePlayerLabels];
 	[self hideActivePlayerIndicator];
 	[self hideSnapIndicators];
+    
+    [self loadSounds];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -261,10 +269,14 @@ const CGFloat cardViewVerticalGape = 17.0f;
     self.snapButton.hidden = YES;
     self.nextRoundButton.hidden = YES;
     
-    NSTimeInterval delay = 1.0f;
-    
     Deck *deck = [[Deck alloc] init];
     [deck shuffle];
+    
+    NSTimeInterval delay = 1.0f;
+
+    _dealingCardsSound.currentTime = 0.0f;
+    [_dealingCardsSound prepareToPlay];
+    [_dealingCardsSound performSelector:@selector(play) withObject:nil afterDelay:delay];
     
     for (NSInteger cardCount = 1; cardCount <= 12; cardCount ++)
     {
@@ -274,6 +286,27 @@ const CGFloat cardViewVerticalGape = 17.0f;
         [cardView animationDealingToPosition:[self pointForCardViewCount:cardCount] withDelay:delay];
         NSLog(@"cardView's card = %@", cardView.card);
     }
+    
+    [self performSelector:@selector(afterDealing) withObject:nil afterDelay:delay];
+}
+
+- (void)loadSounds
+{
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    audioSession.delegate = nil;
+    [audioSession setCategory:AVAudioSessionCategoryAmbient error:NULL];
+    [audioSession setActive:YES error:NULL];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Dealing" withExtension:@"caf"];
+    _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    _dealingCardsSound.numberOfLoops = -1;
+    [_dealingCardsSound prepareToPlay];
+}
+
+- (void)afterDealing
+{
+    [_dealingCardsSound stop];
+    self.snapButton.hidden = NO;
 }
 
 - (CGPoint)pointForCardViewCount:(NSInteger)count
@@ -525,6 +558,9 @@ const CGFloat cardViewVerticalGape = 17.0f;
 {
 	if (buttonIndex != alertView.cancelButtonIndex)
 	{
+        // It's powerful
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        
 		[self.game quitGameWithReason:QuitReasonUserQuit];
 	}
 }

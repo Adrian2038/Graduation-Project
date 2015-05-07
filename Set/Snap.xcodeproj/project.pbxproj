@@ -276,6 +276,10 @@
 		8BBD94EF1AF9F3C40080113C /* Red Striped Squiggle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD949C1AF9F3C40080113C /* Red Striped Squiggle 1.png */; };
 		8BBD94F01AF9F3C40080113C /* Red Striped Squiggle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD949D1AF9F3C40080113C /* Red Striped Squiggle 2.png */; };
 		8BBD94F11AF9F3C40080113C /* Red Striped Squiggle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD949E1AF9F3C40080113C /* Red Striped Squiggle 3.png */; };
+		8BF23A4F1AFB4697006B0B1B /* CorrectMatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4B1AFB4697006B0B1B /* CorrectMatch.caf */; };
+		8BF23A501AFB4697006B0B1B /* Dealing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4C1AFB4697006B0B1B /* Dealing.caf */; };
+		8BF23A511AFB4697006B0B1B /* TurnCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4D1AFB4697006B0B1B /* TurnCard.caf */; };
+		8BF23A521AFB4697006B0B1B /* WrongMatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A4E1AFB4697006B0B1B /* WrongMatch.caf */; };
 		E110A100156EC8DD0045AB96 /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E110A0FF156EC8DD0045AB96 /* Action_Man.ttf */; };
 		E110A104156EC9230045AB96 /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E110A103156EC9230045AB96 /* UIFont+SnapAdditions.m */; };
 		E110A108156ECA130045AB96 /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E110A107156ECA130045AB96 /* UIButton+SnapAdditions.m */; };
@@ -576,6 +580,10 @@
 		8BBD949C1AF9F3C40080113C /* Red Striped Squiggle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 1.png"; sourceTree = "<group>"; };
 		8BBD949D1AF9F3C40080113C /* Red Striped Squiggle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 2.png"; sourceTree = "<group>"; };
 		8BBD949E1AF9F3C40080113C /* Red Striped Squiggle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Striped Squiggle 3.png"; sourceTree = "<group>"; };
+		8BF23A4B1AFB4697006B0B1B /* CorrectMatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CorrectMatch.caf; sourceTree = "<group>"; };
+		8BF23A4C1AFB4697006B0B1B /* Dealing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dealing.caf; sourceTree = "<group>"; };
+		8BF23A4D1AFB4697006B0B1B /* TurnCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TurnCard.caf; sourceTree = "<group>"; };
+		8BF23A4E1AFB4697006B0B1B /* WrongMatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongMatch.caf; sourceTree = "<group>"; };
 		E110A0FF156EC8DD0045AB96 /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		E110A102156EC9230045AB96 /* UIFont+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SnapAdditions.h"; path = "Snap/UIFont+SnapAdditions.h"; sourceTree = "<group>"; };
 		E110A103156EC9230045AB96 /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SnapAdditions.m"; path = "Snap/UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
@@ -847,6 +855,7 @@
 		7B67D9E114C9C6AD00254619 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8BF23A4A1AFB4697006B0B1B /* Sounds */,
 				8BBD944B1AF9F3C40080113C /* Set_Images */,
 				E110A0FF156EC8DD0045AB96 /* Action_Man.ttf */,
 				7B67D9E314C9C6AD00254619 /* InfoPlist.strings */,
@@ -976,6 +985,17 @@
 			path = Set_Images;
 			sourceTree = "<group>";
 		};
+		8BF23A4A1AFB4697006B0B1B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8BF23A4B1AFB4697006B0B1B /* CorrectMatch.caf */,
+				8BF23A4C1AFB4697006B0B1B /* Dealing.caf */,
+				8BF23A4D1AFB4697006B0B1B /* TurnCard.caf */,
+				8BF23A4E1AFB4697006B0B1B /* WrongMatch.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		E110A105156EC9290045AB96 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B67D9E514C9C6AD00254619 /* InfoPlist.strings in Resources */,
+				8BF23A501AFB4697006B0B1B /* Dealing.caf in Resources */,
 				7B2B321A14CC83760002F476 /* Felt.png in Resources */,
 				8BBD94DA1AF9F3C40080113C /* Red Open Oval 1.png in Resources */,
 				8BBD94F11AF9F3C40080113C /* Red Striped Squiggle 3.png in Resources */,
@@ -1154,6 +1175,7 @@
 				8BBD94AB1AF9F3C40080113C /* Green Solid Diamond 2.png in Resources */,
 				35E647E11571757C00F1073A /* Clubs 5@2x.png in Resources */,
 				35E647E21571757C00F1073A /* Clubs 6.png in Resources */,
+				8BF23A521AFB4697006B0B1B /* WrongMatch.caf in Resources */,
 				35E647E31571757C00F1073A /* Clubs 6@2x.png in Resources */,
 				35E647E41571757C00F1073A /* Clubs 7.png in Resources */,
 				35E647E51571757C00F1073A /* Clubs 7@2x.png in Resources */,
@@ -1277,6 +1299,7 @@
 				8BBD94B11AF9F3C40080113C /* Green Solid Squiggle 2.png in Resources */,
 				35E648361571757C00F1073A /* Spades 2.png in Resources */,
 				35E648371571757C00F1073A /* Spades 2@2x.png in Resources */,
+				8BF23A511AFB4697006B0B1B /* TurnCard.caf in Resources */,
 				35E648381571757C00F1073A /* Spades 3.png in Resources */,
 				35E648391571757C00F1073A /* Spades 3@2x.png in Resources */,
 				35E6483A1571757C00F1073A /* Spades 4.png in Resources */,
@@ -1284,6 +1307,7 @@
 				8BBD94AC1AF9F3C40080113C /* Green Solid Diamond 3.png in Resources */,
 				35E6483C1571757C00F1073A /* Spades 5.png in Resources */,
 				35E6483D1571757C00F1073A /* Spades 5@2x.png in Resources */,
+				8BF23A4F1AFB4697006B0B1B /* CorrectMatch.caf in Resources */,
 				8BBD94B51AF9F3C40080113C /* Green Striped Diamond 3.png in Resources */,
 				35E6483E1571757D00F1073A /* Spades 6.png in Resources */,
 				35E6483F1571757D00F1073A /* Spades 6@2x.png in Resources */,
