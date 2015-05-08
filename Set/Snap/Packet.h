@@ -38,6 +38,8 @@ PacketType;
 + (id)packetWithType:(PacketType)packetType;
 - (id)initWithInsideType:(PacketType)packetType;
 + (id)packetWithData:(NSData *)data;
++ (NSDictionary *)cardsFromData:(NSData *)data atOffset:(size_t)offset;
+- (void)addCards:(NSDictionary *)cards toPayload:(NSMutableData *)data;
 
 - (NSData *)data;
 

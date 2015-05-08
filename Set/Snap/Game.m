@@ -11,6 +11,7 @@
 #import "PacketSignInResponse.h"
 #import "PacketServerReady.h"
 #import "PacketOtherClientQuit.h"
+#import "PacketDealCards.h"
 #import "Deck.h"
 #import "Card.h"
 #import "Stack.h"
@@ -183,6 +184,13 @@ GameState;
 			[self quitGameWithReason:QuitReasonServerQuit];
 			break;            
             
+        case PacketTypeDealCards:
+            if (_state == GameStateDealing)
+            {
+                [self handleDealCardsPacket:(PacketDealCards *)packet];
+            }
+            break;
+            
 		default:
 			NSLog(@"Client received unexpected packet: %@", packet);
 			break;
@@ -232,6 +240,14 @@ GameState;
 			[self clientDidDisconnect:player.peerID];
 			break;            
             
+        case PacketTypeClientDealtCards:
+            
+            if (_state == GameStateDealing && [self receivedResponsesFromAllPlayers])
+            {
+                _state = GameStatePlaying;
+            }
+            break;
+            
 		default:
 			NSLog(@"Server received unexpected packet: %@", packet);
 			break;
@@ -259,10 +275,17 @@ GameState;
     NSAssert(self.isServer, @"Must be Server");
     NSAssert(_state == GameStateDealing, @"Wrong state");
     
-    // not use yet.
-    Deck *deck = [[Deck alloc] init];
-    [deck shuffle];
+    // ........................................
     
+    NSMutableDictionary *cards = [NSMutableDictionary dictionaryWithCapacity:1];
+    
+    // some data stuff must add to the cards;
+    
+    PacketDealCards *packet = [PacketDealCards packetWithCards:cards];
+    [self sendPacketToAllClients:packet];
+    
+    // ........................................
+
     [self.delegate gameShouldDealCards:self];
 }
 
@@ -298,6 +321,22 @@ GameState;
      }];
     
 	return player;
+}
+
+- (void)handleDealCardsPacket:(PacketDealCards *)packet
+{
+    // All the clients should get the dictionary of the deal cards which on the board.
+    
+    // As the habit, when the client receive a message from the server,
+    // then client send message back to the server.
+    Packet *responsePacket = [Packet packetWithType:PacketTypeClientDealtCards];
+    [self sendPacketToServer:responsePacket];
+    
+    _state = GameStatePlaying;
+    
+    // as the server do with the GameViewController,
+    // so all the clients will start the same deal cards animtion with the GameViewController's view
+    [self.delegate gameShouldDealCards:self];
 }
 
 #pragma mark - GKSessionDelegate

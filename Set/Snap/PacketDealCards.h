@@ -10,4 +10,8 @@
 
 @interface PacketDealCards : Packet
 
+@property (nonatomic, strong) NSDictionary *cards;
+
++ (id)packetWithCards:(NSDictionary *)cards;
+
 @end
