@@ -215,6 +215,55 @@ const CGFloat cardViewVerticalGape = 17.0f;
 	}
 }
 
+- (void)loadSounds
+{
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    audioSession.delegate = nil;
+    [audioSession setCategory:AVAudioSessionCategoryAmbient error:NULL];
+    [audioSession setActive:YES error:NULL];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Dealing" withExtension:@"caf"];
+    _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    _dealingCardsSound.numberOfLoops = -1;
+    [_dealingCardsSound prepareToPlay];
+}
+
+- (void)afterDealing
+{
+    [_dealingCardsSound stop];
+    self.snapButton.hidden = NO;
+}
+
+- (CGPoint)pointForCardViewCount:(NSInteger)count
+{
+    CGPoint point;
+    CGFloat x;
+    CGFloat y;
+    
+    if (count >= 1 && count <= 4)
+    {
+        x = cardViewStartPointX + ((count - 1) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 1);
+        y = cardViewStartPointY + cardHeight / 2.0f;
+        point = CGPointMake(x, y);
+    }
+    else if (count >= 5 && count <= 8)
+    {
+        x = cardViewStartPointX + ((count - 5) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 5);
+        y = cardViewStartPointY + cardHeight * 3/2.0f + cardViewVerticalGape;
+        point = CGPointMake(x, y);
+    }
+    else    // count >= 9 & count <= 12
+    {
+        x = cardViewStartPointX + ((count - 9) * 2 + 1) / 2.0 * cardWidth +
+        cardViewHorizontalGape * (count - 9);
+        y = cardViewStartPointY + cardHeight * 5/2.0f + cardViewVerticalGape * 2 ;
+        point = CGPointMake(x, y);
+    }
+    return point;
+}
+
 #pragma mark - Actions
 
 - (IBAction)exitAction:(id)sender
@@ -292,54 +341,6 @@ const CGFloat cardViewVerticalGape = 17.0f;
     [self performSelector:@selector(afterDealing) withObject:nil afterDelay:delay];
 }
 
-- (void)loadSounds
-{
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    audioSession.delegate = nil;
-    [audioSession setCategory:AVAudioSessionCategoryAmbient error:NULL];
-    [audioSession setActive:YES error:NULL];
-    
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Dealing" withExtension:@"caf"];
-    _dealingCardsSound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    _dealingCardsSound.numberOfLoops = -1;
-    [_dealingCardsSound prepareToPlay];
-}
-
-- (void)afterDealing
-{
-    [_dealingCardsSound stop];
-    self.snapButton.hidden = NO;
-}
-
-- (CGPoint)pointForCardViewCount:(NSInteger)count
-{
-    CGPoint point;
-    CGFloat x;
-    CGFloat y;
-    
-    if (count >= 1 && count <= 4)
-    {
-        x = cardViewStartPointX + ((count - 1) * 2 + 1) / 2.0 * cardWidth +
-        cardViewHorizontalGape * (count - 1);
-        y = cardViewStartPointY + cardHeight / 2.0f;
-        point = CGPointMake(x, y);
-    }
-    else if (count >= 5 && count <= 8)
-    {
-        x = cardViewStartPointX + ((count - 5) * 2 + 1) / 2.0 * cardWidth +
-        cardViewHorizontalGape * (count - 5);
-        y = cardViewStartPointY + cardHeight * 3/2.0f + cardViewVerticalGape;
-        point = CGPointMake(x, y);
-    }
-    else    // count >= 9 & count <= 12
-    {
-        x = cardViewStartPointX + ((count - 9) * 2 + 1) / 2.0 * cardWidth +
-        cardViewHorizontalGape * (count - 9);
-        y = cardViewStartPointY + cardHeight * 5/2.0f + cardViewVerticalGape * 2 ;
-        point = CGPointMake(x, y);
-    }
-    return point;
-}
 
 - (void)game:(Game *)game playerDidDisconnect:(Player *)disconnectedPlayer
 {
