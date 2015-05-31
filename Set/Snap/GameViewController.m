@@ -318,6 +318,7 @@ const CGFloat cardViewVerticalGape = 17.0f;
     self.snapButton.hidden = YES;
     self.nextRoundButton.hidden = YES;
     
+    // should not init the deck model here, because the model is share to all clients
     Deck *deck = [[Deck alloc] init];
     [deck shuffle];
     
